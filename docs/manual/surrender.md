@@ -23,12 +23,12 @@ Below, in case you provided additional params, like `learn-more` or `alternative
 At the end, there will always be a small disclaimer looking like this:
 
 !!! quote "Disclaimer shown"
-    This project was _automatically deprecated_ using the FuckingNode _**VERSION HERE**_ CLI utility (found at [this repo](https://github.com/ZakaHaceCosas/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
+    This project was _automatically deprecated_ using the FuckingNode _**VERSION HERE**_ CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
 
 Below is an example of how a full deprecation README, assuming example values for all optional arguments, could look like.
 
 ```bash
-fkn surrender ../some-package "Next version of ECMAScript adds this as a native JavaScript feature, thus this package is no longer needed." "For browsers that do not support it yet, you can get '@someone/random-feature-polyfill' from npm" "Learn more at https://bsky.app/FuckingNode"
+fkn surrender ../some-package "Next version of ECMAScript adds this as a native JavaScript feature, thus this package is no longer needed." "For browsers that do not support it yet, you can get '@someone/random-feature-polyfill' from npm" "Learn more at https://bsky.app/profile/fknode.bsky.social"
 ```
 
 ```md title="README.md" linenums="1"
@@ -40,9 +40,9 @@ This note was left by the maintainer of this repository: next version of ecmascr
 
 The maintainer of this repository has provided the following alternative: for browsers that do not support it yet, you can get '@someone/random-feature-polyfill' from npm
 
-You may find here additional information regarding this project's deprecation: learn more at https://bsky.app/fuckingnode
+You may find here additional information regarding this project's deprecation: learn more at https://bsky.app/profile/fknode.bsky.social
 
-###### This project was _automatically deprecated_ using the FuckingNode v3.0.0-rc.3 CLI utility (found at [this repo](https://github.com/ZakaHaceCosas/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
+###### This project was _automatically deprecated_ using the FuckingNode v3.0.0-rc.3 CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
 -------------
 
 # Some package

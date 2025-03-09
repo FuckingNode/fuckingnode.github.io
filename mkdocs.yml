@@ -1,11 +1,11 @@
 site_name: FuckingNode
 site_description: The fucking chaos of maintaining JavaScript projects ends here.
-site_url: https://zakahacecosas.github.io/FuckingNode/
+site_url: https://fuckingnode.github.io/
 site_author: ZakaHaceCosas
 copyright: Copyright &copy; 2024 - 2025 ZakaHaceCosas
 
-repo_name: ZakaHaceCosas/FuckingNode
-repo_url: https://github.com/ZakaHaceCosas/FuckingNode/
+repo_name: FuckingNode/FuckingNode
+repo_url: https://github.com/FuckingNode/FuckingNode/
 
 docs_dir: "docs"
 
@@ -33,7 +33,6 @@ nav:
     - Learn:
           - Learn: "learn/index.md"
           - How does cleanup work under the hood: "learn/clean.md"
-          - How does kickstart work under the hood: "learn/kickstart.md"
           - How does audit work under the hood: "learn/audit.md"
 
     - Roadmap: "about/roadmap.md"
@@ -94,7 +93,7 @@ plugins:
     - redirects:
           redirect_maps:
               "about.md": "about/roadmap.md"
-              "repo.md": "https://github.com/ZakaHaceCosas/FuckingNode"
+              "repo.md": "https://github.com/FuckingNode/FuckingNode"
               "roadmap.md": "about/roadmap.md"
               "cross-runtime.md": "learn/cross-runtime-support.md"
               "cross-platform.md": "learn/cross-runtime-support.md"

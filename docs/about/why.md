@@ -65,6 +65,6 @@ FuckingNode is a thing because it fixes all of the issues mentioned above.
 
 ---
 
-That is why FuckingNode is a thing; because it's a single tool to fix everything. And if there's something we didn't fix yet, just [join our Discord server](https://discord.gg/AA2jYAFNmq), mention us on [Twitter](https://x.com/FuckingNode) or [Bluesky](https://bsky.app/FuckingNode), or [raise an issue on GitHub](https://github.com/ZakaHaceCosas/FuckingNode/issues) telling us what else you'd like to see within our tooling, and we'll add it (if possible).
+That is why FuckingNode is a thing; because it's a single tool to fix everything. And if there's something we didn't fix yet, just [join our Discord server](https://discord.gg/AA2jYAFNmq), mention us on [Twitter](https://x.com/FuckingNode) or [Bluesky](https://bsky.app/profile/fknode.bsky.social), or [raise an issue on GitHub](https://github.com/FuckingNode/FuckingNode/issues) telling us what else you'd like to see within our tooling, and we'll add it (if possible).
 
 *[CWD]: Current Working Directory

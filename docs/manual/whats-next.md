@@ -22,7 +22,7 @@ Here you got, a bunch of links you might find interesting or useful.
 
 [Branding guidelines? (yes we have them)](../about/branding.md)
 
-[GitHub](https://github.com/ZakaHaceCosas/FuckingNode)
+[Our GitHub organization](https://github.com/FuckingNode)
 
 [Follow us on social media](../about/social.md)
 

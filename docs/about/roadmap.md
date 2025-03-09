@@ -68,15 +68,13 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 ### Version 3.3
 
-- [ ] Stabilize `audit` feature and support it everywhere NodeJS.
-  - [ ] Stabilize it
-      - [ ] Fix known issues (see TODO.md at the repository).
-      - [ ] Expand vector string lists.
-  - [x] Support it
-      - [x] pnpm
-      - [x] yarn
-- [ ] Extend the FuckingNode Interop Layer
-    - [ ] Auditer (this is a bit special, you'll see what we mean soon).
+- [ ] Rewrite `audit` feature.
+    - [ ] Stabilize it
+        - [ ] Fix known issues (see TODO.md at the repository).
+        - [ ] Expand vector string lists & question list.
+    - [x] Support it everywhere NodeJS
+        - [x] pnpm
+        - [x] yarn
 
 ---
 

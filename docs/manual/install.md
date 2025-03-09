@@ -9,7 +9,7 @@ First thing first, install the CLI:
 Copy and paste the following code in a terminal session.
 
 ```powershell
-powershell -c "irm zakahacecosas.github.io/FuckingNode/install.ps1 | iex"
+powershell -c "irm fuckingnode.github.io/install.ps1 | iex"
 ```
 
 ### Linux and macOS
@@ -17,7 +17,7 @@ powershell -c "irm zakahacecosas.github.io/FuckingNode/install.ps1 | iex"
 Copy and paste the following code in a terminal session.
 
 ```bash
-curl -fsSL zakahacecosas.github.io/FuckingNode/install.sh | bash
+curl -fsSL fuckingnode.github.io/install.sh | bash
 ```
 
 ### NixOS
@@ -26,7 +26,7 @@ Add the repo to your `flake.nix`.
 
 ```nix
 inputs = {
-    fuckingnode.url = "github:ZakaHaceCosas/FuckingNode";
+    fuckingnode.url = "github:FuckingNode/FuckingNode";
 }
 ```
 

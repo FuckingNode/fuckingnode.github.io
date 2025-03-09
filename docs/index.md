@@ -37,7 +37,7 @@
 
     Never again make a commit without running your test-suite test.
 
-    [:octicons-arrow-right-24: Safe commits](https://zakahacecosas.github.io/FuckingNode/manual/commit/)
+    [:octicons-arrow-right-24: Safe commits](./manual/commit.md)
 
 -   :fontawesome-solid-skull:{ .lg .middle } **Be prepared for anything**
 
@@ -45,7 +45,7 @@
 
     With the world’s only chad-enough JavaScript CLI to auto-deprecate projects at will.
 
-    [:octicons-arrow-right-24: Automated deprecations](https://zakahacecosas.github.io/FuckingNode/manual/surrender/)
+    [:octicons-arrow-right-24: Automated deprecations](./manual/surrender.md)
 
 -   :material-arm-flex:{ .lg .middle } **Flex about it**
 
@@ -53,7 +53,7 @@
 
     Your friends waste lots of their time manually maintaining never-releasing JS projects. Show 'em the F\*ckingNode way.
 
-    [:octicons-arrow-right-24: Download now](https://github.com/ZakaHaceCosas/FuckingNode/releases/latest)
+    [:octicons-arrow-right-24: Download now](https://github.com/FuckingNode/FuckingNode/releases/latest)
 
 </div>
 

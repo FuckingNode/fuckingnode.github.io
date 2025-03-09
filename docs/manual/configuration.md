@@ -82,7 +82,7 @@ Just run `fuckingnode manager list`. It'll beautifully show you all of your proj
 💡 Here are the m*therf*ckers you added so far:
 
 personaplus@0.0.6-preapp.29 C:\\Users\\Zaka\\personaplus
-@zakahacecosas/fuckingnode@3.0.0-rc.1 C:\\Users\\Zaka\\FuckingNode
+@zakahacecosas/fuckingnode@3.1.0 C:\\Users\\Zaka\\FuckingNode
 @zakahacecosas/string-utils@1.11.0 C:\\Users\\Zaka\\string-utils
 ...
 ```

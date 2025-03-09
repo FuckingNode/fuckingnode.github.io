@@ -6,15 +6,13 @@ Just in case you wanted to write an article or make a video about us (thank you!
 
 ## The logo
 
-You can use our logo just as you'd use any app's logo in a post, video, or any kind of visual content that requires it. With proper attribution, of course. A PNG is available from our main repository.
-
-Please don't alter it however. Only valid change is making it full black (`#000`) instead of full white (`#FFF`) for usage over light backgrounds.
+You can use our logo just as you'd use any app's logo in a post, video, or any kind of visual content that requires it (with proper attribution, of course). Black and white PNGs are available from this website's repository.
 
 ## The name
 
-Ideally, capitalize it as FuckingNode. The asterisk (F*ckingNode) is optional. If used, censor the U and not any other letter (<s>F\*ckingNode</s>).
+Ideally, capitalize it as FuckingNode. The asterisk (F*ckingNode) is optional. If used, censor the U and not any other letter (avoid things like <s>F\*\*kingNode</s>).
 
-There isn't any preference towards font families to be used. We recommend a `monospace` font.
+There isn't a real preference towards font families to be used. We recommend a `monospace` font.
 
 ### Can acronyms or abbreviations be used?
 
@@ -24,9 +22,9 @@ There isn't any preference towards font families to be used. We recommend a `mon
 
 **Keep the logo white or black.** If you _really_ want to color it, go for either light green (like this documentation site's accent color), or orange. `#FCA737` (our classic orange) or `#65BA4F` (lightened NodeJS' logo green) could do.
 
-## Something needless to say
+## Needless to say
 
-Our logo, name, and branding are _ours_. They're made with love and effort and they may not be used anywhere without either crediting us or having our explicit consent. Copyright actions might be taken if we see them necessary; we hope you'll be able to abide by such a simple rule.
+Our logo, name, and branding are _ours_. They're made with love and effort and they may not be used anywhere without either crediting us or having our explicit consent. Copyright actions may be taken if we see them necessary; so we hope you'll be able to abide by such a simple rule.
 
 ---
 

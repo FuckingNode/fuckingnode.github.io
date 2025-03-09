@@ -13,6 +13,7 @@ These are links to individual pages. For the full manual, click the first one, t
 - [Extra - Kickstart](kickstart.md)
 - [Extra - Commit](commit.md)
 - [Extra - Release](release.md)
+- [Extra - Launch](launch.md)
 - [Extra - Surrender](surrender.md)
 - [Extra - Setup](setup.md)
 - [Extra - Stats](stats.md)
@@ -26,19 +27,19 @@ For further learning:
 
 ### Step 1
 
-Add all of your projects. This is done manually with the `fuckingnode manager add <path>` command. Path can be relative, absolute, or the `--self` flag to use the CWD.
+Add your projects to FuckingNode's project list. This is done manually with the `fuckingnode manager add <path>` (or `fkadd <path>`) command. `<path>` can be any file path, or `--self` to use the CWD.
 
 ```bash
 # relative
 fuckingnode manager add "../projects/project1"
 # absolute
-fuckingnode manager add "/home/engin/projects/project2"
+fuckingnode manager add "/home/me/projects/project2"
 # self path
 cd project3
 fuckingnode manager add --self
 ```
 
-It's recommended that from now on you run `manager add --self` immediately after running `npm init` (or `pnpm init` or whatever) each time you create a project.
+It's recommended that from now on you run `fkadd --self` immediately after running `npm init` (or `pnpm init` or whatever) each time you create a project.
 
 ### Step 2
 
@@ -46,20 +47,23 @@ A basic cleanup is invoked by running this command, with no arguments.
 
 ```bash
 fuckingnode clean
+# or "fkclean"
 ```
 
-It's simple, and while it doesn't recover gigabytes, it's fast and it gets the job done. Additional flags can be passed for using more advanced features.
+While it doesn't recover gigabytes of storage, it's simple, fast and gets the job done. Flags can be passed for using extra features.
 
-Keep in mind it's a global command; it'll run the cleanup (with the same flags if passed) across all the projects you've added, saving you time.
+Keep in mind cleanup is global by default; it'll run (with the same flags if passed) across all the projects you've added, saving you time.
 
-A config file `fknode.yaml` can be created at the root of an added project to override this some behaviors.
+A config file `fknode.yaml` can be created at the root of a project to customize behavior. Learn more [here](fknode-yaml.md).
 
 You can also clean a specific project providing it's path, or it's name from the `package.json`.
 
 ```bash
-fuckingnode clean ../project1 # only clean /home/users/me/project1, for example
-# or
-fuckingnode clean my-framework # only clean the project with "my-framework" in the "name" field
+# only clean /home/users/me/project1, for example
+fuckingnode clean ../project1
+
+# only clean the project with "my-framework" in the "name" field
+fuckingnode clean my-framework
 ```
 
 ### Step 3
@@ -70,9 +74,9 @@ For increased intensity, use this.
 fuckingnode clean hard
 ```
 
-Immediately after cleaning all of your projects, it'll now clear global caches of all your installed package managers.
+When cleaning like this, global caches from all your installed package managers will be cleared immediately after cleaning all of your projects.
 
-If you only wish to clear global caches without waiting for individual cleanup of all projects, use `fuckingnode clean hard-only`, or a shortcut (`fuckingnode global-clean` or `fuckingnode hard-clean`).
+If you only wish to clear global caches without waiting for individual cleanup of all of your projects, use `fuckingnode clean hard-only`, or a shortcut (`fuckingnode global-clean` or `fuckingnode hard-clean`).
 
 ### Step 4
 
@@ -84,16 +88,16 @@ For the best experience, you can pass flags to the clean command for using addit
 - `--update` updates dependencies
 - `--commit` commits changes made by us (e.g. changes to your lockfile because of updating)
 
-Each flag can be invoked with the 1st letter for faster typing (`-l` = `--lint`, `-p` = `--pretty`...)
+Each flag can be invoked with its 1st letter for faster typing (`-l` = `--lint`, `-p` = `--pretty`...).
 
-As outlined [before](#step-2) cleaning is global. When running with `--lint` all your projects will be automatically linted (unless overridden, as said), greatly increasing your productivity.
+As outlined [before](#step-2) cleaning is global. When running with `--lint` all your projects will be automatically linted (unless overridden via an [`fknode.yaml` file](fknode-yaml.md)), greatly increasing your productivity.
 
-Behavior itself can also be overridden, in case you use a different linter than ESLint, or a different prettifier than Prettier. All flags support their custom configuration.
+Behavior itself can also be overridden via an `fknode.yaml` file, in case you'd like to use a different linter than ESLint, or a different prettifier than Prettier.
 
-There are two exceptions to the "global cleaning" rule mentioned earlier:
+Note `--destroy` and `--commit` _are_ effected by the global cleaning rule, however they won't run by default as they require configuration via an `fknode.yaml` file:
 
-- `--destroy` requires per-project configuration via `fknode.yaml` (you shall specify what you want to be removed). We don't have "default" directories to auto-remove like `dist/`, to avoid removing something you _might_ need.
-- `--commit` requires per-project configuration via `fknode.yaml`. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Committing requires explicit allowance from you, and additional safety checks are performed as outlined [here](../manual/usage.md#committing-your-code-commit).
+- `--destroy` requires you to specify what you want to be removed. We don't have "default" directories to auto-remove like `dist/`, to avoid removing something you _might_ need.
+- `--commit` requires you to specify permission to run. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Hence, committing requires explicit allowance from you, and additional safety checks are performed as outlined [here](../manual/usage.md#committing-your-code-commit).
 
 ---
 
