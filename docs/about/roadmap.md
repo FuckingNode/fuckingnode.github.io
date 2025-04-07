@@ -60,10 +60,10 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 ### Version 3.2 (Upcoming)
 
-- [ ] Enhancements
+- [X] Enhancements
     - [X] Add `launchCmd` to `fklaunch` for users to define how a project should start up.
-- [ ] Better `migrate` feature.
-    - [ ] Manually migrate projects, copying exact versions from one lockfile and creating (by us) a new one where everything'll be added. (Sounds difficult, but some package managers AFAIK are capable of this, so we should try at least too.)
+- [X] Better `migrate` feature.
+    - [X] Respect exact versions from the previous lockfile.
 - [ ] Support `stats`' Recommended Community Standards across:
     - [X] Deno
     - [ ] Cargo
