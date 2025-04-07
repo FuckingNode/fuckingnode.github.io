@@ -33,7 +33,7 @@ You'll see a confirmation like this one, showing what will be made:
 Run deno task test
 If everything above went alright, commit 0 file(s) to branch v3 with message "test"
 
-- all of this at @zakahacecosas/fuckingnode@3.0.0-alpha.3 C:\Users\Zaka\FuckingNode
+- all of this at @zakahacecosas/fuckingnode@3.2.0 C:\Users\Zaka\FuckingNode
 Confirm? [y/N]
 ```
 

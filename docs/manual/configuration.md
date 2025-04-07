@@ -36,7 +36,7 @@ fuckingnode manager add --self
 
 This is our recommended way, as you can run it right after running `npm init` and you don't have to type a long folder name.
 
-**3 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On Windows it lives at your local `%APPDATA%`, and on Linux & mac it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks kinda like this:
+**3 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On :fontawesome-brands-windows: Windows it lives at your local `%APPDATA%`, and on :simple-linux: Linux & :simple-apple: macOS it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks kinda like this:
 
 ```txt title="fuckingnode-motherfuckers.txt" linenums="1"
 C:\Users\JohnDoe\projects\Sokora
@@ -76,15 +76,16 @@ The above would work as long as you have one added project with this package.jso
 
 ### Listing projects
 
-Just run `fuckingnode manager list`. It'll beautifully show you all of your projects in a `name@version path` format, kinda like this (but with colors and cool stuff):
+Just run `fuckingnode manager list`. It'll beautifully show you all of your projects in a `name@version path` format, like below, but with colors and cool stuff.
 
 ```bash
 💡 Here are the m*therf*ckers you added so far:
 
-personaplus@0.0.6-preapp.29 C:\\Users\\Zaka\\personaplus
-@zakahacecosas/fuckingnode@3.1.0 C:\\Users\\Zaka\\FuckingNode
-@zakahacecosas/string-utils@1.11.0 C:\\Users\\Zaka\\string-utils
-...
+sokora@0.3.0 /home/zaka/Code/Sokora
+vuelto.pp.ua@v1.1.2 /home/zaka/Code/vuelto
+personaplus-website@0.1.0 /home/zaka/Code/personaplus-website
+personaplus@0.0.6-preapp.30 /home/zaka/Code/personaplus
+@zakahacecosas/fuckingnode@3.1.1 /home/zaka/Code/FuckingNode
 ```
 
 Later on we'll see how to "ignore" projects; here we'll tell you that you can pass `--ignored` to only list ignored projects, or `--alive` to only list non-ignored projects. If you try to mix both flags to create a loophole and break the matrix, you won't break anything; the flag you write first will overrule the second one.
@@ -128,7 +129,7 @@ fuckingnode settings change update-freq 15
 
 ### Additional settings commands
 
-Settings includes an additional `flush` command, that takes a `<file>` (`logs`, `updates`, `projects`, or `all`) as an argument, removing that from F\*ckingNode's configuration. Removing `logs` is particularly recommended. Removals of `projects` and `all` are discouraged - by the way, yes, we store all logs in a `.log` file, it lives in `%APPDATA%/FuckingNode` on Windows and `/home/USER/.config/FuckingNode` on Linux & macOS.
+Settings includes an additional `flush` command, that takes a `<file>` (`logs`, `updates`, `projects`, or `all`) as an argument, removing that from F\*ckingNode's configuration. Removing `logs` is particularly recommended. Removals of `projects` and `all` are discouraged - by the way, yes, we store all logs in a `.log` file, it lives in `%APPDATA%/FuckingNode` on :fontawesome-brands-windows: Windows and `/home/USER/.config/FuckingNode` on :simple-linux: Linux & :simple-apple: macOS.
 
 There's another settings command, `settings repair`. It simply resets settings to defaults.
 

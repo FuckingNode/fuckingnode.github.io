@@ -25,6 +25,10 @@ For further learning:
 
 ## TL;DR for getting started as soon as possible
 
+### Step 0
+
+Install it for your platform following the instructions [here](./install.md) (just like any professional tool, installation is as easy as running one CLI command).
+
 ### Step 1
 
 Add your projects to FuckingNode's project list. This is done manually with the `fuckingnode manager add <path>` (or `fkadd <path>`) command. `<path>` can be any file path, or `--self` to use the CWD.

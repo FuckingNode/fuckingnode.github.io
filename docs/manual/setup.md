@@ -15,7 +15,7 @@ To list available setups, run:
 fuckingnode setup
 ```
 
-You'll see something like the following:
+You'll see something like the following (but with more options):
 
 ```txt
 ┌───────────────────────┬───────────────────────────────────────────────────────────────────────┐

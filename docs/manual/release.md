@@ -36,7 +36,7 @@ Update your deno.json's "version" field
 Create a deno.json.bak file, and add it to .gitignore
 Publish your changes to JSR
 
-- all of this at @zakahacecosas/fuckingnode@3.0.0-alpha.3 C:\Users\Zaka\FuckingNode
+- all of this at @zakahacecosas/fuckingnode@3.2.0 C:\Users\Zaka\FuckingNode
 Confirm? [y/N]
 ```
 

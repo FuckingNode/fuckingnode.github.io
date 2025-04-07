@@ -7,16 +7,13 @@ This is the simplest thing ever. Just run `fuckingnode stats *`, replacing `*` w
 ## Project outline
 
 ```txt
-@zakahacecosas/fuckingnode@3.0.0-alpha.3 C:\Users\Zaka\FuckingNode
-deno runtime & deno pkg manager
+@zakahacecosas/fuckingnode@3.1.1 /home/zaka/Code/FuckingNode · deno runtime · deno pkg manager
 
-Depends on 8 m*therf*ckers:
+Depends on 9 m*therf*ckers:
 @std/datetime@^0.225.3 > jsr # Dependency
-@std/fs@^1.0.13 > jsr # Dependency
-@std/jsonc@^1.0.1 > jsr # Dependency
-@std/path@^1.0.8 > jsr # Dependency
-@std/toml@^1.0.2 > jsr # Dependency
-...and 3 more.
+@std/fmt@^1.0.6 > jsr # Dependency
+@std/fs@^1.0.15 > jsr # Dependency
+...and 6 more.
 ```
 
 `> jsr # Dependency` exists because

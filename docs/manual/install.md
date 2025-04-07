@@ -4,7 +4,7 @@ First thing first, install the CLI:
 
 ## Standard installation
 
-### Microsoft Windows
+### :fontawesome-brands-windows: Microsoft Windows
 
 Copy and paste the following code in a terminal session.
 
@@ -12,7 +12,7 @@ Copy and paste the following code in a terminal session.
 powershell -c "irm fuckingnode.github.io/install.ps1 | iex"
 ```
 
-### Linux and macOS
+### :simple-linux: Linux and :simple-apple: macOS
 
 Copy and paste the following code in a terminal session.
 
@@ -20,7 +20,7 @@ Copy and paste the following code in a terminal session.
 curl -fsSL fuckingnode.github.io/install.sh | bash
 ```
 
-### Nix / NixOS
+### :simple-nixos: Nix / NixOS
 
 !!! warning
     ARM (`aarch64-linux`) support is available, but NOT tested!
@@ -41,7 +41,7 @@ Then, add this to your system packages:
 inputs.fuckingnode.packages."${pkgs.system}".default;
 ```
 
-## Compile from source
+## :simple-deno: Compile from source
 
 For contributors and nerds who clone the entire source just to change one line they don't like, compiling is extremely easy:
 

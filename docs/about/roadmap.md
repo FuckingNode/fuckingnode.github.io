@@ -18,8 +18,8 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
     - [x] `fuckingnode setup <project> <setup>` to automatically add preset `tsconfig.json`, `.gitignore`, and `fknode.yaml` files to a project.
     - [x] `fuckingnode compat` to show cross-runtime compatibility without the need to open the browser.
 - [x] Better installer
-    - [x] Revamped `.ps1` based installer for Windows.
-    - [x] New `.sh` based installed for mac and Linux.
+    - [x] Revamped `.ps1` based installer for :fontawesome-brands-windows: Windows.
+    - [x] New `.sh` based installed for :simple-apple: macOS and :simple-linux: Linux.
 - [x] Cross-runtime migration.
     - [x] Bun. Implies generating `bun.lock` in `bun.lockb` projects.
     - [x] Deno.
@@ -64,9 +64,9 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
     - [X] Add `launchCmd` to `fklaunch` for users to define how a project should start up.
 - [X] Better `migrate` feature.
     - [X] Respect exact versions from the previous lockfile.
-- [ ] Support `stats`' Recommended Community Standards across:
+- [X] Support `stats`' Recommended Community Standards across:
     - [X] Deno
-    - [ ] Cargo
+    - [X] Cargo
 
 ### Version 3.3
 

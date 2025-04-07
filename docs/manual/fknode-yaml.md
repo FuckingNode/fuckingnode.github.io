@@ -154,7 +154,42 @@ Specifies a task to be executed upon running the `commit` command.
   commitCmd: "commit" # equals "npm run commit"
   ```
 
+## launchCmd
+
+Specifies a task to be executed upon running the `launch` command. Only used for NodeJS and Bun, analog to [`launchFile`](#launchfile) in other runtimes.
+
+- **Type**: `string`
+- **Example**:
+
+  ```yaml
+  launchCmd: "start" # equals "npm run start"
+  ```
+
+## launchFile
+
+Specifies a path to a code file to be executed upon running the `launch` command. Only used for DenoJS, Cargo and Golang, analog to [`launchCmd`](#launchcmd) in other runtimes.
+
+- **Type**: `string`
+- **Example**:
+
+  ```yaml
+  launchFile: "src/main.go" # runs "<PROJECT-ROOT>/src/main.go"
+  ```
+
+## launchWithUpdate
+
+Specifies whether to update a project's dependencies upon running the `launch` command. False by default.
+
+- **Type**: `boolean`
+- **Example**:
+
+  ```yaml
+  launchWithUpdate: true # updates deps of a project when launching it
+  ```
+
 ---
+
+## Full sample
 
 This is an example of a full `fknode.yaml` file.
 
@@ -177,10 +212,12 @@ flagless:
 releaseCmd: "release"
 releaseAlwaysDry: true
 commitCmd: "commit"
+launchCmd: "dev"
+launchWithUpdate: true
 ```
 
 ---
 
-You've now learn how to configure each project to your liking.
+You've now learnt how to configure each project to your liking.
 
 Next: Kickstart - Now proceed a bunch of extra features from the CLI to enhance productivity; kickstart is the first one.
