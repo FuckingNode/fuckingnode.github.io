@@ -20,9 +20,6 @@ if [ "${EXTRACTED:-0}" != "1" ]; then
     if [[ "$PARENT" == *"FuckingNode"* ]]; then
         sudo kill "$OLD_PPID" 2>/dev/null
     fi
-
-    # exit the child process
-    exit
 fi
 
 # constants
