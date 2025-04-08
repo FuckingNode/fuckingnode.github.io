@@ -13,12 +13,12 @@ if [ "${EXTRACTED:-0}" != "1" ]; then
     PARENT=$(ps -p $PPID -o comm=)
 
     # rerun on a new "orphan" process
-    setsid "$0" "$@" &
+    sudo setsid "$0" "$@" &
 
     # if possible, kill the parent
     # that sounds so wrong omg
     if [[ "$PARENT" == *"FuckingNode"* ]]; then
-        kill "$OLD_PPID" 2>/dev/null
+        sudo kill "$OLD_PPID" 2>/dev/null
     fi
 
     # exit the child process
