@@ -27,7 +27,7 @@
 
     ---
 
-    Automate linting, prettifying, updating, and even releasing your projects.
+    Automate linting, prettifying, updating, starting, and even releasing your projects.
 
     [:octicons-arrow-right-24: Advanced features](manual/index.md#fckingnode-full-manual)
 
@@ -35,15 +35,15 @@
 
     ---
 
-    Never again make a commit without running your test-suite test.
+    Never again make a commit or package release without running your test-suite test.
 
     [:octicons-arrow-right-24: Safe commits](./manual/commit.md)
 
--   :fontawesome-solid-skull:{ .lg .middle } **Be prepared for anything**
+-   :fontawesome-solid-skull:{ .lg .middle } **Be ready for anything**
 
     ---
 
-    With the world’s only chad-enough JavaScript CLI to auto-deprecate projects at will.
+    With the world’s only JavaScript CLI gigachad enough to auto-deprecate projects at will.
 
     [:octicons-arrow-right-24: Automated deprecations](./manual/surrender.md)
 
@@ -51,7 +51,7 @@
 
     ---
 
-    Your friends waste lots of their time manually maintaining never-releasing JS projects. Show 'em the F\*ckingNode way.
+    Your friends waste their time manually maintaining never-releasing JS projects. Show 'em the F\*ckingNode way.
 
     [:octicons-arrow-right-24: Download now](https://github.com/FuckingNode/FuckingNode/releases/latest)
 
