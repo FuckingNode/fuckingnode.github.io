@@ -5,22 +5,22 @@ set -e
 set -u
 
 # self-extract process
-if [ "${EXTRACTED:-0}" != "1" ]; then
-    export EXTRACTED=1
+# if [ "${EXTRACTED:-0}" != "1" ]; then
+#     export EXTRACTED=1
 
-    # store parent (fkn) PID
-    OLD_PPID=$PPID
-    PARENT=$(ps -p $PPID -o comm=)
+#     # store parent (fkn) PID
+#     OLD_PPID=$PPID
+#     PARENT=$(ps -p $PPID -o comm=)
 
-    # rerun on a new "orphan" process
-    sudo setsid "$0" "$@" &
+#     # rerun on a new "orphan" process
+#     sudo setsid "$0" "$@" &
 
-    # if possible, kill the parent
-    # that sounds so wrong omg
-    if [[ "$PARENT" == *"FuckingNode"* ]]; then
-        sudo kill "$OLD_PPID" 2>/dev/null
-    fi
-fi
+#     # if possible, kill the parent
+#     # that sounds so wrong omg
+#     if [[ "$PARENT" == *"FuckingNode"* ]]; then
+#         sudo kill "$OLD_PPID" 2>/dev/null
+#     fi
+# fi
 
 # constants
 APP_NAME="FuckingNode"
