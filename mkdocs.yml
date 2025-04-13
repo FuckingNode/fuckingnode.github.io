@@ -27,6 +27,7 @@ nav:
           - Extra - Setup: "manual/setup.md"
           - Extra - Stats: "manual/stats.md"
           - Extra - Surrender: "manual/surrender.md"
+          - Extra - Audit: "manual/audit.md"
           - Learn - Cross-runtime support: "learn/cross-runtime-support.md"
           - "What's next?": "manual/whats-next.md"
 

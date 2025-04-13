@@ -2,13 +2,6 @@
 
 An attempt to make security reports easier.
 
-!!! danger "Outdated"
-    **This section will not be updated until V3.3**. To prevent updates from taking ages, as we've recently planned a full rewrite of this feature, we will not waste our time on fixing a feature that is not considered stable for use anyway.
-    **Avoid using audit as of now.**
-
-!!! danger "Work in Progress feature"
-    This is an **experimental** feature. It is subject to changes, full rewrites, or even removals.
-
 ## Abstract
 
 We will explain this  with a real life example - I, the creator of F\*ckingNode, have been working on a mobile React Native app, which once became affected by a `low` severity vulnerability, related to cookies. The thing is, fixing it implied breaking changes (as `expo-router` had a dependency that had a dependency that had a... until one that depended on the vulnerable version).
@@ -23,8 +16,6 @@ However, as a mobile app that never interacted with cookies and very rarely used
 
 ## How it works
 
-> AGAIN, THIS IS AN UNFINISHED, NON-RELEASED FEATURE.
-
 The process is as follows:
 
 - We analyze your vulnerabilities
@@ -38,21 +29,27 @@ Due to where nowadays society is heading, it _is_ worth noting questions are not
 
 ```mermaid
 graph TD
-    A[npm audit] -->|Command execution| B[Returns report string]
-    B -->|Parsed| C[Stored in ParsedNpmReport]
-    C -->|For each dependency| D[Fetch info from OSV.dev and store it]
+    A[fkaudit] -->|Command execution| B[Runs platform-specific audit command]
+    B -->|Parse JSON output| C[Stores text in a SV_KEYWORDS object]
+    B -->|Parse JSON output| G[Stores severities separately]
+    C -->|Analyzed| D[Questions asked to the user]
+    D -->|Analyzed, too| E[RF computed]
+    E -->|RF pondered| H(Final RISK FACTOR)
+    G -->|Numeric associations made| J[SB and SDB computed]
+    J -->|Used to ponder RF| H
+    H -->|Basic equation done| K[Human readable percentage and text result given to the end user]
 ```
 
-We regularly audit your project and rely on `https://api.osv.dev` to get more details onto what is it about. After that, a more detailed analysis is made where we obtain **key questions** based on vectors.
+We perform a regular audit your project, and then we realize a keyword analysis from where we obtain **key questions** based on vectors.
 
 ```mermaid
 graph TD
-    A[ParsedNpmReport] -->|For each vulnerability| B[Pass key data to analyzer function]
+    A[ParsedNodeReport] -->|For each vulnerability| B[Pass key data to analyzer function]
     B -->|Search for attack vectors via keywords| C(Keyword / vector found?)
     C -- Yes --> D[Return 'beginner question' based on attack vector] --> F
     C -- No --> E[No return] --> F
     F[Was that the last one?]
-    F -- Yes --> G[Audit complete]
+    F -- Yes --> G[Questions ready for auditing]
     F -- No --> B
 ```
 
@@ -72,30 +69,44 @@ graph TD
     F -->|NO| H[Audit results are ready by this point.]
 ```
 
+Each question returns either `+1` or `+2` to be added to either the positive count or the negative count, as described right below.
+
 ### Step three: evaluation
 
-Your questions are evaluated using a straightforward positive-negative system: responses indicating 'positive' information add +1 to the positive count, while those indicating 'negative' information add +1 to the negative count.
+Your questions are evaluated using a straightforward positive-negative system: responses indicating 'positive' information add up to the positive count, while those indicating 'negative' information add up to the negative count.
 
-These counts are used to compute the RF, based on the following formula:
+These counts and the SB and SDB values are used to compute the RF, a risk percentage where 0 means _safe to ignore security updates_ and 100 means _absolutely necessary to perform security updates_. The RF is computed based on the following formula. It is worth noting that, because of the unreliability of a non-human scan, we take a more complex approach so that we can intentionally increase the RF by pure mathematic means, using the SB and SDB.
 
-$$
-R.F. = \left( \frac{\text{positives}}{\text{positives} + \text{negatives}} \right) \times 100
-$$
+\[
+T = P + (N \cdot S_d)
+\]
 
-There is a `--strict` flag that can be passed to the audit command that adds an additional **risk bump**, based on the severity of the most-severe identified vulnerability, as follows:
+\[
+\text{RF} =
+\begin{cases}
+0, & \text{if } T = 0 \\
+\min\left(100, \max\left(0, \dfrac{N \cdot S_b}{T} \cdot 100\right)\right), & \text{otherwise}
+\end{cases}
+\]
 
-$$
-Strict R.F. = \frac{R.F. + (R.B. \times 100)}{2}
-$$
+\[
+\text{where:} \quad
+\begin{aligned}
+P &= \text{positives} \\
+N &= \text{negatives} \\
+S_d &= \text{severityDeBump (indirectly bumps RF)} \\
+S_b &= \text{severityBump (directly bumps RF)}
+\end{aligned}
+\]
 
-RB values are as follows:
+SB and SDB values are as follows:
 
-| Severity |   RB |
-| :------- | ---: |
-| critical |    1 |
-| high     | 0.75 |
-| moderate |  0.5 |
-| low      | 0.25 |
+| Severity |   SB |  SDB |
+| :------- | ---: | ---: |
+| critical | 2.00 | 0.25 |
+| high     | 1.75 | 0.50 |
+| moderate | 1.50 | 0.75 |
+| low      | 1.25 | 1.00 |
 
 ---
 
@@ -115,4 +126,5 @@ Where `EXP` indicates experimental, `CAVEAT` indicates partial support / support
 | v2.1.0     | EXP        | NO          | NO          | NO   | NO  | NO | NO    |
 
 *[RF]: Risk Factor; a percentage computed by us to estimate the joint impact of all vulnerabilities of a NodeJS project.
-*[RB]: Risk Bump; a 0.25-1 number that's used to bump the RF based on the highest severity (as in low/moderate/high/critical) of a found vulnerability within a project.
+*[SB]: Severity Bump; a 1.25-2 number that's used to bump the RF based on the highest severity (as in low/moderate/high/critical) of a found vulnerability within a project.
+*[SDB]: Severity DeBump; a 0.25-1 number that's used to de-bump the negative count prior computing the RF based on the highest severity (as in low/moderate/high/critical) of a found vulnerability within a project.

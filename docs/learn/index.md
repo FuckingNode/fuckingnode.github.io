@@ -11,4 +11,4 @@ Only features worth including are mentioned - not because other features are wor
 ## Table of Contents
 
 - [Clean](clean.md)
-- [(Experimental) Audit](audit.md)
+- [Audit](audit.md)

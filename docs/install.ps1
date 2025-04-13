@@ -68,6 +68,7 @@ Function New-Shortcuts {
             "fkadd"       = "manager add"
             "fkrem"       = "manager remove"
             "fklist"      = "manager list"
+            "fkaudit"     = "audit"
         }
 
         foreach ($name in $commands.Keys) {

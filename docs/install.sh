@@ -125,6 +125,7 @@ create_shortcuts() {
         ["fkadd"]="manager add"
         ["fkrem"]="manager remove"
         ["fklist"]="manager list"
+        ["fkaudit"]="audit"
     )
 
     for name in "${!commands[@]}"; do

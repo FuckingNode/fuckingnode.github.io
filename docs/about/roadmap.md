@@ -8,9 +8,8 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 ## Upcoming release
 
-- [ ] Rewrite the `audit` feature.
-    - [ ] Fix known issues.
-    - [ ] Expand vector string lists & question list.
+- [X] Rewrite the `audit` feature.
+    - [X] Fix known issues.
     - [x] Support it everywhere NodeJS
         - [x] pnpm
         - [x] yarn
