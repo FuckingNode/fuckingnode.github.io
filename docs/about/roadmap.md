@@ -2,13 +2,24 @@
 
 # Roadmap
 
-What we're planning to do. Only includes minor and major releases, patch releases only fix bugs, thus they aren't planned (as our plan and hope is to write errorless code (which we'll never do, but we'll try our best to get as close as possible to that)).
+What we're planning to do. Only includes minor and major releases, patch releases only fix errors, meaning they aren't planned, as our plan and hope is to write errorless code (which we'll never do, but we'll try our best to get as close as possible to that).
 
 We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make progress and/or change our plans.
 
+## Upcoming release
+
+- [ ] Rewrite the `audit` feature.
+    - [ ] Fix known issues.
+    - [ ] Expand vector string lists & question list.
+    - [x] Support it everywhere NodeJS
+        - [x] pnpm
+        - [x] yarn
+
+---
+
 ## 3.X
 
-### Version 3.0 (released)
+### Version 3.0 (Released)
 
 - [x] Make a proper logo for the project.
 - [x] New features
@@ -70,13 +81,7 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 ### Version 3.3
 
-- [ ] Rewrite `audit` feature.
-    - [ ] Stabilize it
-        - [ ] Fix known issues (see TODO.md at the repository).
-        - [ ] Expand vector string lists & question list.
-    - [x] Support it everywhere NodeJS
-        - [x] pnpm
-        - [x] yarn
+[Upcoming.](#upcoming-release)
 
 ---
 
@@ -97,3 +102,18 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 - [x] Per-project cleanup.
 - [x] Flagless features via `fknode.yaml`.
 - [x] Auto-flush for log files.
+
+---
+
+## 4.X plans
+
+These are very, VERY early plans; however since we do have ideas that imply breaking changes, we're already thinking about 4.0. Expect this list to drastically change and/or get removals.
+
+- [ ] New features
+    - [ ] `build`, to automate building. Especially useful in JavaScript. This would have a text-config file to define what tasks to run for building a project. It could be used in combination with `release`.
+- [ ] `release` support for Cargo.
+- [ ] Dual release support: using the `FnCPF` from the interop layer to allow publishing the same JavaScript package to both npm and jsr. This would be really helpful as jsr downloads do not always work well with npm projects.
+- [ ] Rebuild `commit`, so you tell it what files to commit and it:
+    - [ ] Un-stages anything else to avoid committing randomly staged files.
+    - [ ] Doesn't require you to stage files before (making it useless, as `git commit -a` is also just one command).
+    - [ ] Runs pre-commit tasks _before_ staging, make them actually useful.
