@@ -4,32 +4,12 @@
 set -e
 set -u
 
-# self-extract process
-# if [ "${EXTRACTED:-0}" != "1" ]; then
-#     export EXTRACTED=1
-
-#     # store parent (fkn) PID
-#     OLD_PPID=$PPID
-#     PARENT=$(ps -p $PPID -o comm=)
-
-#     # rerun on a new "orphan" process
-#     sudo setsid "$0" "$@" &
-
-#     # if possible, kill the parent
-#     # that sounds so wrong omg
-#     if [[ "$PARENT" == *"FuckingNode"* ]]; then
-#         sudo kill "$OLD_PPID" 2>/dev/null
-#     fi
-# fi
-
 # constants
 APP_NAME="FuckingNode"
 CLI_NAME="fuckingnode"
 STYLED_NAME="F*ckingNode"
-REPO="$APP_NAME/$APP_NAME"
 INSTALL_DIR="/usr/local/$APP_NAME"
 EXE_PATH="$INSTALL_DIR/$CLI_NAME"
-BASE_URL="https://api.github.com/repos/$REPO/releases/latest"
 
 # get where we are so it knows what to use
 get_platform_arch() {
@@ -37,10 +17,10 @@ get_platform_arch() {
     Darwin)
         case "$(uname -m)" in
         arm64)
-            echo "mac_os_arm"
+            echo "macos_arm"
             ;;
         x86_64)
-            echo "mac_os_x86_64"
+            echo "macos64"
             ;;
         *)
             echo "Unsupported macOS architecture."
@@ -54,7 +34,7 @@ get_platform_arch() {
             echo "linux_arm"
             ;;
         x86_64)
-            echo "linux_x86_64"
+            echo "linux64"
             ;;
         *)
             echo "Unsupported Linux architecture."
@@ -73,8 +53,7 @@ ARCH=$(get_platform_arch)
 
 # get url
 get_latest_release_url() {
-
-    URL=$(curl -s $BASE_URL |
+    URL=$(curl -s "https://api.github.com/repos/FuckingNode/FuckingNode/releases/latest" |
         grep -o '"browser_download_url": "[^"]*' |
         grep "$ARCH" |
         sed 's/"browser_download_url": "//')
