@@ -8,11 +8,7 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 ## Upcoming release
 
-- [X] Rewrite the `audit` feature.
-    - [X] Fix known issues.
-    - [x] Support it everywhere NodeJS
-        - [x] pnpm
-        - [x] yarn
+No plans made as of now. We'll be thinking about what could we do for a 3.4 release, or a [4.0 release using these plans](#4x-plans).
 
 ---
 
@@ -80,7 +76,11 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 ### Version 3.3
 
-[Upcoming.](#upcoming-release)
+- [X] Rewrite the `audit` feature.
+    - [X] Fix known issues.
+    - [x] Support it everywhere NodeJS
+        - [x] pnpm
+        - [x] yarn
 
 ---
 

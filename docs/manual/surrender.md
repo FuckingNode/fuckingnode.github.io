@@ -72,4 +72,6 @@ This feature might seem a joke, but in reality, regardless of it being a project
 
 ---
 
-You've now learnt everything about F\*ckingNode.
+You've now learn how to ensure your JavaScript project dies properly.
+
+Next: Audit - how to make NodeJS security audits actually understandable.

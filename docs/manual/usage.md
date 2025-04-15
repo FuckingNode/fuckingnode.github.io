@@ -121,7 +121,7 @@ Available flags are:
 | `--commit`    |    does the obvious (commits) |
 | `--update`    |    does the obvious (updates) |
 
-\* if not obvious enough, removes files and directories you specify, such as `.react`, `out/`, `dist/`, or anything you'd like to do away with.
+\* if not obvious enough, removes files and directories you specify, such as `.react`, `out/`, `dist/`, or anything you want gone.
 
 !!! abstract "Cross-runtime support notice"
 
