@@ -56,6 +56,7 @@ get_latest_release_url() {
     URL=$(curl -s "https://api.github.com/repos/FuckingNode/FuckingNode/releases/latest" |
         grep -o '"browser_download_url": "[^"]*' |
         grep "$ARCH" |
+        grep -v "\.asc" |
         sed 's/"browser_download_url": "//')
 
     if [ -z "$URL" ]; then
