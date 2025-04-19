@@ -64,7 +64,7 @@ No plans made as of now. We'll be thinking about what could we do for a 3.4 rele
 - [X] New features
     - [X] `fuckingnode launch <project>` to immediately launch user's favorite IDE with the given project and update its dependencies.
 
-### Version 3.2 (Upcoming)
+### Version 3.2 (Released)
 
 - [X] Enhancements
     - [X] Add `launchCmd` to `fklaunch` for users to define how a project should start up.
@@ -74,7 +74,7 @@ No plans made as of now. We'll be thinking about what could we do for a 3.4 rele
     - [X] Deno
     - [X] Cargo
 
-### Version 3.3
+### Version 3.3 (Released)
 
 - [X] Rewrite the `audit` feature.
     - [X] Fix known issues.
