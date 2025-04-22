@@ -102,6 +102,8 @@ plugins:
               "crossruntime.md": "learn/cross-runtime-support.md"
               "crossplatform.md": "learn/cross-runtime-support.md"
               "follow-us.md": "about/social.md"
+              "why.md": "about/why.md"
+              "motivation.md": "about/why.md"
 
 markdown_extensions:
     - abbr

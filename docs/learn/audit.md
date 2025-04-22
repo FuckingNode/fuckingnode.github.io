@@ -118,11 +118,12 @@ F\*ckingNode audit should not be allowed to have the final say over whether brea
 
 ## Availability
 
-Where `EXP` indicates experimental, `CAVEAT` indicates partial support / support with known flaws, and `YES` and `NO` indicate the obvious.
+Where `EXP` indicates only experimental support, and `YES` and `NO` indicate the obvious.
 
 | Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno | Bun | Go | Cargo |
 | :--------- | ---------- | ----------- | ----------- | ---- | --- | -- | ----- |
-| **v3.0.0** | EXP        | EXP         | EXP         | NO   | NO  | NO | NO    |
+| v3.3.0     | YES        | YES         | YES         | NO   | NO  | NO | NO    |
+| v3.0.0     | EXP        | EXP         | EXP         | NO   | NO  | NO | NO    |
 | v2.1.0     | EXP        | NO          | NO          | NO   | NO  | NO | NO    |
 
 *[RF]: Risk Factor; a percentage computed by us to estimate the joint impact of all vulnerabilities of a NodeJS project.

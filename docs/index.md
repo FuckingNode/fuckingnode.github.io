@@ -21,7 +21,7 @@
 
     Works with any NodeJS, Deno, or BunJS project. Even Go and Rust are partially supported![^1]
 
-    [:octicons-arrow-right-24: Cross-platform support](learn/cross-runtime-support.md)
+    [:octicons-arrow-right-24: Cross-runtime support](learn/cross-runtime-support.md)
 
 -   :material-speedometer:{ .lg .middle } **Speed up your workflow**
 
