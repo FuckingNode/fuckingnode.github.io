@@ -6,6 +6,8 @@ What we're planning to do. Only includes minor and major releases, patch release
 
 We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make progress and/or change our plans.
 
+This page also lists all minor and major releases since 2.X. Patches aren't listed, and most bugfixes aren't included (as we don't "plan" to fix bugs).
+
 ## Upcoming release
 
 No plans made as of now. We'll be thinking about what could we do for a 3.4 release, or a [4.0 release using these plans](#4x-plans).
@@ -28,6 +30,17 @@ These are very, VERY early plans; however since we do have ideas that imply brea
 ---
 
 ## 3.X
+
+### Version 3.4 (Released)
+
+(This release wasn't planned).
+
+- [X] Improve cross-runtime support.
+    - [X] Support `lint` for Deno and Cargo.
+    - [X] Improve parsing of `Cargo.toml` files.
+- [X] Improve kickstart.
+    - [X] Improve parsing of Git URLs.
+    - [X] Add Git "aliases" / "scopes" (e.g. `gh:owner/repo`).
 
 ### Version 3.3 (Released)
 
