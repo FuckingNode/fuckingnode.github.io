@@ -25,7 +25,9 @@ Reasons for not supporting a feature are the following.
 
 ## Partial Deno, Bun, Cargo & Go support for cleanup
 
-In both runtimes, the kind of cleanup commands we'd use (`prune`, `dedupe`...) aren't available, so the _cleanup itself_ isn't available. `clean` will still work with them, as linting, prettification, or updates may work. Run `fuckingnode compat cleaner`.
+In all these runtimes, the kind of cleanup commands we'd use (`prune`, `dedupe`...) aren't available, so the _cleanup itself_ isn't available.
+
+`clean` will still work with them, as linting, prettification, or updates do work.
 
 ## No Deno support for hard cleanup
 
