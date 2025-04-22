@@ -1,6 +1,6 @@
 <!-- markdownlint-disable md007 -->
 
-# Roadmap
+# Roadmap & release history
 
 What we're planning to do. Only includes minor and major releases, patch releases only fix errors, meaning they aren't planned, as our plan and hope is to write errorless code (which we'll never do, but we'll try our best to get as close as possible to that).
 
@@ -12,7 +12,45 @@ No plans made as of now. We'll be thinking about what could we do for a 3.4 rele
 
 ---
 
+## 4.X plans
+
+These are very, VERY early plans; however since we do have ideas that imply breaking changes, we're already thinking about 4.0. Expect this list to drastically change and/or get removals.
+
+- [ ] New features
+    - [ ] `build`, to automate building. Especially useful in JavaScript. This would have a text-config file to define what tasks to run for building a project. It could be used in combination with `release`.
+- [ ] `release` support for Cargo.
+- [ ] Dual release support: using the `FnCPF` from the interop layer to allow publishing the same JavaScript package to both npm and jsr. This would be really helpful as jsr downloads do not always work well with npm projects.
+- [ ] Rebuild `commit`, so you tell it what files to commit and it:
+    - [ ] Un-stages anything else to avoid committing randomly staged files.
+    - [ ] Doesn't require you to stage files before (making it useless, as `git commit -a -m` is also just one command).
+    - [ ] Runs pre-commit tasks _before_ staging, make them actually useful.
+
+---
+
 ## 3.X
+
+### Version 3.3 (Released)
+
+- [X] Rewrite the `audit` feature.
+    - [X] Fix known issues.
+    - [x] Support it everywhere NodeJS
+        - [x] pnpm
+        - [x] yarn
+
+### Version 3.2 (Released)
+
+- [X] Enhancements
+    - [X] Add `launchCmd` to `fklaunch` for users to define how a project should start up.
+- [X] Better `migrate` feature.
+    - [X] Respect exact versions from the previous lockfile.
+- [X] Support `stats`' Recommended Community Standards across:
+    - [X] Deno
+    - [X] Cargo
+
+### Version 3.1 (Released)
+
+- [X] New features
+    - [X] `fuckingnode launch <project>` to immediately launch user's favorite IDE with the given project and update its dependencies.
 
 ### Version 3.0 (Released)
 
@@ -59,32 +97,15 @@ No plans made as of now. We'll be thinking about what could we do for a 3.4 rele
     - [x] Prettifier
     - [x] Updater
 
-### Version 3.1 (Released)
-
-- [X] New features
-    - [X] `fuckingnode launch <project>` to immediately launch user's favorite IDE with the given project and update its dependencies.
-
-### Version 3.2 (Released)
-
-- [X] Enhancements
-    - [X] Add `launchCmd` to `fklaunch` for users to define how a project should start up.
-- [X] Better `migrate` feature.
-    - [X] Respect exact versions from the previous lockfile.
-- [X] Support `stats`' Recommended Community Standards across:
-    - [X] Deno
-    - [X] Cargo
-
-### Version 3.3 (Released)
-
-- [X] Rewrite the `audit` feature.
-    - [X] Fix known issues.
-    - [x] Support it everywhere NodeJS
-        - [x] pnpm
-        - [x] yarn
-
 ---
 
 ## 2.X
+
+### Version 2.2 (Released)
+
+- [x] Per-project cleanup.
+- [x] Flagless features via `fknode.yaml`.
+- [x] Auto-flush for log files.
 
 ### Version 2.1 (Released)
 
@@ -95,24 +116,3 @@ No plans made as of now. We'll be thinking about what could we do for a 3.4 rele
     - [x] VSCodium
     - [x] Atom (_it's unmaintained, but anyways..._)
 - [x] Get this documentation finished.
-
-### Version 2.2 (Released)
-
-- [x] Per-project cleanup.
-- [x] Flagless features via `fknode.yaml`.
-- [x] Auto-flush for log files.
-
----
-
-## 4.X plans
-
-These are very, VERY early plans; however since we do have ideas that imply breaking changes, we're already thinking about 4.0. Expect this list to drastically change and/or get removals.
-
-- [ ] New features
-    - [ ] `build`, to automate building. Especially useful in JavaScript. This would have a text-config file to define what tasks to run for building a project. It could be used in combination with `release`.
-- [ ] `release` support for Cargo.
-- [ ] Dual release support: using the `FnCPF` from the interop layer to allow publishing the same JavaScript package to both npm and jsr. This would be really helpful as jsr downloads do not always work well with npm projects.
-- [ ] Rebuild `commit`, so you tell it what files to commit and it:
-    - [ ] Un-stages anything else to avoid committing randomly staged files.
-    - [ ] Doesn't require you to stage files before (making it useless, as `git commit -a` is also just one command).
-    - [ ] Runs pre-commit tasks _before_ staging, make them actually useful.
