@@ -38,8 +38,7 @@ nav:
 
     - Roadmap: "about/roadmap.md"
     - Brand guidelines: "about/branding.md"
-    - Follow us: "about/social.md"
-    - Community: "about/community.md"
+    - Community: "about/social.md"
 
 theme:
     name: material

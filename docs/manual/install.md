@@ -1,6 +1,8 @@
 # Getting started
 
-First thing first, install the CLI:
+First thing first, install the CLI using any of these methods.
+
+Standard installation for :fontawesome-brands-windows: Microsoft Windows, :simple-linux: Linux and :simple-apple: macOS is script-based, and it's worth noting **these scripts will also create shortcuts.** For example, `fkn`, `fknode`, and also command-specific shortcuts like `fkclean`, `fkaudit`, and so on. These shortcuts are script (SH or PS1) based, and are not created when compiling from source or installing for NixOS.
 
 ## Standard installation
 
@@ -52,6 +54,9 @@ You can now either:
 
 - Run `deno task compile` and get the output executable from `dist/`.
 - Run `deno -A src/main.ts [...commands]` from the root.
+
+!!! note Note for source compiling
+    When compiling from source, you'll get an error because of a missing utility "kbi". You can ignore it, we use it for hashing release binaries.
 
 ---
 

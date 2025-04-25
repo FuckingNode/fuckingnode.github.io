@@ -1,5 +1,7 @@
 <!-- markdownlint-disable md033 md030 -->
-# Follow us
+# F\*ckingNode community
+
+## Follow us
 
 <div class="grid cards" markdown>
 
@@ -36,3 +38,7 @@
     [:octicons-arrow-right-24: Watch us](https://youtube.com/watch?v=_lppvGYUXNk)
 
 </div>
+
+## Join us
+
+<iframe src="https://discord.com/widget?id=1333145935265398826&theme=dark" width="500" height="600" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
