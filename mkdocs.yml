@@ -14,6 +14,8 @@ nav:
 
     - "Why FuckingNode?": "about/why.md"
 
+    - Installation: "manual/install.md"
+
     - Manual:
           - User manual: "manual/index.md"
           - Installation: "manual/install.md"
