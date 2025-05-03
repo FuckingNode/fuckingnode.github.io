@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 <!-- markdownlint-disable md033 -->
 <!-- markdownlint-disable md030 -->
 
