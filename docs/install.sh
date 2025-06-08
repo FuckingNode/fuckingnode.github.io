@@ -7,7 +7,6 @@ set -u
 # constants
 APP_NAME="FuckingNode"
 CLI_NAME="fuckingnode"
-STYLED_NAME="F*ckingNode"
 INSTALL_DIR="/usr/local/$APP_NAME"
 EXE_PATH="$INSTALL_DIR/$CLI_NAME"
 
@@ -164,7 +163,7 @@ add_app_to_path() {
 
 # installer itself
 installer() {
-    echo "Hi! We'll install $STYLED_NAME ($ARCH edition) for you. Just a sec!"
+    echo "Hi! We'll install $APP_NAME ($ARCH edition) for you. Just a sec!"
     echo "Please note we'll use sudo a lot (many files to be created)"
     echo "They're all found at $INSTALL_DIR."
     install_app

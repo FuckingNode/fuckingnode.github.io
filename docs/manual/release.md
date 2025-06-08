@@ -2,7 +2,7 @@
 
 > `fuckingnode release <project> <version> [--push] [--dry]`, or `fkrelease <project> <version> [--push] [--dry]`
 
-The `release` command in F\*ckingNode allows you to run maintenance tasks and any task of your liking before making a release, and then having the package release made ONLY if these task succeed. This way you ensure you didn't forget to update dependencies or bump version number before releasing, and avoid pushing a change that made a certain test not pass (if you chose, for example, your test runner to be the pre-release task).
+The `release` command in FuckingNode allows you to run maintenance tasks and any task of your liking before making a release, and then having the package release made ONLY if these task succeed. This way you ensure you didn't forget to update dependencies or bump version number before releasing, and avoid pushing a change that made a certain test not pass (if you chose, for example, your test runner to be the pre-release task).
 
 ## Usage
 

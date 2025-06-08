@@ -14,6 +14,7 @@
         "fknode",
         "fkrelease",
         "fkrem",
+        "fksetup",
         "fkstart",
         "fksurrender",
         "fontawesome",

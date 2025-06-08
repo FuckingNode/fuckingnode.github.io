@@ -1,4 +1,4 @@
-# Setup F*ckingNode
+# Setup FuckingNode
 
 !!! question "Don't mess terms up"
     It's not the same to _setup FuckingNode_ (here) than to use _fuckingnode setup_ (a [separate utility](setup.md) we provide)
@@ -6,7 +6,7 @@
 Here we'll learn everything about setting up and configuring the CLI to your liking.
 
 !!! tip "Pro tip"
-    If you just want to learn how to quickly add a project so you can use the CLI, skip [here](#adding-a-project).
+    If you just want to learn how to quickly add a project so you can use the CLI, [skip here](#adding-a-project).
 
 ## Manager
 

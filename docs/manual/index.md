@@ -1,4 +1,4 @@
-# F*ckingNode user manual
+# FuckingNode user manual
 
 Everything, from the basic to the complex, is documented here step by step.
 
@@ -28,7 +28,7 @@ For further learning:
 
 ### Step 0
 
-Install it for your platform following the instructions [here](./install.md) (just like any professional tool, installation is as easy as running one CLI command).
+Install it for your platform following [the instructions here](./install.md) (just like any professional tool, installation is as easy as running one CLI command).
 
 ### Step 1
 
@@ -59,7 +59,7 @@ While it doesn't recover gigabytes of storage, it's simple, fast and gets the jo
 
 Keep in mind cleanup is global by default; it'll run (with the same flags if passed) across all the projects you've added, saving you time.
 
-A config file `fknode.yaml` can be created at the root of a project to customize behavior. Learn more [here](fknode-yaml.md).
+A config file `fknode.yaml` can be created at the root of a project to customize behavior. [Learn more here](fknode-yaml.md).
 
 You can also clean a specific project providing it's path, or it's name from the `package.json`.
 
@@ -102,7 +102,7 @@ Behavior itself can also be overridden via an `fknode.yaml` file, in case you'd 
 Note `--destroy` and `--commit` _are_ effected by the global cleaning rule, however they won't run by default as they require configuration via an `fknode.yaml` file:
 
 - `--destroy` requires you to specify what you want to be removed. We don't have "default" directories to auto-remove like `dist/`, to avoid removing something you _might_ need.
-- `--commit` requires you to specify permission to run. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Hence, committing requires explicit allowance from you, and additional safety checks are performed as outlined [here](../manual/usage.md#committing-your-code-commit).
+- `--commit` requires you to specify permission to run. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Hence, committing requires explicit allowance from you, and additional safety checks are performed [as outlined here](../manual/usage.md#committing-your-code-commit).
 
 ---
 

@@ -4,7 +4,6 @@ $ErrorActionPreference = "Stop"
 $APP_NAME = @{
     CASED  = "FuckingNode"
     CLI    = "fuckingnode"
-    STYLED = "F*ckingNode"
 }
 $installDir = "C:\$($APP_NAME.CASED)"
 $exePath = Join-Path -Path $installDir -ChildPath "$($APP_NAME.CLI).exe"
@@ -192,7 +191,7 @@ Function Add-AppToPath {
 
 Function Installer {
     try {
-        Write-Host "Hi! We'll install $($APP_NAME.STYLED) for you. Just a sec!"
+        Write-Host "Hi! We'll install $($APP_NAME.CASED) for you. Just a sec!"
         $url = Get-LatestReleaseUrl
         Install-App -url $url
         Add-AppToPath

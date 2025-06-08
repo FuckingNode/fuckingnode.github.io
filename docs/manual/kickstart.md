@@ -7,7 +7,7 @@ The `kickstart` command is an extra command that increases your productivity by 
 - Clones a Git repo wherever you want
 - Installs dependencies automatically using the project's default package manager (or at your choice, another one).
 - Launches your favorite code editor (as defined by your user settings).
-- Adds the project to the F\*ckingNode list.
+- Adds the project to the FuckingNode list.
 
 ## Usage
 
@@ -61,6 +61,6 @@ and we'll convert that into `https://github.com/jonathan/some_app.git`. And it's
 
 ---
 
-You've now learnt how to get stuff from Git the F\*ckingNode way.
+You've now learnt how to get stuff from Git the FuckingNode way.
 
-Next: Commit - Committing stuff the F\*ckingNode way.
+Next: Commit - Committing stuff the FuckingNode way.

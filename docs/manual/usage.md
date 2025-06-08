@@ -4,7 +4,7 @@
 
 > `fuckingnode clean [...many optional arguments]`, or `fkclean [...many optional arguments]`
 
-The core idea of F\*ckingNode is to automate cleanup of your NodeJS projects. On top of that base, additional maintenance features and [cross-runtime support](cross-runtime.md) exist as well.
+The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On top of that base, additional maintenance features and [cross-runtime support](cross-runtime.md) exist as well.
 
 ## The `clean` command
 

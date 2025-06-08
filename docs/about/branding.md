@@ -1,6 +1,6 @@
 <!-- markdownlint-disable md033 -->
 
-# F*ckingNode branding guidelines
+# FuckingNode branding guidelines
 
 Just in case you wanted to write an article or make a video about us (thank you!). We're not Nintendo, of course we won't sue you if you don't follow this _rules_ whatsoever. They're here just in case you don't know how to represent the branding of such a project or simply wanted to ensure you stick to our ideals (thank you for that too!).
 

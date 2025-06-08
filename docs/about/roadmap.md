@@ -10,12 +10,6 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 
 ## Upcoming release
 
-No plans made as of now. We'll be thinking about what could we do for a 3.4 release, or a [4.0 release using these plans](#4x-plans).
-
----
-
-## 4.X plans
-
 These are very, VERY early plans; however since we do have ideas that imply breaking changes, we're already thinking about 4.0. Expect this list to drastically change and/or get removals.
 
 - [ ] New features
@@ -26,6 +20,7 @@ These are very, VERY early plans; however since we do have ideas that imply brea
     - [ ] Un-stages anything else to avoid committing randomly staged files.
     - [ ] Doesn't require you to stage files before (making it useless, as `git commit -a -m` is also just one command).
     - [ ] Runs pre-commit tasks _before_ staging, make them actually useful.
+- [ ] Allow for DIR-based running; in simpler terms, compute things like `fkn stats` to `fkn stats --self` or `fkadd` to `fkadd --self`, so the `--self` flag isn't necessary (except for commands like `fkclean` where it does make sense to have it).
 
 ---
 
@@ -122,7 +117,7 @@ These are very, VERY early plans; however since we do have ideas that imply brea
 
 ### Version 2.1 (Released)
 
-- [x] Release the `audit` feature as an `npm` only experiment. Learn more [here](../learn/audit.md).
+- [x] Release the `audit` feature as an `npm` only experiment. [Learn more here](../learn/audit.md).
 - [x] Support more editors for the `kickstart` command (PS. doing this is as simple as ensuring we know the command to launch that editor in all platforms).
     - [x] Emacs
     - [x] Notepad ++

@@ -2,7 +2,7 @@
 
 You have reached the end of the manual. Congratulations.
 
-We hope F\*ckingNode made your JavaScript developer journey a bit less of a f\*cking headache.
+We hope FuckingNode made your JavaScript developer journey a bit less of a f\*cking headache.
 
 Note "we" should actually be "I", as this is maintained by a single developer (me, Zaka 👋) (open to contributions, as always). Any suggestion and/or feedback is appreciated.
 
@@ -18,7 +18,7 @@ Here you got, a bunch of links you might find interesting or useful.
 
 [Roadmap and future plans](../about/roadmap.md)
 
-[Learn how does F*ckingNode work from the inside](../learn/index.md)
+[Learn how does FuckingNode work from the inside](../learn/index.md)
 
 [Branding guidelines? (yes we have them)](../about/branding.md)
 

@@ -1,4 +1,4 @@
-# Learn: How does F*ckingNode work from the inside?
+# Learn: How does FuckingNode work from the inside?
 
 For wannabe contributors or curious / bored enough people, pages in here explain in detail how do our most important features work from an insider perspective.
 

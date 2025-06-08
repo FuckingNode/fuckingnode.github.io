@@ -2,7 +2,7 @@
 
 > `fuckingnode surrender <project> [message] [alternative] [learn-more] [--github]`
 
-The `surrender` command in F\*ckingNode is a _one of its kind_ command - it automates the process of deprecating a project. It updates dependencies of your project one last time, then updates your README file, makes a final commit, and pushes your changes to GitHub. Once changes are on the cloud, it removes the code from your local machine, too.
+The `surrender` command in FuckingNode is a _one of its kind_ command - it automates the process of deprecating a project. It updates dependencies of your project one last time, then updates your README file, makes a final commit, and pushes your changes to GitHub. Once changes are on the cloud, it removes the code from your local machine, too.
 
 ## Usage
 
