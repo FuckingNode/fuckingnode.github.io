@@ -20,26 +20,30 @@ I initially created FuckingNode as a `.ps1` script to automate `npm prune` and `
 
 FuckingNode is a thing because it fixes all of the issues mentioned above.
 
-> Bored of manually updating dependencies, linting code, prettifying code, committing all of these, or removing built output / artifacts?
+### Bored of manually updating dependencies, linting code, or prettifying code?
 
-- [X] `fuckingnode clean -- -- -l -p -c -d -u`
+### Bored of committing all of that?
+
+### Bored of removing built output / artifacts?
+
+- [X] `fuckingnode clean -- -- --lint --pretty --commit --destroy --update`
   - Shorthand: `fkclean -- -- -l -p -c -d -u`
-  - Assuming [flagless features](../manual/fknode-yaml.md#flagless) are enabled, it can simply be `fkclean`
+  - Assuming [flagless features](../manual/fknode-yaml.md#flagless) are enabled, it can be shortened to just `fkclean`
 
-> Bored of finding and pasting or writing your own `tsconfig.json`?
+### Bored of finding and pasting or writing your own `tsconfig.json`?
 
 - [X] `fuckingnode setup <path> ts-strictest`
   - `<path>` is the path to the project, or `--self` to use the CWD.
   - `ts-strictest` is an example, there are more setups available. Run `fuckingnode setup` with no args to see them all.
 
-> Bored of manually cloning, installing, and launching?
+### Bored of manually cloning, installing, and launching?
 
 - [X] `fuckingnode kickstart <git-url> [path] [manager]`
   - Shorthand: `fkstart <git-url> [path] [manager]`
   - `[path]` is optional and specifies a custom path to clone to.
-  - `[manager]` is optional and specifies the package manager to use for the installation. If none, the one from the cloned repo is used (if any).
+  - `[manager]` is optional and overrides the package manager to use for this project.
 
-> Bored of manually writing a deprecation notice?
+### Bored of manually writing a deprecation notice?
 
 - [X] `fuckingnode surrender <path> [message] [alternatives] [learn-more]`
   - `<path>` is the path to the project, or `--self` to use the CWD.
@@ -47,7 +51,7 @@ FuckingNode is a thing because it fixes all of the issues mentioned above.
   - `[alternatives]` is optional and lets you write about alternatives to what is going to be deprecated.
   - `[learn-more]` is optional and lets you write a text or link about where the user can learn more about this deprecation.
 
-> Don't want the pain of making a commit forgetting your tests?
+### Scared of the pain of making a commit forgetting your tests?
 
 - [X] `fuckingnode commit <message> [branch] [--push]`
   - Shorthand: `fkcommit <message> [branch] [--push]`
@@ -55,7 +59,7 @@ FuckingNode is a thing because it fixes all of the issues mentioned above.
   - `[branch]` is optional and specifies the branch to commit to. If unspecified, current branch is used.
   - `--push` is optional and if passed the commit (and any previous local commit) will be pushed.
 
-> Don't want the annoyance of npm or jsr package releases?
+### Tired of the annoyance of npm or jsr package releases?
 
 - [X] `fuckingnode release <path> <version> [--push] [--dry]`
   - `<path>` is the path to the project, or `--self` to use the CWD.
