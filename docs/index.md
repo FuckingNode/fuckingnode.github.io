@@ -56,7 +56,7 @@ hide:
 
     ---
 
-    Your friends waste their time manually maintaining never-releasing JS projects. Show 'em the FuckingNode way.
+    Your friends still maintain never-releasing projects manually. Show 'em the FuckingNode way.
 
     [:octicons-arrow-right-24: Download now](https://github.com/FuckingNode/FuckingNode/releases/latest)
 
@@ -75,19 +75,17 @@ Note: For whatever reason, _very few_ features can also be used with Golang and 
 - [x] automated prettying of JS projects
 - [x] automated removal of unneeded files (e.g. dist/, out/...)
 - [x] automated commit of lint / prettify / update changes in your code
-- [x] automated release / update process of npm / jsr packages
-- [x] automated cloning of a repo, installation of dependencies, and opening of your favorite editor for a project
-- [x] automated cross-manager (e.g. npm -> pnpm) or cross-runtime (e.g. NodeJS/npm -> Bun) migration
 
 — **from a single command.** It's not magic, it's _F\*ckingNode_-and that name is shipping to production.
 
 Plus other features like:
 
+- [x] automated release / update process of npm / jsr packages, from a single command
+- [x] automated cloning of a repo, installation of dependencies, and opening of your favorite editor for a project, from a single command
+- [x] automated cross-manager (e.g. npm -> pnpm) or cross-runtime (e.g. NodeJS/npm -> Bun) migration, from a single command
 - [x] a security audit assistant that analyzes vulnerabilities and tells you if they _do_ affect your project or can be safely ignored, from a single command
 - [x] addition of a pre-configured `tsconfig.json` or `.gitignore` file for your project, from a single command
-- [x] automated removal of entire `node_modules` across all of your projects for _storage emergencies_, from, you guessed it, single command
-
-And that's it for now.
+- [x] automated removal of entire `node_modules` across all of your projects for _storage emergencies_, from, you guessed it, a single command
 
 ## Learn to use this beauty
 
