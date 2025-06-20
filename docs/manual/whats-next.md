@@ -12,9 +12,11 @@ Here you got, a bunch of links you might find interesting or useful.
 
 ---
 
-[Go to the beginning?](index.md)
+[Go to the beginning?](../index.md)
 
-[Our low-budget action trailer on YouTube (less than two minutes and worth watching (_kind off_))](https://youtube.com/watch?v=_lppvGYUXNk)
+[Got an error code?](./errors.md)
+
+[Our low-budget action trailer on YouTube (less than two minutes and _kinda_ worth watching)](https://youtube.com/watch?v=_lppvGYUXNk)
 
 [Roadmap and future plans](../about/roadmap.md)
 

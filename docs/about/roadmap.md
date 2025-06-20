@@ -8,19 +8,20 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 This page also lists all minor and major releases since 2.X. Patches aren't listed, and most bugfixes aren't included (as we don't "plan" to fix bugs).
 
-## Upcoming release
+## Upcoming major release
 
-These are very, VERY early plans; however since we do have ideas that imply breaking changes, we're already thinking about 4.0. Expect this list to drastically change and/or get removals.
+These are early plans; however we're already working on 4.0 [from this branch](https://github.com/FuckingNode/FuckingNode/tree/v4). Expect this list to change over time and/or get removals.
 
 - [ ] New features
     - [ ] `build`, to automate building. Especially useful in JavaScript. This would have a text-config file to define what tasks to run for building a project. It could be used in combination with `release`.
 - [ ] `release` support for Cargo.
 - [ ] Dual release support: using the `FnCPF` from the interop layer to allow publishing the same JavaScript package to both npm and jsr. This would be really helpful as jsr downloads do not always work well with npm projects.
 - [ ] Rebuild `commit`, so you tell it what files to commit and it:
-    - [ ] Un-stages anything else to avoid committing randomly staged files.
-    - [ ] Doesn't require you to stage files before (making it useless, as `git commit -a -m` is also just one command).
-    - [ ] Runs pre-commit tasks _before_ staging, make them actually useful.
-- [ ] Allow for DIR-based running; in simpler terms, compute things like `fkn stats` to `fkn stats --self` or `fkadd` to `fkadd --self`, so the `--self` flag isn't necessary (except for commands like `fkclean` where it does make sense to have it).
+    - [x] Un-stages anything else to avoid committing randomly staged files.
+    - [x] Doesn't require you to stage the files _before_ (making it useless, as `git commit -a -m` is also just one command), and lets you stage files from the own command.
+    - [ ] Runs pre-commit tasks _before_ staging, making them actually useful.
+- [X] Allow for DIR-based running; in simpler terms, compute things like `fkn stats` to `fkn stats --self` or `fkadd` to `fkadd --self`, so the `--self` flag isn't necessary (except for commands like `fkclean` where it does make sense to have it).
+- [X] Add Bun support for `audit`.
 
 ---
 

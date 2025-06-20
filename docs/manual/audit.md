@@ -32,7 +32,7 @@ Does your app use {x} feature? [V:XXX] [y/N]
 
 The question prompted will vary on the identified "vulnerability vector" (denoted by the `[V:XXX]` code). Depending on your responses, we'll show different questions. Then we'll compute a percentage and show it to you, where 0% means _not worth fixing_ and 100% means _absolutely needs fixing_. This percentage, which we call Risk Factor, is computed using a basic scoring system and a bit of math.
 
-We made a research paper-like page [here](../learn/audit.md) explaining in detail how this works.
+We made [a research paper-like page here](../learn/audit.md) explaining in detail how this works.
 
 ---
 
