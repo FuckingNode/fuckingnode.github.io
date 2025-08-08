@@ -44,7 +44,7 @@ This workflow can be simplified into the following:
 graph TD
     A["fkadd ../project1"]
     B["fkadd ../project2"]
-    C["fkadd /home/me/work/some-app"]
+    C["fkadd /home/Zaka/Code/some-app"]
 
     D["fkclean -- -- -u -l -d -p -"]
 
@@ -65,7 +65,7 @@ We reduce your workflow to a one-time bunch of commands for initial setup, and t
 
 ### Finding your projects
 
-You need to manually add a project, via the `fuckingnode manager add` command. When you add a project, it's stored in either:
+You need to manually add a project, via the `fuckingnode add` command. When you add a project, it's stored in either:
 
 - `C:\Users\YOUR_USER\AppData\Roaming\FuckingNode\` on :fontawesome-brands-windows: Windows
 - `/home/.config/FuckingNode/` on :simple-apple: macOS and :simple-linux: Linux
@@ -75,9 +75,9 @@ Concretely, a plain `.txt` file called `fuckingnode-motherfuckers.txt` is used t
 For example:
 
 ```txt title="fuckingnode-motherfuckers.txt" linenums="1"
-C:\Users\JohnDoe\projects\Sokora
-C:\Users\JohnDoe\projects\Vuelto
-C:\Users\JohnDoe\projects\another-project-ig
+C:\Users\Zaka\projects\Sokora
+C:\Users\Zaka\projects\Vuelto
+C:\Users\Zaka\projects\FuckingNode
 ```
 
 Whenever you run the `fuckingnode clean` command, first thing we do is reading this file.
@@ -90,7 +90,7 @@ Cleaning a project involves the following steps:
 graph TD
     CLI["fuckingnode clean [...flags]"]
 
-    CLI -->|chdir into| A["C:\Users\JohnDoe\projects\Sokora"]
+    CLI -->|chdir into| A["C:\Users\Zaka\projects\Sokora"]
 
     A -->|Validates| B["Is it valid?"]
     B -->|No| Skip
@@ -103,7 +103,7 @@ graph TD
     D --> G
     H --> G
     G["Repeat"]
-    G -->|chdir into| I["C:\Users\JohnDoe\AnotherProject"]
+    G -->|chdir into| I["C:\Users\Zaka\projects\AnotherProject"]
     I -->|Validates| B
 ```
 
@@ -131,7 +131,7 @@ Where `EXP` indicates experimental, `CAVEAT` indicates partial support / support
 
 | Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno   | Bun    | Go     | Cargo  |
 | :--------- | ---------- | ----------- | ----------- | ------ | ------ | ------ | ------ |
-| **v3.0.0** | YES        | YES         | YES         | CAVEAT | CAVEAT | CAVEAT | CAVEAT |
+| **v4.0.0** | YES        | YES         | YES         | CAVEAT | CAVEAT | CAVEAT | CAVEAT |
 | v2.0.0     | YES        | YES         | YES         | CAVEAT | CAVEAT | NO     | NO     |
 | v1.0.0     | YES        | YES         | YES         | NO     | NO     | NO     | NO     |
 

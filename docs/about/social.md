@@ -33,7 +33,7 @@
 
     ---
 
-    This isn't really _our own YouTube_, it's the creator's personal channel and has unrelated stuff. Still, major release trailers will be here (and a trailer for V3 is work in progress).
+    The creator's personal channel*. Major release trailers will be here. (\*as such, unrelated stuff also hangs in there).
 
     [:octicons-arrow-right-24: Watch us](https://youtube.com/watch?v=_lppvGYUXNk)
 

@@ -32,16 +32,16 @@ Install it for your platform following [the instructions here](./install.md) (ju
 
 ### Step 1
 
-Add your projects to FuckingNode's project list. This is done manually with the `fuckingnode manager add <path>` (or `fkadd <path>`) command. `<path>` can be any file path, or `--self` to use the CWD.
+Add your projects to FuckingNode's project list. This is done manually with the `fuckingnode add <path>` (or `fkadd <path>`) command. `<path>` can be any file path, or `--self` to use the CWD.
 
 ```bash
 # relative
-fuckingnode manager add "../projects/project1"
+fuckingnode add "../projects/project1"
 # absolute
-fuckingnode manager add "/home/me/projects/project2"
+fuckingnode add "/home/Zaka/Code/project2"
 # self path
 cd project3
-fuckingnode manager add --self
+fuckingnode add --self
 ```
 
 It's recommended that from now on you run `fkadd --self` immediately after running `npm init` (or `pnpm init` or whatever) each time you create a project.

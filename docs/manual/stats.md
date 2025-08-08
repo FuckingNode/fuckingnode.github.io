@@ -7,7 +7,7 @@ This is the simplest thing ever. Just run `fuckingnode stats *`, replacing `*` w
 ## Project outline
 
 ```txt
-@zakahacecosas/fuckingnode@3.1.1 /home/zaka/Code/FuckingNode · deno runtime · deno pkg manager
+@zakahacecosas/fuckingnode@4.0.0 /home/Zaka/Code/FuckingNode · deno runtime · deno pkg manager
 
 Depends on 9 m*therf*ckers:
 @std/datetime@^0.225.3 > jsr # Dependency

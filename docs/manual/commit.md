@@ -9,14 +9,16 @@ The `commit` command in FuckingNode allows you to run maintenance tasks and any 
 To commit changes to your project, use the following command:
 
 ```bash
-fuckingnode commit <message> [branch] [--push]
+fuckingnode commit <message> <files> [--branch branch] [--push] [--keep-staged] [--yes]
 ```
 
-`message` is obvious and mandatory, `branch` is optional is the branch to commit to. If not given, the branch you were currently on will be used. `--push` is optional too, and if passed, the commit will be pushed to the remote repository.
+`message` and `files` are obvious and mandatory. Anything after the message (which must be quoted) is considered a file until a `--`flag appears. All flags are optional.
+
+Flag `--branch [branch-name]` indicates the branch to commit to. If not given, the branch you're currently on will be used. `--push` can be passed to push the commit to the remote repository. `--keep-staged` can be passed to include files you had in the stage area before running this command (if not passed, the default behavior is to unstage all files, then stage the ones you provide to the command).
 
 ### Configuring the task to be executed
 
-As said, you can add a task (for example your test suite) and have it run before committing. The commit will only be made if this task succeeds (exits with code 0). Specify the task by setting the `commitCmd` key in your `fknode.yaml` to a script to be executed (see [fknode.yaml docs](fknode-yaml.md)).
+As said, you can add a task (e.g., your test suite) and have it run before committing. The commit will only be made if this task succeeds (exits with code 0). Specify the task by setting the `commitCmd` key in your `fknode.yaml` to a script to be executed (see [fknode.yaml docs](fknode-yaml.md)).
 
 ```yaml
 commitCmd: "test" # "npm run test" / "deno task test" / ...
@@ -29,17 +31,20 @@ If absent, no custom task will be executed.
 You'll see a confirmation like this one, showing what will be made:
 
 ```txt
-🚨 Heads up! We're about to take the following actions:
-Run deno task test
-If everything above went alright, commit 0 file(s) to branch v3 with message "test"
+✅ Staged all files for commit (4).
+❓ Heads up! We're about to take the following actions:
 
-- all of this at @zakahacecosas/fuckingnode@3.2.0 C:\Users\Zaka\FuckingNode
+Run deno task precommit
+If everything above went alright, commit 4 files to branch v4 with message "minor fixes"
+
+- all of this at @zakahacecosas/fuckingnode@4.0.0 C:\Users\Zaka\projects\FuckingNode 
+
 Confirm? [y/N]
 ```
 
 If you input `y`, all tasks will run, and unless they fail, a commit will be made (and pushed if enabled, which would have shown up in the shown above list).
 
-No files are added to Git, so just as you would normally do, run `git add (whatever)` before running our commit command.
+You can also run the command with the `--yes` flag to skip this - though we don't really recommend it.
 
 ---
 

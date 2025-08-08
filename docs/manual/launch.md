@@ -9,7 +9,7 @@ The `launch` command is a command that automatically launches your favorite edit
 Just run the following:
 
 ```bash
-fuckingnode launch < PROJECT >
+fuckingnode launch <PROJECT>
 ```
 
 `PROJECT` is obvious and mandatory. It can be a relative file path, absolute file path, or the project's name as mentioned before.

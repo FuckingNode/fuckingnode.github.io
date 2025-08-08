@@ -11,7 +11,7 @@ The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On 
 The `fuckingnode clean` command is the base utility of the app. It accepts the following (all optional) arguments:
 
 ```bash
-fuckingnode clean < PROJECT | -- > < INTENSITY | -- > [--update] [--lint] [--pretty] [--destroy] [--verbose] [--commit]
+fuckingnode clean <PROJECT | --> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--verbose] [--commit]
 ```
 
 When executed with no arguments, it'll do a cleanup using the default intensity (which is `normal` and can be changed from the [settings](configuration.md#settings)) across all of your projects.

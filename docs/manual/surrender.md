@@ -42,7 +42,7 @@ The maintainer of this repository has provided the following alternative: for br
 
 You may find here additional information regarding this project's deprecation: learn more at https://bsky.app/profile/fknode.bsky.social
 
-###### This project was _automatically deprecated_ using the FuckingNode v3.2.0 CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
+###### This project was _automatically deprecated_ using the FuckingNode v4.0.0 CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
 -------------
 
 # Some package

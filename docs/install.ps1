@@ -1,9 +1,11 @@
 $ErrorActionPreference = "Stop"
 
+# todo: check usage of Write-Host (just prints) and Write-Output (prints and is considered readable output)
+
 # Constants
 $APP_NAME = @{
-    CASED  = "FuckingNode"
-    CLI    = "fuckingnode"
+    CASED = "FuckingNode"
+    CLI   = "fuckingnode"
 }
 $installDir = "C:\$($APP_NAME.CASED)"
 $exePath = Join-Path -Path $installDir -ChildPath "$($APP_NAME.CLI).exe"
@@ -62,12 +64,16 @@ Function New-Shortcuts {
             "fkstart"     = "kickstart"
             "fklaunch"    = "launch"
             "fkcommit"    = "commit"
+            "fkbuild"     = "build"
             "fkrelease"   = "release"
             "fksurrender" = "surrender"
-            "fkadd"       = "manager add"
-            "fkrem"       = "manager remove"
-            "fklist"      = "manager list"
+            "fkadd"       = "add"
+            "fkrem"       = "remove"
+            "fklist"      = "list"
             "fkaudit"     = "audit"
+            "fkstats"     = "stats"
+            "fksetup"     = "setup"
+            "fkmigrate"   = "migrate"
         }
 
         foreach ($name in $commands.Keys) {
@@ -195,7 +201,18 @@ Function Installer {
         $url = Get-LatestReleaseUrl
         Install-App -url $url
         Add-AppToPath
-        New-Shortcuts
+        Write-Output "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
+        Write-Output "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
+        Write-Output "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
+
+        $response = Read-Host "Do you wish to create these shortcuts? [Y/N]"
+
+        if ($response -match '^[Yy]$') {
+            New-Shortcuts
+        }
+        else {
+            Write-Output "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
+        }
         Write-Host "Installed successfully! Restart your terminal for it to work."
     }
     catch {

@@ -99,12 +99,16 @@ create_shortcuts() {
         ["fkstart"]="kickstart"
         ["fklaunch"]="launch"
         ["fkcommit"]="commit"
+        ["fkbuild"]="build"
         ["fkrelease"]="release"
         ["fksurrender"]="surrender"
-        ["fkadd"]="manager add"
-        ["fkrem"]="manager remove"
-        ["fklist"]="manager list"
+        ["fkadd"]="add"
+        ["fkrem"]="remove"
+        ["fklist"]="list"
         ["fkaudit"]="audit"
+        ["fkstats"]="stats"
+        ["fksetup"]="setup"
+        ["fkmigrate"]="migrate"
     )
 
     for name in "${!commands[@]}"; do
@@ -167,7 +171,17 @@ installer() {
     echo "Please note we'll use sudo a lot (many files to be created)"
     echo "They're all found at $INSTALL_DIR."
     install_app
-    create_shortcuts
+    echo "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
+    echo "These are made by creating a bunch of scripts (fknode.sh, fkn.sh...) next to the main installation."
+    echo "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
+
+    read -p "Do you wish to create these shortcuts? [Y/N] " response
+
+    if [[ "$response" =~ ^[Yy]$ ]]; then
+        create_shortcuts
+    else
+        echo "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
+    fi
     add_app_to_path
     echo "Installed successfully! Restart your terminal for it to work."
 }

@@ -5,7 +5,7 @@ The `fknode.yaml` file is used to configure extra settings for individual projec
 Below is a detailed explanation of each configuration option available in the file. They are all optional.
 
 !!! tip "Get autocomplete for VSCode"
-    While still work in progress, you can already download our Visual Studio Code extension for FuckingNode V3 [here](https://marketplace.visualstudio.com/items?itemName=ZakaHaceCosas.fknode).
+    You can [download our Visual Studio Code extension for FuckingNode here](https://marketplace.visualstudio.com/items?itemName=ZakaHaceCosas.fknode), to get autocomplete (as well as some other features).
 
 ## divineProtection
 
@@ -64,7 +64,7 @@ Configuration for the destroyer, which removes specified targets when `clean` is
 
 ## commitActions
 
-If true, a commit will be made if an action that changes the code is performed and the Git workspace is clean. Learn more [here](usage.md#committing-your-code---commit).
+If true, a commit will be made if an action that changes the code is performed and the Git workspace is clean. [Learn more here](usage.md#committing-your-code---commit).
 
 - **Type**: `boolean`
 - **Example**:
@@ -187,6 +187,41 @@ Specifies whether to update a project's dependencies upon running the `launch` c
   launchWithUpdate: true # updates deps of a project when launching it
   ```
 
+## projectEnvOverride
+
+FuckingNode uses certain hints (especially your project's lockfile) to infer the runtime to use; however it may rarely fail. You can override its inference system and state the runtime to be used.
+
+- **Type**: "npm" | "pnpm" | "yarn" | "deno" | "bun" | "go" | "cargo"
+- **Example**:
+
+  ```yaml
+  projectEnvOverride: "cargo" # even if a "package-lock.json" existed on the root, we'll treat this as a Rust (Cargo) project now
+  ```
+
+## buildCmd
+
+Specifies a set of tasks to be executed upon running the `build` command. Unlike other "cmd" definitions, you can define several commands, separating them with the `^` character.
+
+- **Type**: string
+- **Example**:
+
+  ```yaml
+  releaseCmd: "npm run build^cd dist^vercel --prod" # it'll run, in order, "npm run build", "cd dist", and "vercel --prod"
+  ```
+
+## buildForRelease
+
+If enabled and a `buildCmd` is set, it'll always run before releasing when you invoke `fkrelease`.
+
+- **Type**: boolean
+- **Example**:
+
+  ```yaml
+  buildCmd: "..."
+  releaseCmd: "..."
+  buildForRelease: true # now when running release, buildCmd will auto-run first
+  ```
+
 ---
 
 ## Full sample
@@ -199,7 +234,7 @@ lintCmd: "lint"
 prettyCmd: "prettify"
 destroy:
   intensities: ["high"]
-  targets: ["dist", "build"]
+  targets: ["dist", ".cache"]
 commitActions: true
 commitMessage: "Automated commit by fknode"
 updateCmdOverride: "update"
@@ -214,6 +249,9 @@ releaseAlwaysDry: true
 commitCmd: "commit"
 launchCmd: "dev"
 launchWithUpdate: true
+projectEnvOverride: "bun"
+buildCmd: "cd src^bun build.ts^mv out ../dist"
+buildForRelease: true
 ```
 
 ---

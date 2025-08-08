@@ -24,6 +24,7 @@ nav:
           - Individual project configuration: "manual/fknode-yaml.md"
           - Feature - Kickstart: "manual/kickstart.md"
           - Feature - Commit: "manual/commit.md"
+          - Feature - Build: "manual/build.md"
           - Feature - Release: "manual/release.md"
           - Feature - Launch: "manual/launch.md"
           - Feature - Setup: "manual/setup.md"
@@ -87,6 +88,9 @@ extra:
         - icon: fontawesome/brands/discord
           link: https://discord.gg/AA2jYAFNmq
           name: Chat us on Discord
+        - icon: fontawesome/brands/bitcoin
+          link: "bitcoin:bc1qp0ycnrhddhzjnpfuxvvx7wrpt7y6y89lllqwjj"
+          name: Donate to help maintaining this project
 
     analytics:
         provider: custom

@@ -8,60 +8,70 @@ Here we'll learn everything about setting up and configuring the CLI to your lik
 !!! tip "Pro tip"
     If you just want to learn how to quickly add a project so you can use the CLI, [skip here](#adding-a-project).
 
-## Manager
+## Adding a project
 
-### Adding a project
+> `fuckingnode add <project>`, or `fkadd <project>`
 
-> `fuckingnode manager add <project>`, or `fkadd <project>`
+_We care about user experience, and that's why we're constantly working to ensure peak performance..._ blah blah blah TL;DR: **you need to add projects yourself so we don't consume your time and CPU looking in your entire drive for JavaScript projects** (which trust me, would've been easier for me - kind off).
 
-_We care about user experience, and that's why we're constantly working to ensure peak performance..._ blah blah blah TL;DR: **you need to setup projects yourself so we don't consume your time and CPU looking in your entire drive for JavaScript projects** (which trust me, would've been easier for me - kind off).
+!!! note
+    Some features are **addition agnostic**, like `commit` or `setup`. This means they don't need the project to be added. Features like `commit` don't even need to be on a "supported platform" too.
 
-There are 3 ways to add a project:
+There are 4 ways to add projects:
 
 **1 /** You can add a relative or absolute path:
 
 ```bash
-fuckingnode manager add "../projects/something/"
+fuckingnode add "../projects/something/"
 # or
-fuckingnode manager add "C:\Users\sigma_boy\projects\something"
-#                        ^^^^^^ (or /home/whatever in linux / mac)
+fuckingnode add "C:\Users\Zaka\projects\something"
+#                   ^^^^^^^^^^^ (or /home/whatever in linux / mac)
 ```
 
-**2 /** You can get in the root of the project and add `--self`
+**2 /** You can get in the root of the project and add `.`
 
 ```bash
 cd generic-js-project-name-here
-fuckingnode manager add --self
+fuckingnode add .
 ```
 
 This is our recommended way, as you can run it right after running `npm init` and you don't have to type a long folder name.
 
-**3 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On :fontawesome-brands-windows: Windows it lives at your local `%APPDATA%`, and on :simple-linux: Linux & :simple-apple: macOS it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks kinda like this:
+**3 /** If you have one folder for all your projects, you can use a glob pattern
+
+```bash
+cd my-projects
+fuckingnode add ./*
+# this will check every folder
+# NOTE: as of now, if one folder cannot be added as a project, it'll stop the entire program
+```
+
+**4 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On :fontawesome-brands-windows: Windows it lives at your local `%APPDATA%`, and on :simple-linux: Linux & :simple-apple: macOS it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks kinda like this:
 
 ```txt title="fuckingnode-motherfuckers.txt" linenums="1"
-C:\Users\JohnDoe\projects\Sokora
-C:\Users\JohnDoe\projects\electronJS-clone
+C:\Users\Zaka\projects\Sokora
+C:\Users\Zaka\projects\electronJS-clone
 ```
 
 **Keep in mind paths must always point to the root**. If any path point to the `package.json` itself or to anything else that isn't the root of the project (the DIR that holds `package.json`), you're cooked (the entire CLI won't work).
 
 **Once you're done with adding your projects, you can** theoretically **skip the rest of the page and get started with [using the CLI](usage.md)**. Keep reading for learning the rest about configuring the CLI.
 
-### Removing a project
+## Removing a project
 
-> `fuckingnode manager remove <project>`, or `fkrem <project>`
+> `fuckingnode remove <project>`, or `fkrem <project>`
 
 As easy as using one of the previously mentioned methods, but instead of using `add`, using `remove`.
 
 ```bash
-fuckingnode manager remove "../projects/something/"
-fuckingnode manager remove "C:\Users\me\projects\something"
+fuckingnode remove "../projects/something/"
+fuckingnode remove "C:\Users\Zaka\projects\something"
 ```
 
 However, there's one more thing. Thanks to our innovative expertise, you can use a project's _name_ (as in `package.json > "name"`):
 
 ```bash
-fuckingnode manager remove flamethrower
+fuckingnode remove flamethrower
 ```
 
 The above would work as long as you have one added project with this package.json:
@@ -74,18 +84,21 @@ The above would work as long as you have one added project with this package.jso
 }
 ```
 
-### Listing projects
+It also works for `deno.json`, `Cargo.toml`...
 
-Just run `fuckingnode manager list`. It'll beautifully show you all of your projects in a `name@version path` format, like below, but with colors and cool stuff.
+## Listing projects
+
+Just run `fuckingnode list`. It'll beautifully show you all of your projects in a `name@version path` format, like below, but with colors and cool stuff.
 
 ```bash
 💡 Here are the m*therf*ckers you added so far:
 
-sokora@0.3.0 /home/zaka/Code/Sokora
-vuelto.pp.ua@v1.1.2 /home/zaka/Code/vuelto
-personaplus-website@0.1.0 /home/zaka/Code/personaplus-website
-personaplus@0.0.6-preapp.30 /home/zaka/Code/personaplus
-@zakahacecosas/fuckingnode@3.1.1 /home/zaka/Code/FuckingNode
+sokora@0.3.0 /home/Zaka/Code/Sokora
+vuelto.pp.ua@v1.1.2 /home/Zaka/Code/vuelto
+personaplus-website@0.1.0 /home/Zaka/Code/personaplus-website
+personaplus@0.0.6-preapp.30 /home/Zaka/Code/personaplus
+@zakahacecosas/fuckingnode@4.0.0 /home/Zaka/Code/FuckingNode
+konbini@0.0.1 /home/Zaka/Code/konbini
 ```
 
 Later on we'll see how to "ignore" projects; here we'll tell you that you can pass `--ignored` to only list ignored projects, or `--alive` to only list non-ignored projects. If you try to mix both flags to create a loophole and break the matrix, you won't break anything; the flag you write first will overrule the second one.

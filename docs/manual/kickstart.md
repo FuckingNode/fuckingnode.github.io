@@ -14,7 +14,7 @@ The `kickstart` command is an extra command that increases your productivity by 
 Just run the following:
 
 ```bash
-fuckingnode kickstart < REPO-URL > [PATH] [PKG MANAGER]
+fuckingnode kickstart <REPO-URL> [PATH] [PKG MANAGER]
 ```
 
 `REPO-URL` is obvious and mandatory. `PATH` is optional and defines the path where you want us to clone the project. If not provided, we'll create a directory in the CWD with the name of the repository (just as Git would do by default).

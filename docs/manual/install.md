@@ -43,6 +43,19 @@ Then, add this to your system packages:
 inputs.fuckingnode.packages."${pkgs.system}".default;
 ```
 
+## From a package manager
+
+### Konbini
+
+!!! warn
+    As of now, shortcuts like `fkn` do not generate when installing from a package manager. Only direct installation via a script generates them.
+
+Just install it.
+
+```sh
+kbi install fuckingnode
+```
+
 ## :simple-deno: Compile from source
 
 For contributors and nerds who clone the entire source just to change one line they don't like, compiling is extremely easy:

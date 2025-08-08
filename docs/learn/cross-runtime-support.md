@@ -7,18 +7,18 @@
 
 While FuckingNode can be a very powerful automation tool if properly used, in the end it's just an executable that _automates_ tasks; it doesn't do much on its own. Thus, **features that aren't supported by a runtime itself, won't work with us**. (Adding "polyfills" or "glue fixes" is not discarded as an idea, but not planned short-term anyway).
 
-You can run `compat` anytime from the CLI to see a table showing what works and what doesn't. **NodeJS is the only environment with 100% platform support.** As of version 3.3.1, that table looks like this:
+You can run `compat` anytime from the CLI to see a table showing what works and what doesn't. **NodeJS is the only environment with 100% platform support.** As of version 4.0.0, that table looks like this:
 
 | Feature    | NodeJS | Deno     | Bun      | Go       | Cargo    |
 |------------|--------|----------|----------|----------|----------|
 | Cleanup    | Yes    | Partial  | Partial  | Partial  | Partial  |
 | Kickstart  | Yes    | Yes      | Yes      | Yes      | Yes      |
 | Commit     | Yes    | Yes      | Yes      | Partial  | Partial  |
-| Release    | npm    | jsr      | npm      | No       | No       |
+| Release    | npm    | jsr      | npm      | No       | Yes      |
 | Stats      | Yes    | Yes      | Yes      | Partial  | Yes      |
 | Surrender  | Yes    | Yes      | Yes      | Yes      | Yes      |
 | Setup      | Yes    | Yes      | Yes      | Yes      | Yes      |
-| Audit      | Yes    | No       | No       | No       | No       |
+| Audit      | Yes    | No       | Yes      | No       | No       |
 | Launch     | Yes    | Yes      | Yes      | Yes      | Yes      |
 
 Reasons for not supporting a feature are the following.
@@ -33,9 +33,9 @@ In all these runtimes, the kind of cleanup commands we'd use (`prune`, `dedupe`.
 
 FuckingNode itself is written in Deno, thus we're disallowed by the runtime from cleaning its cache. While a "gluefix" exists, it doesn't work most of the time.
 
-## No Cargo & Go support for release
+## No Golang support for release
 
-We might add them in the future, for now they're not supported because they're harder to implement (as more steps are required).
+We might add it in the future, for now it's not supported because it're harder to implement (as more steps are required).
 
 ## Partial Cargo & Go support for commit
 
@@ -49,6 +49,6 @@ Golang _do_ support it but doesn't support the Recommended Community Standards p
 
 There's a single package manager for these platforms, `migrate` is useless.
 
-## No audit support anywhere non NodeJS
+## No audit support for Deno, Cargo, or Go
 
-Deno and Bun do not offer an `audit` command, neither do Go nor Cargo.
+Neither Deno, nor Golang, nor Cargo, offer an `audit` command.
