@@ -31,11 +31,12 @@ nav:
           - Feature - Stats: "manual/stats.md"
           - Feature - Surrender: "manual/surrender.md"
           - Feature - Audit: "manual/audit.md"
-          - Learn - Cross-runtime support: "learn/cross-runtime-support.md"
           - "What's next?": "manual/whats-next.md"
 
     - Learn:
           - Learn: "learn/index.md"
+          - Cross-runtime support: "learn/cross-runtime-support.md"
+          - Error codes: "learn/errors.md"
           - How does cleanup work under the hood: "learn/clean.md"
           - How does audit work under the hood: "learn/audit.md"
 

@@ -6,23 +6,23 @@ We hope FuckingNode made your JavaScript developer journey a bit less of a f\*ck
 
 Note "we" should actually be "I", as this is maintained by a single developer (me, Zaka 👋) (open to contributions, as always). Any suggestion and/or feedback is appreciated.
 
----
+## Useful pages
 
-Here you got, a bunch of links you might find interesting or useful.
+[**Error code list**](../learn/errors.md)
 
----
+[**Platform support table**](../learn/cross-runtime-support.md)
 
-[Go to the beginning?](../index.md)
+[Go back to the beginning?](../index.md)
 
-[Got an error code?](./errors.md)
-
-[Our low-budget action trailer on YouTube (less than two minutes and _kinda_ worth watching)](https://youtube.com/watch?v=_lppvGYUXNk)
+## Other pages you may find useful
 
 [Roadmap and future plans](../about/roadmap.md)
 
 [Learn how does FuckingNode work from the inside](../learn/index.md)
 
 [Branding guidelines? (yes we have them)](../about/branding.md)
+
+[Our YouTube trailer (outdated, new one is work-in-progress, but this one's still _kinda_ worth watching)](https://youtube.com/watch?v=_lppvGYUXNk)
 
 [Our GitHub organization](https://github.com/FuckingNode)
 
