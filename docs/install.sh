@@ -16,10 +16,10 @@ get_platform_arch() {
     Darwin)
         case "$(uname -m)" in
         arm64)
-            echo "macos_arm"
+            echo "macArm"
             ;;
         x86_64)
-            echo "macos64"
+            echo "mac64"
             ;;
         *)
             echo "Unsupported macOS architecture."
@@ -30,7 +30,7 @@ get_platform_arch() {
     Linux)
         case "$(uname -m)" in
         armv7l)
-            echo "linux_arm"
+            echo "linuxArm"
             ;;
         x86_64)
             echo "linux64"
