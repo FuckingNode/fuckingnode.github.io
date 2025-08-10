@@ -55,6 +55,30 @@ Happens whenever we ask for a DIRECTORY yet you give us a path that points to a 
 
 Usually happens with kickstart. You provided a path that is _not_ empty, but _has to_ be empty. Thus, we demand emptying of the directory.
 
+## Git category [Git]
+
+Errors related to Git operations.
+
+### No branch
+
+> `Git__NoBranch`
+
+Happens when the user specifies a branch that does indeed not exist.
+
+### No branch at all
+
+> `Git__NoBranchAA`
+
+Happens when there's no branches at all. Git repos are supposed to always have a branch, so it is very unlikely - and if it happens it's most likely a bug.
+
+### Unknown Errors
+
+All errors in this category are `Git__UE__[ACTION]`, which can be `IsRepo`, `Push`, or `Commit`. Any unexpected error when performing any of these actions for any project will trigger a Task category `FknError`.
+
+If unclear, `Git__UE__IsRepo` fires if an error happens trying to determine if a directory is a Git repo.
+
+A completely unknown error will fire `Git__UE` with no specified action.
+
 ## Environment category [Env]
 
 Errors related to environments; not in the sense of env variables, but in the sense of "project environments". That's how we refer to the structure we make of each of your projects in order to work with it.
