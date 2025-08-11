@@ -109,7 +109,7 @@ graph TD
 
 Inside the terminal you're running `fuckingnode` from, we'll change directories to each added project's path. From the inside, we proceed as follows:
 
-First, we basically do some basic validations before touching each project (is the lockfile present? are node modules installed? etc...), so we know what to do and we're sure all commands will work out of the box. Some validations, like the absence of `node_modules`, will result in that project being skipped into the next one. Other validations, like a `deno.lock` lockfile, will change our behavior (in this example, we'd skip some features as Deno doesn't support all cleaning features, [as noted here](../manual/cross-runtime.md)).
+First, we basically do some basic validations before touching each project (is the lockfile present? are node modules installed? etc...), so we know what to do and we're sure all commands will work out of the box. Some validations, like the absence of `node_modules`, will result in that project being skipped into the next one. Other validations, like a `deno.lock` lockfile, will change our behavior (in this example, we'd skip some features as Deno doesn't support all cleaning features, [as noted here](./cross-runtime-support.md)).
 
 Then, we seek a `fknode.yaml` config file - if present, we parse it and validate it. If not present, or invalid, **we run each CLI command from the open terminal**. When using `fuckingnode clean` you'll notice we don't add a loader whatsoever, but instead show you the raw output of each command as if you executed it yourself. That's because we did the same, each command is ran from the terminal you're on.
 
@@ -135,4 +135,4 @@ Where `EXP` indicates experimental, `CAVEAT` indicates partial support / support
 | v2.0.0     | YES        | YES         | YES         | CAVEAT | CAVEAT | NO     | NO     |
 | v1.0.0     | YES        | YES         | YES         | NO     | NO     | NO     | NO     |
 
-To learn more about cross-runtime compatibility, [refer to this page](../manual/cross-runtime.md).
+To learn more about cross-runtime compatibility, [refer to this page](./cross-runtime.md).
