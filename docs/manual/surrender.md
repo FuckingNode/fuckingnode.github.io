@@ -52,7 +52,7 @@ Original readme would go here, bla bla bla...
 
 If you do hit `y` twice, the process will begin, with no way to stop it (in reality you could immediately hit ++control+c++ to end the CLI process, however by this point you are theoretically sure you _don't_ want to stop it).
 
-**Something important to note is that, after pushing all your changes to remote**, since they are now (supposedly) on the cloud and you theoretically don't plan to keep maintaining the code anyway, we will remove the entire folder from your hard drive to save up space (as there is no reason to keep big `.git/` and `node_nodules/` directories for a project that is not even alive).
+**Something important to note is that after pushing all your changes to remote**, since they are now (supposedly) on the cloud and you theoretically don't plan to keep maintaining the code anyway, we will remove the entire folder from your hard drive to save up space (as there is no reason to keep big `.git/` and `node_nodules/` directories for a project that is not even alive).
 
 ### Aliases
 

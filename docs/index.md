@@ -64,7 +64,7 @@ hide:
 
 **FuckingNode is a CLI tool that automates tasks and gives you tools to make JavaScript development less of a f\*cking headache.** We can't fix your bugs, but we can automate most headache-giving tasks across all of your NodeJS/Deno/Bun projects and give you a set of tools to make JS development great again.
 
-Note: For whatever reason, _very few_ features can also be used with Golang and Rust. Don't question it, just enjoy it.
+Note: For whatever reason, _some_ features can also be used with Golang and Rust. Don't question it, just enjoy it.
 
 ## Features
 

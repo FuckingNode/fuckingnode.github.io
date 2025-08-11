@@ -99,7 +99,7 @@ As outlined [before](#step-2) cleaning is global. When running with `--lint` all
 
 Behavior itself can also be overridden via an `fknode.yaml` file, in case you'd like to use a different linter than ESLint, or a different prettifier than Prettier.
 
-Note `--destroy` and `--commit` _are_ effected by the global cleaning rule, however they won't run by default as they require configuration via an `fknode.yaml` file:
+Note `--destroy` and `--commit` _are_ affected by the global cleaning rule, however they won't run by default as they require configuration via an `fknode.yaml` file:
 
 - `--destroy` requires you to specify what you want to be removed. We don't have "default" directories to auto-remove like `dist/`, to avoid removing something you _might_ need.
 - `--commit` requires you to specify permission to run. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Hence, committing requires explicit allowance from you, and additional safety checks are performed [as outlined here](../manual/usage.md#committing-your-code-commit).

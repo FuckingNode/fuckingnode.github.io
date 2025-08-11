@@ -5,9 +5,6 @@
 
 Here we'll learn everything about setting up and configuring the CLI to your liking.
 
-!!! tip "Pro tip"
-    If you just want to learn how to quickly add a project so you can use the CLI, [skip here](#adding-a-project).
-
 ## Adding a project
 
 > `fuckingnode add <project>`, or `fkadd <project>`
@@ -15,7 +12,7 @@ Here we'll learn everything about setting up and configuring the CLI to your lik
 _We care about user experience, and that's why we're constantly working to ensure peak performance..._ blah blah blah TL;DR: **you need to add projects yourself so we don't consume your time and CPU looking in your entire drive for JavaScript projects** (which trust me, would've been easier for me - kind off).
 
 !!! note
-    Some features are **addition agnostic**, like `commit` or `setup`. This means they don't need the project to be added. Features like `commit` don't even need to be on a "supported platform" too.
+    Some features are **addition agnostic**, like `commit` or `setup`. This means they don't need the project to be added. These features usually don't even require you to be on a "supported platform".
 
 There are 4 ways to add projects:
 
@@ -28,11 +25,13 @@ fuckingnode add "C:\Users\Zaka\projects\something"
 #                   ^^^^^^^^^^^ (or /home/whatever in linux / mac)
 ```
 
-**2 /** You can get in the root of the project and add `.`
+**2 /** You can get in the root of the project and add with no args, or a dot (`.`)
 
 ```bash
 cd generic-js-project-name-here
 fuckingnode add .
+# this below does the same and is two characters shorter :nerd:
+fuckingnode add
 ```
 
 This is our recommended way, as you can run it right after running `npm init` and you don't have to type a long folder name.
@@ -43,7 +42,6 @@ This is our recommended way, as you can run it right after running `npm init` an
 cd my-projects
 fuckingnode add ./*
 # this will check every folder
-# NOTE: as of now, if one folder cannot be added as a project, it'll stop the entire program
 ```
 
 **4 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On :fontawesome-brands-windows: Windows it lives at your local `%APPDATA%`, and on :simple-linux: Linux & :simple-apple: macOS it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks kinda like this:
