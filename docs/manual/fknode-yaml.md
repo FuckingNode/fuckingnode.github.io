@@ -206,7 +206,7 @@ Specifies a set of tasks to be executed upon running the `build` command. Unlike
 - **Example**:
 
   ```yaml
-  releaseCmd: "npm run build^cd dist^vercel --prod" # it'll run, in order, "npm run build", "cd dist", and "vercel --prod"
+  buildCmd: "npm run build^cd dist^vercel --prod" # it'll run, in order, "npm run build", "cd dist", and "vercel --prod"
   ```
 
 ## buildForRelease
