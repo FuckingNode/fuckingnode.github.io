@@ -40,7 +40,7 @@ There's nothing more to configure. It's a relatively simple automation.
 
 ### What to expect
 
-Progress with all commands will be printed step by step.
+Progress with all commands will be printed step by step. Note that output is not shown live, it gets printed all at once the moment the command finishes execution.
 
 ```bash
 ✔ There we go, time to build <project name here>

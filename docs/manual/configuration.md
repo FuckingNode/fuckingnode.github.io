@@ -107,35 +107,39 @@ As most apps, we offer settings you can tweak. We use default values that should
 
 Currently supported settings are the following them. Change them with `settings change <KEY> <value>`
 
-| KEY | Value Type | Description | Notes |
-| :--- | ---: | :--- | ---: |
-| `defaultIntensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | Changes the default intensity for the `clean` command. | / |
-| `updateFreq` | A fixed number | Changes how frequently (in DAYS) the CLI sends an HTTP request for updates. | We recommend setting it to a high value as we don't frequently update, so you can save up those HTTP requests. |
-| `flushFreq` | A fixed number | Changes how frequently (in DAYS) the CLI removes the `.log` file to save up space. | Cannot be disabled, setting it to `0` will make it auto-flush each time. |
-| `favEditor`  | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart`. | / |
+| KEY | Value Type | Description |
+| :--- | :--- | ---: |
+| `defaultIntensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | Changes the default intensity for the `clean` command. |
+| `updateFreq` | A fixed number | Changes how frequently (in DAYS) the CLI sends an HTTP request for updates. We recommend setting it to a high value as we don't frequently update. |
+| `flushFreq` | A fixed number | Changes how frequently (in DAYS) the CLI removes the `.log` file to save up space. Cannot be disabled, setting it to `0` will make it auto-flush each time. |
+| `favEditor`  | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart` and `launch`. |
+| `showNotifications`  | `true`, `false` | Whether to [use system notifications](../learn/notifications.md). Highly recommended |
+| `thresholdNotifications`  | `true`, `false` | Enabled by default, makes system notifications only fire up if the task to be notified about takes less than 30 seconds. |
 
 ### View current settings
 
 To view your current settings, run `fuckingnode settings` with no args. You should see something like this:
 
-```bash
+```txt
 💡 Your current settings are:
 ---
-Update frequency: Each 69 days. updateFreq
-Default cleaner intensity: hard. defaultIntensity
-Favorite editor: vscodium. favEditor
-Auto-flush log file frequency: Each 13 days. flushFreq
+Check for updates             | Every 5 days. updateFreq        
+Default cleaner intensity     | normal. defaultIntensity        
+Favorite code editor          | vscode. favEditor
+Auto-flush log file           | Every 14 days. flushFreq        
+Send system notifications     | Enabled. showNotifications      
+Threshold notifications (30") | Disabled. thresholdNotifications
 ```
 
-As you can see, you're shown at the end the key used to change a setting.
+As you can see, you're shown at the end the key used to change a setting (it appears _italic_ in your terminal, if supported).
 
 ### Change settings
 
-To change them, execute `fuckingnode settings change (SETTING) (VALUE)`, for example:
+To change them, execute `fuckingnode settings change (KEY) (VALUE)`, for example:
 
 ```bash
-fuckingnode settings change default-int "hard"
-fuckingnode settings change update-freq 15
+fuckingnode settings change defaultIntensity "hard"
+fuckingnode settings change updateFreq 15
 ```
 
 ### Additional settings commands

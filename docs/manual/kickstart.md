@@ -9,6 +9,8 @@ The `kickstart` command is an extra command that increases your productivity by 
 - Launches your favorite code editor (as defined by your user settings).
 - Adds the project to the FuckingNode list.
 
+Plus, **if it takes long, you'll receive a [system notification](../learn/notifications.md) once done,** so if it's a large repo you can just switch tabs and focus on something else, and get notified once ready so you can get to coding.
+
 ## Usage
 
 Just run the following:

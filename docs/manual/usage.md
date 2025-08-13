@@ -11,10 +11,12 @@ The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On 
 The `fuckingnode clean` command is the base utility of the app. It accepts the following (all optional) arguments:
 
 ```bash
-fuckingnode clean <PROJECT | --> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--verbose] [--commit]
+fuckingnode clean <PROJECT | --> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--commit]
 ```
 
 When executed with no arguments, it'll do a cleanup using the default intensity (which is `normal` and can be changed from the [settings](configuration.md#settings)) across all of your projects.
+
+It'll iterate through all of your projects and clean them, showing status updates one by one in the terminal. Once it ends, a report is shown, telling how much time did it take us to clean each individual project. **You'll receive a [system notification](../learn/notifications.md) once done,** so you can switch tabs and focus on something else - you'll know when to come back.
 
 ## Cleaner intensities, explained
 
@@ -133,7 +135,7 @@ Some of these features depend on `fknode.yaml` configuration, [as noted above](#
 
 !!! info "About errors"
 
-    Any error from additional tasks will fail silently; this means they won't stop the execution flow and no logs will be made. However, since the CLI shows command output live, errors will likely be shown in there.
+    Any error from additional tasks will fail silently; this means they won't stop the execution flow and no logs will be made. Error logs are dumped into a log file; you're shown the path whenever an error of this kind happens.
 
 ### Linting your code: `--lint`
 
@@ -238,12 +240,6 @@ To override it, do the same as with the linter and prettifier, but setting the `
 ```yaml title="fknode.yaml" linenums="15"
 updateCmdOverride: "update"
 ```
-
-## Additional info
-
-### Show additional info during cleanup
-
-There's a `--verbose` flag that can be passed to `fuckingnode clean`. It'll show the real output of all commands that are being executed, begin and end timestamps for the cleanup process, plus a report showing how much time did it take us to clean each individual project.
 
 ---
 

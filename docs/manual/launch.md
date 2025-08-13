@@ -1,6 +1,6 @@
 # Using FuckingNode: Launch a project
 
-> `fuckingnode launcher <project>`, or `fklaunch <project>`
+> `fuckingnode launch <project>`, or `fklaunch <project>`
 
 The `launch` command is a command that automatically launches your favorite editor with a project open, and automatically runs a "launch task", e.g. `npm run start`. It can also auto-update your dependencies on launch. It can take a project's name from the `package.json` / `deno.json` / `Cargo.toml`, so it's as simple as doing `fklaunch my-project`.
 
@@ -20,4 +20,4 @@ By default it just launches your favorite editor with your project opened. For u
 
 You've now learnt how to speed up launching your projects.
 
-Next: Setup - How to quickly get text-config files ready.
+Next: Migrate - How to escape npm.
