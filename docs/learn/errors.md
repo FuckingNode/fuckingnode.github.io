@@ -17,7 +17,7 @@ For example, `Env__NoPkgFile` (category:`Environment`, error:`NoPackageFile`).
 
 ## Operating system category [Os]
 
-Errors caused by the OS. There's only one as of now.
+Errors caused by the underlying OS.
 
 ### No APPDATA, No HOME
 
@@ -26,6 +26,17 @@ Errors caused by the OS. There's only one as of now.
 Uncommon, but not impossible. We store config files in :fontawesome-brands-windows: APPDATA / :simple-apple: :simple-linux: HOME, or XDG_CONFIG_HOME if the aforementioned doesn't exist. If none of these exists, you get this error.
 
 Check your system's env variables if this happens; if none of these is defined many apps will fail for you, not just this one.
+
+### No Entity
+
+`Os__NoEntity`
+
+Happens when FuckingNode attempts to invoke an entity and doesn't find it. In simpler words, if you set your `buildCmd` (for example) to `foobar` and there's no entity in your PATH named "foobar", we're unable to launch it - thus this error happens.
+
+It's most often caused by either:
+
+- The entity indeed not existing (perhaps you had a typo).
+- On Windows, `echo 'hi'` or `Write-Output 'hi'` don't exist, `cmd echo 'hi'` or `powershell Write-Output 'hi'`. If you want to use Windows shell command you need to explicitly call a shell executable (preferably PowerShell). Blame it on Microsoft, not us.
 
 ## File system category [Fs]
 
@@ -115,7 +126,7 @@ _The name's a bit of a joke, but_ this error happens when the same project has t
 
 ## Task category [Task]
 
-All errors in this category are `Task__[TASK TYPE]`, which can be `Release`, `Commit`, `Launch`, `Update`, `Lint`, `Pretty`. Any unexpected error when running any of these tasks for any project will trigger a Task category `FknError`.
+All errors in this category are `Task__[TASK TYPE]`, which can be `Release`, `Commit`, `Launch`, `Update`, `Lint`, `Pretty`, or `Build`. Any unexpected error when running any of these tasks for any project will trigger a Task category `FknError`.
 
 ## Parameter category [Param]
 
