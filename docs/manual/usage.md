@@ -16,7 +16,7 @@ fuckingnode clean <PROJECT | --> <INTENSITY | --> [--update] [--lint] [--pretty]
 
 When executed with no arguments, it'll do a cleanup using the default intensity (which is `normal` and can be changed from the [settings](configuration.md#settings)) across all of your projects.
 
-It'll iterate through all of your projects and clean them, showing status updates one by one in the terminal. Once it ends, a report is shown, telling how much time did it take us to clean each individual project. **You'll receive a [system notification](../learn/notifications.md) once done,** so you can switch tabs and focus on something else - you'll know when to come back.
+It'll iterate through all of your projects and clean them, showing status updates one by one in the terminal. Once it ends, a report is shown, telling how much time did it take us to clean each individual project, as well as what features were prevented by divine protection and what features errored, if any. **You'll receive a [system notification](../learn/notifications.md) once done,** so you can switch tabs and focus on something else - you'll know when to come back.
 
 ## Cleaner intensities, explained
 

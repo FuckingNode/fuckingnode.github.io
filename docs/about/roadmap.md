@@ -10,12 +10,26 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 
 ## 4.X
 
+### Version 4.2 (Released)
+
+- [x] Add more system notification prompts.
+  - [x] Whenever a cleaning task (e.g. lint) fails.
+  - [x] When a build finishes.
+- [x] Bring back showing more details into the final report.
+  - [x] Show what features divineProtection prevented (if any).
+  - [x] (New idea) what features failed (if any).
+
+### Version 4.1 (Released)
+
+- [x] Add settings to enable/disable notifications and their thresholds.
+- [x] Always show the cleanup report.
+- [x] Remove verbose flags and live output.
+
 ### Version 4.0 (Released)
 
 - [x] New features
     - [x] `build`, to automate building. Especially useful in JavaScript. This would have a text-config file to define what tasks to run for building a project. It could be used in combination with `release`.
 - [x] `release` support for Cargo.
-- [ ] Dual release support: using the `FnCPF` from the interop layer to allow publishing the same JavaScript package to both npm and jsr. This would be really helpful as jsr downloads do not always work well with npm projects. (_Not done, rescheduled for v4.1_)
 - [x] Rebuild `commit`, so you tell it what files to commit and it:
     - [x] Un-stages anything else to avoid committing randomly staged files.
     - [x] Doesn't require you to stage the files _before_ (making it useless, as `git commit -a -m` is also just one command), and lets you stage files from the own command.
