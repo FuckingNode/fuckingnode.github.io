@@ -103,15 +103,21 @@ plugins:
     - redirects:
           redirect_maps:
               "about.md": "about/roadmap.md"
-              "repo.md": "https://github.com/FuckingNode/FuckingNode"
               "roadmap.md": "about/roadmap.md"
+              "repo.md": "https://github.com/FuckingNode/FuckingNode"
+              "repository.md": "https://github.com/FuckingNode/FuckingNode"
+              "github.md": "https://github.com/FuckingNode/FuckingNode"
               "cross-runtime.md": "learn/cross-runtime-support.md"
               "cross-platform.md": "learn/cross-runtime-support.md"
               "crossruntime.md": "learn/cross-runtime-support.md"
               "crossplatform.md": "learn/cross-runtime-support.md"
               "follow-us.md": "about/social.md"
+              "socials.md": "about/social.md"
               "why.md": "about/why.md"
               "motivation.md": "about/why.md"
+              "install.md": "manual/install.md"
+              "installation.md": "manual/install.md"
+              "download.md": "manual/install.md"
 
 markdown_extensions:
     - abbr
