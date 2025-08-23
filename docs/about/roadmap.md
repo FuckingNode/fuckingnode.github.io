@@ -93,8 +93,8 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
     - [x] Deno.
 - [x] Shorter commands.
     - [x] Shorter core command, `fknode (args)`.
-      - [x] :fontawesome-brands-windows: Windows support
-      - [x] :simple-apple: macOS and :simple-linux: Linux support
+        - [x] :fontawesome-brands-windows: Windows support
+        - [x] :simple-apple: macOS and :simple-linux: Linux support
     - [x] Shorter flags, for example, `fknode clean -- -l -p` instead of `fuckingnode clean -- --lint --pretty`.
     - [x] Shorthands, for example, `fkclean` instead of `fuckingnode clean`, which together with `defaultIntensity` setting and flagless features should handle everything.
         - [x] :fontawesome-brands-windows: Windows support

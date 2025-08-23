@@ -127,12 +127,12 @@ We basically run the CLI commands you'd run by yourself recursively across all o
 
 ## Availability
 
-Where `EXP` indicates experimental, `CAVEAT` indicates partial support / support with known flaws, and `YES` and `NO` indicate the obvious.
+Where `PARTIAL` indicates partial / incomplete support, and `YES` and `NO` indicate the obvious.
 
-| Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno   | Bun    | Go     | Cargo  |
-| :--------- | ---------- | ----------- | ----------- | ------ | ------ | ------ | ------ |
-| **v4.0.0** | YES        | YES         | YES         | CAVEAT | CAVEAT | CAVEAT | CAVEAT |
-| v2.0.0     | YES        | YES         | YES         | CAVEAT | CAVEAT | NO     | NO     |
-| v1.0.0     | YES        | YES         | YES         | NO     | NO     | NO     | NO     |
+| Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno    | Bun     | Go      | Cargo   |
+| :--------- | ---------- | ----------- | ----------- | ------- | ------- | ------- | ------- |
+| **v4.0.0** | YES        | YES         | YES         | PARTIAL | PARTIAL | PARTIAL | PARTIAL |
+| v2.0.0     | YES        | YES         | YES         | PARTIAL | PARTIAL | NO      | NO      |
+| v1.0.0     | YES        | YES         | YES         | NO      | NO      | NO      | NO      |
 
 To learn more about cross-runtime compatibility, [refer to this page](./cross-runtime.md).
