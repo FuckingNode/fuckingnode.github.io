@@ -19,15 +19,15 @@ You'll see something like the following (but with more options):
 
 ```txt
 ┌────────────────────────┬───────────────────────────────────────────────────────────────────────┐
-│ Name                  │ Description                                                           │
+│ Name                   │ Description                                                           │
 ├────────────────────────┼───────────────────────────────────────────────────────────────────────┤
-│ fknode-basic          │ A very basic fknode.yaml file.                                        │
-│ fknode-allow-all      │ An fknode.yaml file that allows every feature to run (commits too!).  │
-│ gitignore-js          │ A gitignore file for JavaScript projects.                             │
-│ gitignore-js-nolock   │ A gitignore file for JavaScript projects (also ignores lockfiles).    │
-│ ts-strictest          │ Strictest way of TypeScripting, ensuring cleanest code.               │
-│ ts-library            │ Recommended config for libraries.                                     │
-│ editorconfig-default  │ A basic .editorconfig file that works for everyone.                   │
+│ fknode-basic           │ A very basic fknode.yaml file.                                        │
+│ fknode-allow-all       │ An fknode.yaml file that allows every feature to run (commits too!).  │
+│ gitignore-js           │ A gitignore file for JavaScript projects.                             │
+│ gitignore-js-nolock    │ A gitignore file for JavaScript projects (also ignores lockfiles).    │
+│ ts-strictest           │ Strictest way of TypeScripting, ensuring cleanest code.               │
+│ ts-library             │ Recommended config for libraries.                                     │
+│ editorconfig-default   │ A basic .editorconfig file that works for everyone.                   │
 └────────────────────────┴───────────────────────────────────────────────────────────────────────┘
 You didn't provide any argument, or provided invalid ones, so up here are all possible setups.
 ```
