@@ -126,7 +126,7 @@ create_shortcuts() {
 
 # add app to path
 add_app_to_path() {
-    echo "Adding shorthand to PATH..."
+    echo "Adding shorthand $INSTALL_DIR to PATH..."
 
     if [ -z "$INSTALL_DIR" ]; then
         echo "Install directory is undefined or empty."
