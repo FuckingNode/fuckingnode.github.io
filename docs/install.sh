@@ -142,6 +142,8 @@ add_app_to_path() {
     # define target files
     FILES=("$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
 
+    local MODIFIED=false
+
     # append to each file if it exists and doesn't already contain the entry
     for file in "${FILES[@]}"; do
         if [ -f "$file" ]; then
@@ -161,16 +163,21 @@ add_app_to_path() {
         source "$HOME/.bash_profile" 2>/dev/null
         echo "Successfully added $INSTALL_DIR to PATH."
     else
-        echo "No config files were modified."
+        echo "No PATH was modified."
     fi
 }
 
 # installer itself
 installer() {
     echo "Hi! We'll install $APP_NAME ($ARCH edition) for you. Just a sec!"
-    echo "Please note we'll use sudo a lot (many files to be created)"
+    echo ""
+    echo "Please note we'll use sudo a lot (many files to be created)."
     echo "They're all found at $INSTALL_DIR."
+    echo ""
+    echo "This script relies on you running from Bash 4 or later."
+    echo ""
     install_app
+    add_app_to_path
     echo "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
     echo "These are made by creating a bunch of scripts (fknode.sh, fkn.sh...) next to the main installation."
     echo "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
@@ -182,7 +189,6 @@ installer() {
     else
         echo "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
     fi
-    add_app_to_path
     echo "Installed successfully! Restart your terminal for it to work."
 }
 
