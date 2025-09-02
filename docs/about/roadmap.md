@@ -1,5 +1,3 @@
-<!-- markdownlint-disable md007 -->
-
 # Roadmap & release history
 
 What we're planning to do. Only includes minor and major releases, patch releases only fix errors, meaning they aren't planned, as our plan and hope is to write errorless code (which we'll never do, but we'll try our best to get as close as possible to that).
@@ -11,10 +9,10 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 ## 5.X (Upcoming)
 
 - [ ] Improve `setup`.
-  - [ ] Add many more setups (LICENSEs, gitignores, etc...).
-  - [ ] Make setups searchable.
+    - [ ] Add many more setups (LICENSEs, gitignores, etc...).
+    - [ ] Make setups searchable.
 - [x] Improve `commit`
-  - [x] ~~Commit prevention if compromised files (e.g. `.env` or `node_modules`) are staged.~~
+    - [x] Commit prevention if compromised files (e.g. `.env` or `node_modules`) are staged.
 - [ ] Setting to actually halt cleanup execution and notify if an error happens.
 - [ ] Dual release system.
 - [ ] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
@@ -50,11 +48,11 @@ No important milestones for this release.
 ### Version 4.2 (Released)
 
 - [x] Add more system notification prompts.
-  - [x] Whenever a cleaning task (e.g. lint) fails.
-  - [x] When a build finishes.
+    - [x] Whenever a cleaning task (e.g. lint) fails.
+    - [x] When a build finishes.
 - [x] Bring back showing more details into the final report.
-  - [x] Show what features divineProtection prevented (if any).
-  - [x] (New idea) what features failed (if any).
+    - [x] Show what features divineProtection prevented (if any).
+    - [x] (New idea) what features failed (if any).
 
 ### Version 4.1 (Released)
 

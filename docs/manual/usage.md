@@ -4,8 +4,6 @@ description: "How to cleanup your projects - and fall in love with FuckingNode."
 icon: material/broom
 ---
 
-<!-- markdownlint-disable md010 md046 md033 -->
-
 # Using FuckingNode: the most important command
 
 > `fuckingnode clean [...many optional arguments]`, or `fkclean [...many optional arguments]`
@@ -139,11 +137,13 @@ Some of these features depend on `fknode.yaml` configuration, [as noted above](#
 
 ### Callouts
 
+<!-- todo -->
+
 !!! info "About errors"
 
     Any error from additional tasks will fail silently; this means they won't stop the execution flow and no logs will be made. Error logs are dumped into a log file; you're shown the path whenever an error of this kind happens.
 
-### Linting your code: `--lint`
+### Linting your code
 
 When linting, we will automatically run your linter. By default, we use ESLint - which in most cases should just work out of the box. Still, for convenience, you're able to choose a different linter.
 
@@ -163,7 +163,7 @@ scripts: {
 lintCmd: "linter"
 ```
 
-### Prettifying your code: `--pretty`
+### Prettifying your code
 
 When prettying, we will automatically run your prettifier. By default, we use Prettier - which just as ESLint should work, and just as ESLint can be changed anyway.
 
@@ -183,7 +183,7 @@ scripts: {
 prettyCmd: "prettifier"
 ```
 
-### Destroying your <s>code</s> files: `--destroy`
+### Destroying your files
 
 When destroying, we will automatically remove files and directories you specified.
 
@@ -212,7 +212,7 @@ destroy:
 
 You can use an asterisk (`*`) if you want to destroy with all intensities without typing all of that. _Due to how the CLI is designed, it must still be an array, so `["*"]` works and `"*"` doesn't._
 
-### Committing your code: `--commit`
+### Committing your code
 
 When committing, we will automatically commit our changes (updating, linting, prettifying) to Git, using a default commit message unless overridden.
 
@@ -233,7 +233,7 @@ For your own safety, we will commit ONLY IF ALL of the following conditions are 
     commitActions: true # authorize commits
     ```
 
-### Updating your code: `--update`
+### Updating your code
 
 When updating, we will automatically update your dependencies using your project's package manager (we'll know that based on your lockfile). By default, the standard update command is used, though you can actually override this command too.
 

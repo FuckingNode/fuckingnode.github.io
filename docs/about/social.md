@@ -1,5 +1,4 @@
-<!-- markdownlint-disable md033 md030 -->
-# F\*ckingNode community
+# FuckingNode community
 
 <div class="grid cards" markdown>
 

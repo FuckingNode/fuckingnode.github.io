@@ -1,3 +1,9 @@
+---
+title: "Kickstart"
+description: "Get your projects cloned, launched, and prepared for use"
+icon: material/rocket-launch
+---
+
 # Using FuckingNode: Kickstart a project
 
 > `fuckingnode kickstart <repo-url> [file-path] [package manager]`, or `fkstart <repo-url> [file-path] [package manager]`

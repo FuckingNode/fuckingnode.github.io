@@ -3,9 +3,6 @@ hide:
   - navigation
 ---
 
-<!-- markdownlint-disable md033 -->
-<!-- markdownlint-disable md030 -->
-
 # The f*cking chaos of maintaining JavaScript projects ends here
 
 **Because dev life is messy enough.**

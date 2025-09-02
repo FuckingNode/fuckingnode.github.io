@@ -135,4 +135,4 @@ Where `PARTIAL` indicates partial / incomplete support, and `YES` and `NO` indic
 | v2.0.0     | YES        | YES         | YES         | PARTIAL | PARTIAL | NO      | NO      |
 | v1.0.0     | YES        | YES         | YES         | NO      | NO      | NO      | NO      |
 
-To learn more about cross-runtime compatibility, [refer to this page](./cross-runtime.md).
+To learn more about cross-runtime compatibility, [refer to this page](./cross-runtime-support.md).
