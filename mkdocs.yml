@@ -97,8 +97,7 @@ extra:
         provider: custom
 
 plugins:
-    - social:
-          cards_layout: default/variant
+    - social
     - redirects:
           redirect_maps:
               "about.md": "about/roadmap.md"

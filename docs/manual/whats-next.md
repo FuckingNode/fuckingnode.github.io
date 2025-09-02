@@ -1,7 +1,6 @@
 ---
 title: "What's next?"
 description: "Final page of the FuckingNode user manual. What comes next?"
-icon: material/head-question
 ---
 
 # What's next?

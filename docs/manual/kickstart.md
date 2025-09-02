@@ -1,7 +1,6 @@
 ---
 title: "Kickstart"
 description: "Get your projects cloned, launched, and prepared for use"
-icon: material/rocket-launch
 ---
 
 # Using FuckingNode: Kickstart a project

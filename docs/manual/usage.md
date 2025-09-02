@@ -1,7 +1,6 @@
 ---
 title: "Usage - FuckingNode"
 description: "How to cleanup your projects - and fall in love with FuckingNode."
-icon: material/broom
 ---
 
 # Using FuckingNode: the most important command
