@@ -2,7 +2,7 @@
 
 ## What we wanted to fix
 
-FuckingNode exists because of the many problems that a JavaScript developer can encounter, including but not limited to:
+There are many problems that a JavaScript developer can encounter, including but not limited to:
 
 - How tiring it is to go through all of your projects to update dependencies.
 - How boring it is to manually make "Lint code" or "Format code" commits periodically.
@@ -18,7 +18,7 @@ _And the list goes on..._
 
 I initially created FuckingNode as a `.ps1` script to automate `npm prune` and `pnpm store prune` across a fixed list of personal projects, and as you can see, it has grown into four major releases, eleven separate utilities (`clean`, `kickstart`, `release`, `commit`, `surrender`, `setup`, `stats`, `launch`, `build`, `migrate`, `audit`), DenoJS & BunJS support, and even a small amount of features bridged to Go and Cargo.
 
-FuckingNode is a thing because it fixes all of the issues mentioned above.
+FuckingNode exists because it fixes all of the issues mentioned above.
 
 ### Bored of manually updating dependencies, linting code, or prettifying code? Of committing all of that? Of removing built output / artifacts?
 
@@ -64,6 +64,6 @@ FuckingNode is a thing because it fixes all of the issues mentioned above.
 
 ---
 
-That is why FuckingNode is a thing; because it's a single tool to fix everything. And if there's something we didn't fix yet, just [join our Discord server](https://discord.gg/AA2jYAFNmq), mention us on [Twitter](https://x.com/FuckingNode) or [Bluesky](https://bsky.app/profile/fknode.bsky.social), or [raise an issue on GitHub](https://github.com/FuckingNode/FuckingNode/issues) telling us what else you'd like to see within our tooling, and we'll add it (if possible).
+That is why FuckingNode exists; because it's a single tool to fix everything. And if there's something we didn't fix yet, just [join our Discord server](https://discord.gg/AA2jYAFNmq), mention us on [Twitter](https://x.com/FuckingNode) or [Bluesky](https://bsky.app/profile/fknode.bsky.social), or [raise an issue on GitHub](https://github.com/FuckingNode/FuckingNode/issues) telling us what else you'd like to see within our tooling, and we'll add it (if possible).
 
 *[CWD]: Current Working Directory

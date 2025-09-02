@@ -1,3 +1,9 @@
+---
+title: "Usage - FuckingNode"
+description: "How to cleanup your projects - and fall in love with FuckingNode."
+icon: material/broom
+---
+
 <!-- markdownlint-disable md010 md046 md033 -->
 
 # Using FuckingNode: the most important command
@@ -57,9 +63,9 @@ The `normal` level recursively "cleans" each of your project. We define "cleanin
 The `hard` level does the previous (unless using `hard-only`), plus cleans global caches. This will make the most sense for `pnpm` user, which is known for it's global module cache, however cleaning is made for all package managers.
 
 !!! warning "Regarding npm's cache"
-    As `npm` itself warns you when cache cleaning manually, it will make `npm` even slower than what it already is next time you use it. Our recommendation is simple: to use `pnpm` as your default package manager. Don't remove `npm`, though, as compatibility issues may appear.
+    As `npm` itself warns you when manually cleaning its cache, it will make `npm` even slower than what it already is the next time you use it. Our recommendation is simple: to use `pnpm` or `bun` as your default package manager instead.
 
-We recommend running `normal` cleanups in a mid-frequent basis, and `hard` cleanups two or three times a month. That's our recommendation, of course. Do whatever you please with your PC.
+Our official recommendation is to run `normal` cleanups in a weekly basis, and `hard` cleanups once or twice a month. That's our recommendation, of course. Do whatever you please with your computer.
 
 The `maxim` level does what the previous levels do (unless using `hard-only`), and also the removes `node_modules` directory (forcing you to reinstall dependencies next time you want to code).
 

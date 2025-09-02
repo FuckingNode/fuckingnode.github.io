@@ -8,7 +8,44 @@ We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make pr
 
 This page also lists all minor and major releases since 2.X. Patches aren't listed, and most bugfixes aren't included (as we don't "plan" to fix bugs).
 
+## 5.X (Upcoming)
+
+- [ ] Improve `setup`.
+  - [ ] Add many more setups (LICENSEs, gitignores, etc...).
+  - [ ] Make setups searchable.
+- [x] Improve `commit`
+  - [x] ~~Commit prevention if compromised files (e.g. `.env` or `node_modules`) are staged.~~
+- [ ] Setting to actually halt cleanup execution and notify if an error happens.
+- [ ] Dual release system.
+- [ ] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
+- [x] Functional self updater.
+- [ ] Functional self remover.
+- [ ] Add `fuckingnode terminate <MGR_GLOBAL>` (aliases: `ftl` (fuck the lang), `resign`, and `un-node, un-bun, un-deno, ...`)
+    - Removes FROM DISK all added projects of the given stack
+    - Removes all caches of the given stack
+    - Removes, indeed, the given stack
+    - (Shows at least *two* confirmation*s* to protect “i accidentally rm -rf’d the db” ahh people)
+- [ ] Make commands spreading based where possible.
+    - Going from `fkclean project/-- intensity/-- -l -p -d` to `fkclean --projects foo bar foobar -l -d --intensity=normal -p`
+        - IF no `--projects` default to all projects, as it’d make sense to.
+    - Do the same for *most* commands. Commit is an exception, for example, message still goes first. After that, do make the parameters spread.
+- [ ] Standardized commands system
+    - [ ] Command sequences.
+    - [ ] Parallel execution.
+    - [ ] Shell, script, and file denotation.
+- [x] Allow to change notification threshold.
+- [ ] “Deep merge” for text-based setups like `.editorconfig` (avoid duplicates basically).
+- [x] Improve `surrender`.
+    - [x] GitLab FM support.
+    - [x] Add a countdown for the removal process.
+    - [x] Add `deprecate` and `nevermind` as aliases to `surrender`.
+- [x] Remove `logs.log`, for performance.
+
 ## 4.X
+
+### Version 4.3 (Released)
+
+No important milestones for this release.
 
 ### Version 4.2 (Released)
 
@@ -32,8 +69,8 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 - [x] `release` support for Cargo.
 - [x] Rebuild `commit`, so you tell it what files to commit and it:
     - [x] Un-stages anything else to avoid committing randomly staged files.
-    - [x] Doesn't require you to stage the files _before_ (making it useless, as `git commit -a -m` is also just one command), and lets you stage files from the own command.
-    - [x] Runs pre-commit tasks _before_ staging, making them actually useful.
+    - [x] Doesn't require you to stage the files *before* (making it useless, as `git commit -a -m` is also just one command), and lets you stage files from the own command.
+    - [x] Runs pre-commit tasks *before* staging, making them actually useful.
 - [X] Allow for DIR-based running; in simpler terms, compute things like `fkn stats` to `fkn stats --self` or `fkadd` to `fkadd --self`, so the `--self` flag isn't necessary (except for commands like `fkclean` where it does make sense to have it).
 - [X] Add Bun support for `audit`.
 - [x] Support glob patterns for adding projects.
@@ -110,12 +147,12 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
     - [x] Platforms
         - [x] Golang
             - [x] Base support (Recognition, package file parsing...)
-            - [x] Operations (Cleanup, lint, pretty...) (_May be limited_)
-            - [x] Extras (Kickstart, stats...) (_May be limited_)
+            - [x] Operations (Cleanup, lint, pretty...) (*May be limited*)
+            - [x] Extras (Kickstart, stats...) (*May be limited*)
         - [x] Cargo (Rust)
             - [x] Base support (Recognition, package file parsing...)
-            - [x] Operations (Cleanup, lint, pretty...) (_May be limited_)
-            - [x] Extras (Kickstart, stats...) (_May be limited_)
+            - [x] Operations (Cleanup, lint, pretty...) (*May be limited*)
+            - [x] Extras (Kickstart, stats...) (*May be limited*)
 - [x] Create a FuckingNode Interop Layer
     - [x] Linter
     - [x] Prettifier
@@ -138,5 +175,5 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
     - [x] Emacs
     - [x] Notepad ++
     - [x] VSCodium
-    - [x] Atom (_it's unmaintained, but anyways..._)
+    - [x] Atom (*it's unmaintained, but anyways...*)
 - [x] Get this documentation finished.

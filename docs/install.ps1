@@ -1,14 +1,18 @@
 $ErrorActionPreference = "Stop"
 
-# todo: check usage of Write-Host (just prints) and Write-Output (prints and is considered readable output)
-
-# Constants
 $APP_NAME = @{
     CASED = "FuckingNode"
     CLI   = "fuckingnode"
 }
-$installDir = "C:\$($APP_NAME.CASED)"
-$exePath = Join-Path -Path $installDir -ChildPath "$($APP_NAME.CLI).exe"
+$INSTALL_DIR = "C:\$($APP_NAME.CASED)"
+$EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
+
+Function Remove-IfNeeded() {
+   if ($null -ne $args[0] -as [double]) {
+        Stop-Process -Id $args[0] -Force
+        Remove-Item $EXE_PATH -Force
+   }
+}
 
 # get latest release URL
 Function Get-LatestReleaseUrl {
@@ -53,8 +57,8 @@ Function New-Shortcuts {
 
         $appName = $APP_NAME.CLI
 
-        if (-not (Test-Path $installDir -PathType Container)) {
-            Throw "Error: Install directory '$installDir' does not exist."
+        if (-not (Test-Path $INSTALL_DIR -PathType Container)) {
+            Throw "Error: Install directory '$INSTALL_DIR' does not exist."
         }
 
         $commands = @{
@@ -79,7 +83,7 @@ Function New-Shortcuts {
         foreach ($name in $commands.Keys) {
             $cmd = $commands[$name]
             $batContent = "@echo off`n%~dp0$($appName).exe $cmd %*"
-            $batPath = Join-Path -Path $installDir -ChildPath "$name.bat"
+            $batPath = Join-Path -Path $INSTALL_DIR -ChildPath "$name.bat"
             Set-Content -Path $batPath -Value $batContent -Encoding ASCII
             Write-Host "Shortcut created successfully at $batPath"
         }
@@ -98,12 +102,12 @@ Function Install-App {
     try {
         Write-Host "Downloading from $url..."
 
-        if (-not (Test-Path $installDir)) {
-            New-Item -ItemType Directory -Path $installDir | Out-Null
+        if (-not (Test-Path $INSTALL_DIR)) {
+            New-Item -ItemType Directory -Path $INSTALL_DIR | Out-Null
         }
 
-        Invoke-WebRequest -Uri $url -OutFile $exePath
-        Write-Host "Downloaded successfully to $exePath"
+        Invoke-WebRequest -Uri $url -OutFile $EXE_PATH
+        Write-Host "Downloaded successfully to $EXE_PATH"
     }
     catch {
         Throw "Failed to download or save the file: $_"
@@ -173,20 +177,20 @@ Function Add-AppToPath {
     try {
         Write-Host "Adding shorthand to PATH..."
 
-        if ([string]::IsNullOrWhiteSpace($installDir)) {
+        if ([string]::IsNullOrWhiteSpace($INSTALL_DIR)) {
             Throw "Install DIR is undefined or empty."
         }
 
         $Path = (Get-Env -Key "Path") -split ';'
 
-        # Add installDir to PATH if not already present
-        if ($Path -notcontains $installDir) {
-            $Path += $installDir
+        # Add INSTALL_DIR to PATH if not already present
+        if ($Path -notcontains $INSTALL_DIR) {
+            $Path += $INSTALL_DIR
             Write-Env -Key 'Path' -Value ($Path -join ';')
             $env:PATH = $Path;
         }
         else {
-            Write-Output "'${installDir}' is already in your PATH."
+            Write-Host "'${INSTALL_DIR}' is already in your PATH."
         }
     }
     catch {
@@ -198,12 +202,12 @@ Function Add-AppToPath {
 Function Installer {
     try {
         Write-Host "Hi! We'll install $($APP_NAME.CASED) for you. Just a sec!"
-        $url = Get-LatestReleaseUrl
-        Install-App -url $url
+        Remove-IfNeeded
+        Install-App -url (Get-LatestReleaseUrl)
         Add-AppToPath
-        Write-Output "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
-        Write-Output "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
-        Write-Output "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
+        Write-Host "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
+        Write-Host "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
+        Write-Host "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
 
         $response = Read-Host "Do you wish to create these shortcuts? [Y/N]"
 
@@ -211,7 +215,7 @@ Function Installer {
             New-Shortcuts
         }
         else {
-            Write-Output "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
+            Write-Host "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
         }
         Write-Host "Installed successfully! Restart your terminal for it to work."
     }

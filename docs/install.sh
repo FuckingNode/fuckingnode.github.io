@@ -7,7 +7,7 @@ set -u
 # constants
 APP_NAME="FuckingNode"
 CLI_NAME="fuckingnode"
-INSTALL_DIR="/usr/local/$APP_NAME"
+INSTALL_DIR="/usr/local/$CLI_NAME"
 EXE_PATH="$INSTALL_DIR/$CLI_NAME"
 
 # get where we are so it knows what to use
@@ -49,6 +49,13 @@ get_platform_arch() {
 }
 
 ARCH=$(get_platform_arch)
+
+remove_if_needed() {
+    if [[ "$1" =~ ^[0-9]+$ ]]; then
+        kill -9 $1 2>/dev/null
+        rm -f $EXE_PATH
+    fi
+}
 
 # get url
 get_latest_release_url() {
@@ -113,7 +120,7 @@ create_shortcuts() {
 
     for name in "${!commands[@]}"; do
         cmd=${commands[$name]}
-        script_path="$INSTALL_DIR/$name" # (.sh)
+        script_path="$INSTALL_DIR/$name.sh"
 
         echo "#!/bin/bash" | sudo tee "$script_path" >/dev/null
         echo "\"\$(dirname \"\$0\")/$CLI_NAME\" $cmd \"\$@\"" | sudo tee -a "$script_path" >/dev/null
@@ -176,6 +183,7 @@ installer() {
     echo ""
     echo "This script relies on you running from Bash 4 or later."
     echo ""
+    remove_if_needed
     install_app
     add_app_to_path
     echo "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."

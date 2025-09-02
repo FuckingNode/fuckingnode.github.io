@@ -20,14 +20,6 @@ hide:
 
     [:octicons-arrow-right-24: Getting started](manual/usage.md#the-clean-command)
 
--   :material-connection:{ .lg .middle } **Use it everywhere**
-
-    ---
-
-    Works with any NodeJS, Deno, or BunJS project. Even Go and Rust are partially supported![^1]
-
-    [:octicons-arrow-right-24: Cross-runtime support](learn/cross-runtime-support.md)
-
 -   :material-speedometer:{ .lg .middle } **Speed up your workflow**
 
     ---
@@ -52,6 +44,14 @@ hide:
 
     [:octicons-arrow-right-24: Automated deprecations](./manual/surrender.md)
 
+-   :material-connection:{ .lg .middle } **Use it everywhere**
+
+    ---
+
+    Works with any NodeJS, Deno, or BunJS project. Even Go and Rust are partially supported![^1]
+
+    [:octicons-arrow-right-24: Cross-runtime support](learn/cross-runtime-support.md)
+
 -   :material-arm-flex:{ .lg .middle } **Flex about it**
 
     ---
@@ -68,20 +68,21 @@ Note: For whatever reason, _some_ features can also be used with Golang and Rust
 
 ## Features
 
-- [x] automated cleanup of JS projects
+- [x] automated cleanup of your projects
 - [x] automated cleanup of global caches (especially useful for pnpm or Bun, where a single global cache exists)
-- [x] automated updates of JS projects' dependencies
-- [x] automated linting of JS projects
-- [x] automated prettying of JS projects
+- [x] automated updates of your projects' dependencies
+- [x] automated linting of your projects
+- [x] automated prettying of your projects
 - [x] automated removal of unneeded files (e.g. dist/, out/...)
 - [x] automated commit of lint / prettify / update changes in your code
 
-— **from a single command.** It's not magic, it's _F\*ckingNode_-and that name is shipping to production.
+— **from a single command.** It's not magic, it's **FuckingNode**—and yes, we're shipping _that_ name to production.
 
 Plus other features like:
 
 - [x] automated release / update process of npm / jsr packages, from a single command
 - [x] automated cloning of a repo, installation of dependencies, and opening of your favorite editor for a project, from a single command
+- [x] automated running of your test suite before committing code, from a single command
 - [x] automated cross-manager (e.g. npm -> pnpm) or cross-runtime (e.g. NodeJS/npm -> Bun) migration, from a single command
 - [x] a security audit assistant that analyzes vulnerabilities and tells you if they _do_ affect your project or can be safely ignored, from a single command
 - [x] addition of a pre-configured `tsconfig.json` or `.gitignore` file for your project, from a single command

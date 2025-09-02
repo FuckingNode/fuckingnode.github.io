@@ -48,8 +48,8 @@ theme:
     name: material
     custom_dir: docs/overrides
 
-    logo: fkn_logo_light.webp
-    favicon: fkn_logo.webp
+    logo: fkn_logo_dark.webp
+    favicon: fkn_icon.webp
 
     features:
         - navigation.path
@@ -65,8 +65,8 @@ theme:
 
     palette:
         - scheme: slate
-          primary: custom
-          accent: custom
+          primary: red
+          accent: red
 
 extra_css:
     - overrides/extra.css
@@ -97,7 +97,8 @@ extra:
         provider: custom
 
 plugins:
-    - social
+    - social:
+          card_layout: default/variant
     - redirects:
           redirect_maps:
               "about.md": "about/roadmap.md"
