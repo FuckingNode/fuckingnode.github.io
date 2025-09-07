@@ -78,7 +78,7 @@ extra_javascript:
 extra:
     social:
         - icon: fontawesome/brands/youtube
-          link: https://youtube.com/watch?v=_lppvGYUXNk
+          link: https://youtube.com/watch?v=J675ZcYBrHM
           name: See us on YouTube!
         - icon: fontawesome/brands/twitter
           link: https://x.com/FuckingNode
@@ -90,7 +90,7 @@ extra:
           link: https://discord.gg/AA2jYAFNmq
           name: Chat us on Discord
         - icon: fontawesome/brands/bitcoin
-          link: "bitcoin:bc1qp0ycnrhddhzjnpfuxvvx7wrpt7y6y89lllqwjj"
+          link: "/donate"
           name: Donate to help maintaining this project
 
     analytics:

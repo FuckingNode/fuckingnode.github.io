@@ -14,7 +14,6 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 - [x] Improve `commit`
     - [x] Commit prevention if compromised files (e.g. `.env` or `node_modules`) are staged.
 - [ ] Setting to actually halt cleanup execution and notify if an error happens.
-- [ ] Dual release system.
 - [ ] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
 - [x] Functional self updater.
 - [ ] Functional self remover.
@@ -28,9 +27,9 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
         - IF no `--projects` default to all projects, as it’d make sense to.
     - Do the same for *most* commands. Commit is an exception, for example, message still goes first. After that, do make the parameters spread.
 - [ ] Standardized commands system
-    - [ ] Command sequences.
+    - [x] Command sequences.
     - [ ] Parallel execution.
-    - [ ] Shell, script, and file denotation.
+    - [x] Shell, script, and file denotation.
 - [x] Allow to change notification threshold.
 - [ ] “Deep merge” for text-based setups like `.editorconfig` (avoid duplicates basically).
 - [x] Improve `surrender`.

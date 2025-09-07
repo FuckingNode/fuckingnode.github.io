@@ -19,7 +19,7 @@ Note "we" should actually be "I", as this is maintained by a single developer (m
 
 [Go back to the beginning?](../index.md)
 
-## Other pages you may find useful
+## Other pages you may also find useful
 
 [Roadmap and future plans](../about/roadmap.md)
 
@@ -27,11 +27,11 @@ Note "we" should actually be "I", as this is maintained by a single developer (m
 
 [Branding guidelines? (yes we have them)](../about/branding.md)
 
-[Our YouTube trailer (outdated, new one is work-in-progress, but this one's still _kinda_ worth watching)](https://youtube.com/watch?v=_lppvGYUXNk)
-
-[Our GitHub organization](https://github.com/FuckingNode)
+[Our cool (and low budget) YouTube trailer](https://youtube.com/watch?v=J675ZcYBrHM)
 
 [Follow us on social media](../about/social.md)
+
+[Support this project](../about/donate.md)
 
 ---
 
@@ -39,4 +39,4 @@ Again, any contribution, suggestion, or feedback, is greatly appreciated. Fuckin
 
 This project was made out of the nowhere and I never expected to focus so much on it and giving it so many features and work. I hope you found it useful.
 
-Thanks for reading this manual until the end. You may now flex about being a Certified Node Fucker (and if this project gets popular enough I will actually start emitting FuckingNode certifications).
+Thanks for reading this manual until the end. You may now flex about being a Certified Node Fucker (and if this project gets popular enough I will actually start emitting FuckingNode certifications, promise).

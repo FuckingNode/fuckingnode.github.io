@@ -187,7 +187,8 @@ Function Add-AppToPath {
         if ($Path -notcontains $INSTALL_DIR) {
             $Path += $INSTALL_DIR
             Write-Env -Key 'Path' -Value ($Path -join ';')
-            $env:PATH = $Path;
+            $env:PATH = $Path -join ';'
+            Write-Host "Added $INSTALL_DIR to PATH"
         }
         else {
             Write-Host "'${INSTALL_DIR}' is already in your PATH."

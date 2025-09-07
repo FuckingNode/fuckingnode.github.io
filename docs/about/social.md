@@ -26,12 +26,12 @@
 
     [:octicons-arrow-right-24: Follow us](https://x.com/FuckingNode)
 
--   :fontawesome-brands-youtube:{ .lg .middle } __[YouTube](https://youtube.com/watch?v=_lppvGYUXNk)__
+-   :fontawesome-brands-youtube:{ .lg .middle } __[YouTube](https://youtube.com/watch?v=J675ZcYBrHM)__
 
     ---
 
     The creator's personal channel*. Major release trailers will be here. (\*as such, unrelated stuff also hangs in there).
 
-    [:octicons-arrow-right-24: Watch us](https://youtube.com/watch?v=_lppvGYUXNk)
+    [:octicons-arrow-right-24: Watch us](https://youtube.com/watch?v=J675ZcYBrHM)
 
 </div>
