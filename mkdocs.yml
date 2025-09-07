@@ -90,7 +90,7 @@ extra:
           link: https://discord.gg/AA2jYAFNmq
           name: Chat us on Discord
         - icon: fontawesome/brands/bitcoin
-          link: "/donate"
+          link: "/about/donate"
           name: Donate to help maintaining this project
 
     analytics:

@@ -1,3 +1,10 @@
+---
+title: "Support FuckingNode"
+description: "Spare a dime for the JS tool that makes your life easier, not harder."
+hide:
+  - navigation
+---
+
 # Support the development of FuckingNode
 
 FuckingNode is a solo project, developed and maintained with a lot of effort by myself. I'm a student with no fixed income, and donations would be significantly helpful.
@@ -10,7 +17,7 @@ Plus, you'll be listed anywhere I can think of :]
 
 ---
 
-## :fontawesome-brands-bitcoin: Bitcoin{ .btc }
+## :fontawesome-brands-bitcoin:{ .btc } Bitcoin
 
 You can support the project directly via Bitcoin:
 
