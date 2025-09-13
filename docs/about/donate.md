@@ -19,9 +19,11 @@ Plus, you'll be listed anywhere I can think of :]
 
 ## :fontawesome-brands-bitcoin:{ .btc } Bitcoin
 
-You can support the project directly via Bitcoin:
+You can support the project directly via Bitcoin, through this address:
 
 `bc1qp0ycnrhddhzjnpfuxvvx7wrpt7y6y89lllqwjj`
+
+Be sure to notify me about the payment before making it providing info so I can know who it comes from (in order to credit you). You can do so from [here](https://discord.gg/AA2jYAFNmq).
 
 <style>
 @keyframes btc {

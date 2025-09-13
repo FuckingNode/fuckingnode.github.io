@@ -90,9 +90,8 @@ extra:
           link: https://discord.gg/AA2jYAFNmq
           name: Chat us on Discord
         - icon: fontawesome/solid/heart
-          link: "/about/donate"
+          link: "/about/donate/"
           name: Donate to help maintaining this project
-
     analytics:
         provider: custom
 
@@ -101,6 +100,7 @@ plugins:
     - redirects:
           redirect_maps:
               "about.md": "about/roadmap.md"
+              "donate.md": "about/donate.md"
               "roadmap.md": "about/roadmap.md"
               "repo.md": "https://github.com/FuckingNode/FuckingNode"
               "repository.md": "https://github.com/FuckingNode/FuckingNode"
