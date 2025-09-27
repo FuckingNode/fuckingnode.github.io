@@ -17,11 +17,11 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 - [ ] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
 - [x] Functional self updater.
 - [ ] Functional self remover.
-- [ ] Add `fuckingnode terminate <MGR_GLOBAL>` (aliases: `ftl` (fuck the lang), `resign`, and `un-node, un-bun, un-deno, ...`)
-    - Removes FROM DISK all added projects of the given stack
-    - Removes all caches of the given stack
-    - Removes, indeed, the given stack
-    - (Shows at least *two* confirmation*s* to protect “i accidentally rm -rf’d the db” ahh people)
+- [x] Add `fuckingnode terminate <MGR_GLOBAL>` (aliases: `ftl` (fuck the lang), `resign`, and `un-node, un-bun, un-deno, ...`)
+    - [ ] Removes FROM DISK all added projects of the given stack
+    - [x] Removes all caches of the given stack
+    - [x] Removes, indeed, the given stack
+    - (Shows a confirmation to protect “i accidentally rm -rf’d the db” ahh people)
 - [ ] Make commands spreading based where possible.
     - Going from `fkclean project/-- intensity/-- -l -p -d` to `fkclean --projects foo bar foobar -l -d --intensity=normal -p`
         - IF no `--projects` default to all projects, as it’d make sense to.
