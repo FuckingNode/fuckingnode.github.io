@@ -13,22 +13,21 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
     - [x] Make setups searchable.
 - [x] Improve `commit`
     - [x] Commit prevention if compromised files (e.g. `.env` or `node_modules`) are staged.
-- [ ] Setting to actually halt cleanup execution and notify if an error happens.
+- [x] Setting to actually halt cleanup execution and notify if an error happens.
 - [x] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
 - [x] Functional self updater.
-- [ ] Functional self remover.
 - [x] Add `fuckingnode terminate <MGR_GLOBAL>` (aliases: `ftl` (fuck the lang), `resign`, and `un-node, un-bun, un-deno, ...`)
-    - [ ] Removes FROM DISK all added projects of the given stack
+    - [x] Removes FROM DISK all added projects of the given stack
     - [x] Removes all caches of the given stack
     - [x] Removes, indeed, the given stack
     - (Shows a confirmation to protect “i accidentally rm -rf’d the db” ahh people)
-- [ ] Make commands spreading based where possible.
-    - Going from `fkclean project/-- intensity/-- -l -p -d` to `fkclean --projects foo bar foobar -l -d --intensity=normal -p`
+- [x] Make commands spreading based where possible.
+    - For V5, going from `fkclean project/-- intensity/-- -l -p -d` to `fkclean --projects foo bar foobar -l -d --intensity normal -p`
         - IF no `--projects` default to all projects, as it’d make sense to.
-    - Do the same for *most* commands. Commit is an exception, for example, message still goes first. After that, do make the parameters spread.
-- [ ] Standardized commands system
+    - For V5.1, do the same wherever it makes sense to.
+- [x] Standardized commands system
     - [x] Command sequences.
-    - [ ] Parallel execution.
+    <!-- DELAYED UNTIL 5.1 TOO - [ ] Parallel execution. -->
     - [x] Shell, script, and file denotation.
 - [x] Allow to change notification threshold.
 - [x] “Deep merge” for text-based setups like `.editorconfig` (avoid duplicates basically).
