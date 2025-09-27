@@ -8,13 +8,13 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 
 ## 5.X (Upcoming)
 
-- [ ] Improve `setup`.
-    - [ ] Add many more setups (LICENSEs, gitignores, etc...).
-    - [ ] Make setups searchable.
+- [x] Improve `setup`.
+    - [x] Add more setups (LICENSEs, gitignores, etc...).
+    - [x] Make setups searchable.
 - [x] Improve `commit`
     - [x] Commit prevention if compromised files (e.g. `.env` or `node_modules`) are staged.
 - [ ] Setting to actually halt cleanup execution and notify if an error happens.
-- [ ] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
+- [x] Add `fuckingnode uncommit` - undoes commit and holds, letting the user modify stuff, then re-adds files from the prev commit, runs `commitCmd` if any, and commits with same message.
 - [x] Functional self updater.
 - [ ] Functional self remover.
 - [x] Add `fuckingnode terminate <MGR_GLOBAL>` (aliases: `ftl` (fuck the lang), `resign`, and `un-node, un-bun, un-deno, ...`)
@@ -31,7 +31,7 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
     - [ ] Parallel execution.
     - [x] Shell, script, and file denotation.
 - [x] Allow to change notification threshold.
-- [ ] “Deep merge” for text-based setups like `.editorconfig` (avoid duplicates basically).
+- [x] “Deep merge” for text-based setups like `.editorconfig` (avoid duplicates basically).
 - [x] Improve `surrender`.
     - [x] GitLab FM support.
     - [x] Add a countdown for the removal process.

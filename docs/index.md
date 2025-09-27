@@ -5,8 +5,6 @@ hide:
 
 # The f*cking chaos of maintaining JavaScript projects ends here
 
-**Because dev life is messy enough.**
-
 <div class="grid cards" markdown>
 
 -   :simple-googlecloudstorage:{ .lg .middle } **Save up storage**
