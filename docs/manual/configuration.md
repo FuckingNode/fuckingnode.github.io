@@ -25,6 +25,12 @@ fuckingnode add "C:\Users\Zaka\projects\something"
 #                   ^^^^^^^^^^^ (or /home/whatever in linux / mac)
 ```
 
+Spreading is supported.
+
+```bash
+fuckingnode add ./foo ./bar ./baz
+```
+
 **2 /** You can get in the root of the project and add with no args, or a dot (`.`)
 
 ```bash
@@ -64,15 +70,18 @@ As easy as using one of the previously mentioned methods, but instead of using `
 ```bash
 fuckingnode remove "../projects/something/"
 fuckingnode remove "C:\Users\Zaka\projects\something"
+Spreading is supported.
+
+fuckingnode remove ./foo ./bar ./baz
 ```
 
-However, there's one more thing. Thanks to our innovative expertise, you can use a project's _name_ (as in `package.json > "name"`):
+However, there's one more thing. Thanks to our innovative expertise, you can use a project's _name_ (as in `package.json > "name"`, or your runtime's equivalent):
 
 ```bash
 fuckingnode remove flamethrower
 ```
 
-The above would work as long as you have one added project with this package.json:
+The above would work as long as you have one added project with this `package.json`:
 
 ```json title="package.json" linenums="1"
 {
@@ -105,16 +114,18 @@ Later on we'll see how to "ignore" projects; here we'll tell you that you can pa
 
 As most apps, we offer settings you can tweak. We use default values that should work for most people, to save you even more time - however you _might_ want to change them, **especially if you don't use Visual Studio Code**, as it's your "favorite editor" by default.
 
-Currently supported settings are the following them. Change them with `settings change <KEY> <value>`
+Currently supported settings are the following. Change them with `settings change <KEY> <value>`
 
 | KEY | Value Type | Description |
 | :--- | :--- | ---: |
-| `defaultIntensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | Changes the default intensity for the `clean` command. |
-| `updateFreq` | A fixed number | Changes how frequently (in DAYS) the CLI sends an HTTP request for updates. We recommend setting it to a high value as we don't frequently update. |
-| `flushFreq` | A fixed number | Changes how frequently (in DAYS) the CLI removes the `.log` file to save up space. Cannot be disabled, setting it to `0` will make it auto-flush each time. |
-| `favEditor`  | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart` and `launch`. |
-| `showNotifications`  | `true`, `false` | Whether to [use system notifications](../learn/notifications.md). Highly recommended |
-| `thresholdNotifications`  | `true`, `false` | Enabled by default, makes system notifications only fire up if the task to be notified about takes less than 30 seconds. |
+| `default-intensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | Changes the default intensity for the `clean` command. `normal` by default. |
+| `update-freq` | A fixed number, represents DAYS. | Changes how frequently the CLI sends an HTTP request for updates. Recommend to be high, as we don't frequently update. Defaults to `5`. |
+| `fav-editor`  | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart` and `launch`. VSCode by default. |
+| `default-manager` | `npm`, `pnpm`, `yarn`, `deno`, `bun`, `go`, or `cargo` | Default package manager, for use when we can't guess what to use. Makes most sense to set to a JS one; defaults to `npm`. |
+| `notifications`  | `true`, `false` | Whether to [use system notifications](../learn/notifications.md). Highly recommended, enabled by default. |
+| `notification-threshold`  | `true`, `false` | Disabled by default, makes system notifications only fire up if the task to be notified about takes less than the threshold value. |
+| `notification-threshold-value`  | A fixed number, represents MILLISECONDS. | Threshold value. Defaults to `10000` (10 seconds). |
+| `always-short-circuit-cleanup` | `true`, `false` | Disabled by default, makes `clean` immediately halt if an error happens. See [this](usage.md#note-about-error-handling). |
 
 ### View current settings
 
@@ -123,28 +134,30 @@ To view your current settings, run `fuckingnode settings` with no args. You shou
 ```txt
 💡 Your current settings are:
 ---
-Check for updates             | Every 5 days. updateFreq        
-Default cleaner intensity     | normal. defaultIntensity        
-Favorite code editor          | vscode. favEditor
-Auto-flush log file           | Every 14 days. flushFreq        
-Send system notifications     | Enabled. showNotifications      
-Threshold notifications (30") | Disabled. thresholdNotifications
+Check for updates             | Every 5 days. update-freq
+Default cleaner intensity     | normal. default-intensity
+Default package manager       | npm. default-manager
+Favorite code editor          | vscode. fav-editor
+Send system notifications     | Enabled. notifications
+Threshold notifications?      | Disabled. notification-threshold
+Notification threshold        | 10000 milliseconds. notification-threshold
+Cleanup error behavior?       | Short-circuit always-short-circuit-cleanup
 ```
 
-As you can see, you're shown at the end the key used to change a setting (it appears _italic_ in your terminal, if supported).
+As you can see, you're shown at the end the key used to change a setting (it appears _italic_ in your terminal).
 
 ### Change settings
 
 To change them, execute `fuckingnode settings change (KEY) (VALUE)`, for example:
 
 ```bash
-fuckingnode settings change defaultIntensity "hard"
-fuckingnode settings change updateFreq 15
+fuckingnode settings change default-intensity "hard"
+fuckingnode settings change update-freq 15
 ```
 
 ### Additional settings commands
 
-Settings includes an additional `flush` command, that takes a `<file>` (`logs`, `updates`, `projects`, or `all`) as an argument, removing that from F\*ckingNode's configuration. Removing `logs` is particularly recommended. Removals of `projects` and `all` are discouraged - by the way, yes, we store all logs in a `.log` file, it lives in `%APPDATA%/FuckingNode` on :fontawesome-brands-windows: Windows and `/home/USER/.config/FuckingNode` on :simple-linux: Linux & :simple-apple: macOS.
+Settings includes an additional `flush` command, that takes a `<file>` (`errors`, `updates`, `projects`, or `all`) as an argument, removing said file from FuckingNode's configuration, located at `%APPDATA%/FuckingNode` on :fontawesome-brands-windows: Windows and `/home/USER/.config/FuckingNode` on :simple-linux: Linux & :simple-apple: macOS. Removal of `projects` or `all` is kinda discouraged.
 
 There's another settings command, `settings repair`. It simply resets settings to defaults.
 

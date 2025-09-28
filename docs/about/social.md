@@ -30,7 +30,7 @@
 
     ---
 
-    The creator's personal channel*. Major release trailers will be here. (\*as such, unrelated stuff also hangs in there).
+    The creator's personal channel*. Major release trailers, tutorials, and any related content will be here. (\*as such, unrelated stuff also hangs in there).
 
     [:octicons-arrow-right-24: Watch us](https://youtube.com/watch?v=J675ZcYBrHM)
 

@@ -7,7 +7,7 @@ description: "Final page of the FuckingNode user manual. What comes next?"
 
 You have reached the end of the manual. Congratulations.
 
-We hope FuckingNode made your JavaScript developer journey a bit less of a f\*cking headache.
+We hope FuckingNode made your JavaScript developer journey a bit less of a fucking headache.
 
 Note "we" should actually be "I", as this is maintained by a single developer (me, Zaka 👋) (open to contributions, as always). Any suggestion and/or feedback is appreciated.
 
@@ -31,7 +31,7 @@ Note "we" should actually be "I", as this is maintained by a single developer (m
 
 [Follow us on social media](../about/social.md)
 
-[Support this project](../about/donate.md)
+<!-- [Support this project](../about/donate.md) -->
 
 ---
 

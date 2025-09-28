@@ -15,21 +15,27 @@ To list available setups, run:
 fuckingnode setup
 ```
 
-You'll see something like the following (but with more options):
+You'll see something like the following (but with more setups and CLI colors):
 
 ```txt
-┌────────────────────────┬───────────────────────────────────────────────────────────────────────┐
-│ Name                   │ Description                                                           │
-├────────────────────────┼───────────────────────────────────────────────────────────────────────┤
-│ fknode-basic           │ A very basic fknode.yaml file.                                        │
-│ fknode-allow-all       │ An fknode.yaml file that allows every feature to run (commits too!).  │
-│ gitignore-js           │ A gitignore file for JavaScript projects.                             │
-│ gitignore-js-nolock    │ A gitignore file for JavaScript projects (also ignores lockfiles).    │
-│ ts-strictest           │ Strictest way of TypeScripting, ensuring cleanest code.               │
-│ ts-library             │ Recommended config for libraries.                                     │
-│ editorconfig-default   │ A basic .editorconfig file that works for everyone.                   │
-└────────────────────────┴───────────────────────────────────────────────────────────────────────┘
+
+┌───────────────────────┬──────────────────────────────────────────────────────────────────┐
+│ Name                  │ Description                                                      │
+├───────────────────────┼──────────────────────────────────────────────────────────────────┤
+│ fknode-basic          │ A very basic fknode.yaml file.                                   │
+│ fknode-allow-all      │ An fknode.yaml file that enables every feature (commits too!).   │
+│ gitignore-js          │ A gitignore for JavaScript projects.                             │
+│ gitignore-js-nolock   │ A gitignore for JavaScript projects (ignores lockfiles!).        │
+│ gitignore-golang      │ A gitignore for Go projects.                                     │
+│ gitignore-rust        │ A gitignore for Rust projects.                                   │
+│ ts-strictest          │ Strictest way of TypeScripting, ensuring cleanest code.          │
+│ ts-library            │ Recommended config for libraries.                                │
+│ editorconfig-default  │ A basic .editorconfig file that works for most people.           │
+│ prettierrc-default    │ An unopinionated Prettier config that suits everyone.            │
+└───────────────────────┴──────────────────────────────────────────────────────────────────┘
 You didn't provide any argument, or provided invalid ones, so up here are all possible setups.
+You can filter setups by typing part of the name, e.g. 'setup license' to show all LICENSE setups.
+
 ```
 
 Then, to apply a setup, run:
@@ -48,6 +54,22 @@ This will add a setup to the project in the current working directory. You can a
 fuckingnode setup <setup-name> <path>
 # for example
 fuckingnode setup gitignore-js ./projects/some-js-framework
+```
+
+Since we add more setups from time to time (and the table is already larger than what shown in the documentation), you might want a search option. If you type a setup that doesn't exist but partially matches existing setups, these will be shown.
+
+For example, running `fuckingnode setup ts-` returns something like this:
+
+```txt
+
+┌───────────────┬──────────────────────────────────────────────────────────┐
+│ Name          │ Description                                              │
+├───────────────┼──────────────────────────────────────────────────────────┤
+│ ts-strictest  │ Strictest way of TypeScripting, ensuring cleanest code.  │
+│ ts-library    │ Recommended config for libraries.                        │
+└───────────────┴──────────────────────────────────────────────────────────┘
+You didn't provide a valid setup. Above are all setups that match ts-.
+
 ```
 
 ---

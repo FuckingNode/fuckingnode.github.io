@@ -25,7 +25,7 @@ A sample audit would look like this:
 
 GHSA-XXXX-XXXX-XXXX
 
-=== STARTING F*CKINGNODE SECURITY AUDIT ===
+=== STARTING FUCKINGNODE SECURITY AUDIT ===
 
 Does your app use {x} feature? [V:XXX] [y/N]
 ```
@@ -36,4 +36,4 @@ We made [a research paper-like page here](../learn/audit.md) explaining in detai
 
 ---
 
-You've now learnt everything about F\*ckingNode.
+You've now learnt everything about FuckingNode.

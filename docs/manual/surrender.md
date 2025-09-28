@@ -1,6 +1,6 @@
 # Using FuckingNode: Automate giving up
 
-> `fuckingnode surrender <project> [message] [alternative] [learn-more] [--github]`
+> `fuckingnode surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]`
 
 The `surrender` command in FuckingNode is a _one of its kind_ command - it automates the process of deprecating a project. It updates dependencies of your project one last time, then updates your README file, makes a final commit, and pushes your changes to GitHub. Once changes are on the cloud, it removes the code from your local machine, too.
 
@@ -9,21 +9,21 @@ The `surrender` command in FuckingNode is a _one of its kind_ command - it autom
 To deprecate your project, use the following command:
 
 ```bash
-fuckingnode surrender <project> [message] [alternative] [learn-more] [--github]
+fuckingnode surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]
 ```
 
-`<project>` is the project's path or name, `message` is an optional message to leave in the README, `alternative` is an optional URL (or any text) to leave as an alternative to your project, and `learn-more` is an optional URL (or any text) to leave as a link to a page where a user can learn more about your deprecation. If `--github` or `--gh` are passed, GitHub flavored MarkDown will be used.
+`<project>` is the project's path or name, `message` is an optional message to leave in the README, `alternative` is an optional URL (or any text) to leave as an alternative to your project, and `learn-more` is an optional URL (or any text) to leave as a link to a page where a user can learn more about your deprecation. If `--github` or `--gh` are passed, GitHub flavored MarkDown will be used, and if `--gitlab` or `--gl` are passed instead, GitLab flavored MarkDown will be used instead. If mixing them, you won't crash the CLI or break the matrix, GitHub flavor will simply take precedence.
 
 ### The process
 
-Upon running, you'll be prompted to confirm (twice) that you want to do it. Second confirmation will show a preview of the MarkDown code that will be added right before your current README's content and outline what will be done. A preceding header and small text will be chosen at random, for example "⚠ Project Sunset" or "❌ Deprecated Project". Most headings contain emojis for no specific reason.
+Upon running, you'll be prompted to confirm (twice) that you want to do it. Second confirmation will show a preview of the MarkDown code that will be added right before your current README's content and outline what will be done. A preceding header (for example "Project Sunset" or "End of Life notice") and small text will be chosen at random. Your project's name will be placed inside of the deprecation message.
 
 Below, in case you provided additional params, like `learn-more` or `alternative`, additional text will be added to show these messages.
 
 At the end, there will always be a small disclaimer looking like this:
 
-!!! quote "Disclaimer shown"
-    This project was _automatically deprecated_ using the FuckingNode _**VERSION HERE**_ CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
+!!! quote "The disclaimer shown looks like this:"
+    This project was _automatically deprecated_ using the FuckingNode v5.0.0 CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
 
 Below is an example of how a full deprecation README, assuming example values for all optional arguments, could look like.
 
@@ -34,7 +34,7 @@ fkn surrender ../some-package "Next version of ECMAScript adds this as a native 
 ```md title="README.md" linenums="1"
 # This project is no longer maintained
 
-This repository is archived and will not receive updates or bug fixes.
+This repository is archived and **some-package** will not receive updates or bug fixes anymore. Sorry.
 
 This note was left by the maintainer of this repository: next version of ecmascript adds this as a native javascript feature, thus this package is no longer needed.
 
@@ -58,7 +58,9 @@ If you do hit `y` twice, the process will begin, with no way to stop it (in real
 
 There are different _aliases_ that invoke the exact same command, for you to choose from depending on your mood. They do not affect the process or parameters taken at all.
 
-- `fuckingnode surrender <project> (other params...)`
+- `fuckingnode surrender <project> (other params...)` (original)
+- `fuckingnode deprecate <project> (other params...)`
+- `fuckingnode nevermind <project> (other params...)`
 - `fuckingnode give-up <project> (other params...)`
 - `fuckingnode i-give-up <project> (other params...)`
 - `fuckingnode its-over <project> (other params...)`
@@ -75,4 +77,4 @@ This feature might seem a joke, but in reality, regardless of it being a project
 
 You've now learnt how to ensure your JavaScript project dies properly.
 
-Next: Audit - how to make NodeJS security audits actually understandable.
+Next: Terminate - how to easily quit your NodeJS developer career.

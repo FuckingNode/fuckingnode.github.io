@@ -8,7 +8,7 @@ You can use our logo just as you'd use any app's logo in a post, video, or any k
 
 ## The name
 
-Ideally, capitalize it as FuckingNode. Preferably use the **Mona Sans** typography, an [open source font](https://github.com/mona-sans) we use for our main branding. The asterisk (F\*ckingNode) is optional. If used, censor the U and not any other letter (avoid things like <s>F\*\*kingNode</s>).
+Ideally, capitalize it as FuckingNode. Preferably use the **Mona Sans** typography, an [open source font](https://github.com/mona-sans) we use for our main branding. The asterisk (F\*ckingNode) is optional, and somewhat discouraged (but not prohibited). If used, censor the U and not any other letter (avoid things like <s>F\*\*kingNode</s>).
 
 ### Can acronyms or abbreviations be used?
 

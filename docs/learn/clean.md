@@ -1,6 +1,6 @@
 # Clean
 
-The core of F\*ckingNode, a CLI that automates not just cleaning but overall maintenance of a NodeJS project.
+The core of FuckingNode, a CLI that automates not just cleaning but overall maintenance of a NodeJS project.
 
 ## Abstract
 

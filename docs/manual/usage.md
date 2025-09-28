@@ -14,7 +14,7 @@ The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On 
 The `fuckingnode clean` command is the base utility of the app. It accepts the following (all optional) arguments:
 
 ```bash
-fuckingnode clean <PROJECT | --> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--commit]
+fuckingnode clean <PROJECT | -- | ...PROJECTS> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--commit]
 ```
 
 When executed with no arguments, it'll do a cleanup using the default intensity (which is `normal` and can be changed from the [settings](configuration.md#settings)) across all of your projects.
@@ -85,6 +85,14 @@ Running without an intensity will use the **default intensity**. On a fresh inst
 
 Notice the `--`. `clean` takes a project path / name as a first optional argument. If given (and different from `--`), that specific project will be cleaned (and global caches when `hard` cleanup). If not given, or `--` given, every single project from your list will be cleaned one by one, saving you even more time.
 
+You can also use spreading by using `--projects`, like this:
+
+```bash
+fuckingnode clean --projects foo bar ./projects/baz
+```
+
+**Keep in mind**, when using spreading, you need to use a flag to interrupt spreading, so if you want to specify an intensity, it'll need a `--intensity` flag otherwise. The `--intensity` flag does _not_ work however if projects are not spreading.
+
 ## Configuring a project's behavior
 
 Before continuing, something you should know about is `fknode.yaml`. It's our own text-config file, similar to other config files you're likely used to (`.prettierrc`, `.eslintrc.js`...).
@@ -134,13 +142,13 @@ Available flags are:
 
 Some of these features depend on `fknode.yaml` configuration, [as noted above](#configuring-a-projects-behavior).
 
-### Callouts
+### Note about error handling
 
-<!-- todo -->
+By default, any error from additional tasks will fail silently; this means they won't stop the execution flow and no logs will be made. These errors are shown when cleanup finishes, in the form of "statistics" (a table showing what features errored and for which project). Error logs are dumped into a log file; you're shown the path to it whenever an error of this kind happens.
 
-!!! info "About errors"
+This is done by default because any non-zero status code from any process immediately means "error", leading to false positives.
 
-    Any error from additional tasks will fail silently; this means they won't stop the execution flow and no logs will be made. Error logs are dumped into a log file; you're shown the path whenever an error of this kind happens.
+If you want to immediately stop execution whenever anything fails, you can [change the `always-short-circuit-cleanup` global setting](configuration.md#settings) for making this happen always, or [change the `cleanerShortCircuit` project setting](fknode-yaml.md#cleanershortcircuit) for making this happen on specific projects only.
 
 ### Linting your code
 
@@ -209,7 +217,7 @@ destroy:
         - ".whateverFramework"
 ```
 
-You can use an asterisk (`*`) if you want to destroy with all intensities without typing all of that. _Due to how the CLI is designed, it must still be an array, so `["*"]` works and `"*"` doesn't._
+You can use an asterisk (`*`) instead of an array if you want to destroy with all intensities without typing all of that.
 
 ### Committing your code
 
