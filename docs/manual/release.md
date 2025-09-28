@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Releaser"
+description: "Prepare, release, deploy, and push your JS package, quickly and safely."
+---
+
 # Using FuckingNode: Automate a release
 
 > `fuckingnode release <version> [project] [--push] [--dry]`, or `fkrelease <version> [project] [--push] [--dry]`

@@ -16,7 +16,52 @@
       href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     >
-
+    <meta
+      name="description"
+      content="The fucking chaos of maintaining JavaScript projects ends here."
+    >
+    <meta name="author" content="ZakaHaceCosas">
+    <link
+      rel="canonical"
+      href="https://fuckingnode.github.io/index.html"
+    >
+    <link rel="next" href="https://fuckingnode.github.io/manual/">
+    <link rel="icon" href="https://fuckingnode.github.io/fkn_icon.webp">
+    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="FuckingNode - The fucking chaos of maintaining JavaScript projects ends here."
+    >
+    <meta
+      property="og:description"
+      content="Meet FuckingNode, one of the best automation CLIs out there for NodeJS, Deno, and Bun developers. Save up storage, automate tasks, reduce human mistakes, and more."
+    >
+    <meta
+      property="og:image"
+      content="https://fuckingnode.github.io/og.webp"
+    >
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta
+      property="og:url"
+      content="https://fuckingnode.github.io/"
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      name="twitter:title"
+      content="FuckingNode - The fucking chaos of maintaining JavaScript projects ends here."
+    >
+    <meta
+      name="twitter:description"
+      content="Meet FuckingNode, one of the best automation CLIs out there for NodeJS, Deno, and Bun developers. Save up storage, automate tasks, reduce human mistakes, and more."
+    >
+    <meta
+      name="twitter:image"
+      content="https://fuckingnode.github.io/og.webp"
+    >
+    <meta name="theme-color" content="#b36044">
+    <meta name="color-scheme" content="dark">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FuckingNode</title>
@@ -391,6 +436,41 @@
         font-size: 0.95rem;
         line-height: 1.4;
       }
+
+      /* im lazy to make it responsive */
+      .mobile-message {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .mobile-message {
+          display: flex !important;
+        }
+        header, section {
+          display: none;
+        }
+      }
+      .mobile-message {
+        height: 100vh !important;
+        width: 100vw !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        position: fixed;
+        z-index: 999;
+        box-sizing: border-box;
+        background: #000;
+      }
+      .mobile-message h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.25rem;
+      }
+      .mobile-message p {
+        margin: 0;
+        color: #999;
+      }
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -430,6 +510,13 @@
     </script>
   </head>
   <body>
+    <div class="mobile-message">
+      <h2>This page isn't available on phones.</h2>
+      <p>
+        Sorry, but this page is not available for mobile devices, use a PC to
+        view it. This page is for a desktop-only app anyway.
+      </p>
+    </div>
     <header>
       <h1>
         FuckingNode 5
@@ -446,7 +533,7 @@
 
     <section class="hero">
       <!-- <video autoplay muted loop playsinline>
-        <source src="./fkn4.webm" type="video/webm">
+        <source src="https://fuckingnode.github.io/fkn4.webm" type="video/webm">
       </video> -->
       <div class="hero-text">
         <div style="overflow: hidden">
@@ -470,7 +557,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="./hero.webp" alt="FuckingNode doing some cleanup">
+        <img src="https://fuckingnode.github.io/hero.webp" alt="FuckingNode doing some cleanup">
       </div>
     </section>
 
@@ -551,11 +638,11 @@
           IDE...<br />Save the commands and clicks up, and focus on coding.
         </p>
       </div>
-      <img src="./konbini_2.png" alt="Kickstart">
+      <img src="https://fuckingnode.github.io/konbini_2.png" alt="Kickstart">
     </section>
 
     <section class="feature">
-      <img src="./konbini_7.png" alt="Setup">
+      <img src="https://fuckingnode.github.io/konbini_7.png" alt="Setup">
       <div class="feature-text">
         <h2>You spend a bit too much time messing with config files</h2>
         <p>
@@ -779,8 +866,8 @@
       </a>
     </section>
 
-    <footer>
-      Copyright &copy; 2024-2025 ZakaHaceCosas. All rights reserved.
+    <footer style="text-align: left">
+      Copyright &copy; 2024-2025 ZakaHaceCosas.
     </footer>
   </body>
 </html>

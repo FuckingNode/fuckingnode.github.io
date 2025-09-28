@@ -1,3 +1,8 @@
+---
+title: "FuckingNode user manual"
+description: "A complete guide for your complete dev-life-quality improver."
+---
+
 # FuckingNode user manual
 
 Everything, from the basic to the complex, is documented here step by step.

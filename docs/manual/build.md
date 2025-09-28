@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Builder"
+description: "Make it easy to handle a multiple-step building process."
+---
+
 # Using FuckingNode: Automate builds
 
 > `fuckingnode build <project>`, or `fkbuild <project>`
@@ -6,22 +11,7 @@ The `build` command in FuckingNode allows you to run all the commands of your pr
 
 ## Usage
 
-To build your project, first define all the commands that should run in your `fknode.yaml` by setting the `buildCmd` key. This uses a "peculiar" notation; it's a single string where commands are separated by the `^` character:
-
-```yaml
-# imagine a 3 step build process:
-# some prerelease code, then locally building your project, then deploying it
-buildCmd: "node prerelease.js^npm run build^cd dist^vercel --prod"
-```
-
-The above example would result in this:
-
-```bash
-node prerelease.js
-npm run build
-cd dist
-vercel --prod
-```
+To build your project, first define all the commands that should run in your `fknode.yaml` by setting the `buildCmd` key. This is a CmdSet, [explained here](fknode-yaml.md#cmdsets).
 
 Once defined, just run `build` and it'll build the project in the current working directory. You can also explicitly specify a path.
 

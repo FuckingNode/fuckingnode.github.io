@@ -1,3 +1,8 @@
+---
+title: "Configuring FuckingNode"
+description: "FuckingNode is easy to config and to tweak, this page explains all you need."
+---
+
 # Setup FuckingNode
 
 !!! question "Don't mess terms up"

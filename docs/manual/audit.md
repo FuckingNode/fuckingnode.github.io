@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Auditer"
+description: "Turn 'npm audit' into a thing you understand."
+---
+
 # Using FuckingNode: Audit a project
 
 > `fuckingnode audit [project-name]`

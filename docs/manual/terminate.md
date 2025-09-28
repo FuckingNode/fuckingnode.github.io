@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Terminator"
+description: "Resign with ease."
+---
+
 # Using FuckingNode: Automate quitting your career
 
 > `fuckingnode terminate <runtime> [--remove-all-motherfuckers-too]`

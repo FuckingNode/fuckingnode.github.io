@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Surrenderer"
+description: "Thanks to the world's only JavaScript CLI that knows what you'll actually use, you get this tool to automatically deprecate your own projects at will. Convenient, isn't it?"
+---
+
 # Using FuckingNode: Automate giving up
 
 > `fuckingnode surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]`

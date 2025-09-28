@@ -1,6 +1,6 @@
 ---
-title: "Kickstart"
-description: "Get your projects cloned, launched, and prepared for use"
+title: "FuckingNode Kickstarter"
+description: "Get your projects cloned, launched, and ready for development with just one line."
 ---
 
 # Using FuckingNode: Kickstart a project

@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Launcher"
+description: "Save up the clicks and keystrokes, and get your project instantly up and ready for development."
+---
+
 # Using FuckingNode: Launch a project
 
 > `fuckingnode launch <project>`, or `fklaunch <project>`

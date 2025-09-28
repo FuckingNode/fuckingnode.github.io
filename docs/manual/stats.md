@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Stats"
+description: "Statistics are cool, I guess."
+---
+
 # Using FuckingNode: `stats`
 
 > `fuckingnode stats <project>`

@@ -1,3 +1,8 @@
+---
+title: "FuckingNode Setuper"
+description: "You're meant to write code, not config files. Let us handle setup for you."
+---
+
 # Using FuckingNode: Setup a project
 
 > `fuckingnode setup <setup> [project]`, or `fksetup <project> [project]`

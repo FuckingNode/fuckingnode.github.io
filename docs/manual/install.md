@@ -1,3 +1,8 @@
+---
+title: "Howto install FuckingNode"
+description: "As easy as any installation should be."
+---
+
 # Getting started
 
 First thing first, install the CLI using any of these methods.
