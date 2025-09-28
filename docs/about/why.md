@@ -16,7 +16,7 @@ _And the list goes on..._
 
 ## What we fixed, and how
 
-I initially created FuckingNode as a `.ps1` script to automate `npm prune` and `pnpm store prune` across a fixed list of personal projects, and as you can see, it has grown into four major releases, eleven separate utilities (`clean`, `kickstart`, `release`, `commit`, `surrender`, `setup`, `stats`, `launch`, `build`, `migrate`, `audit`), DenoJS & BunJS support, and even a small amount of features bridged to Go and Cargo.
+I initially created FuckingNode as a `.ps1` script to automate `npm prune` and `pnpm store prune` across a fixed list of personal projects, and as you can see, it has grown into five major releases, thirteen separate utilities (`clean`, `kickstart`, `release`, `commit`, `uncommit`, `surrender`, `setup`, `stats`, `launch`, `build`, `migrate`, `audit`, `terminate`), DenoJS & BunJS support, and even a small amount of features bridged to Go and Cargo.
 
 FuckingNode exists because it fixes all of the issues mentioned above.
 

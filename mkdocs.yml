@@ -22,6 +22,7 @@ nav:
           - Individual project configuration: "manual/fknode-yaml.md"
           - Feature - Kickstart: "manual/kickstart.md"
           - Feature - Commit: "manual/commit.md"
+          - Feature - Uncommit: "manual/uncommit.md"
           - Feature - Build: "manual/build.md"
           - Feature - Release: "manual/release.md"
           - Feature - Launch: "manual/launch.md"

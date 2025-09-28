@@ -55,4 +55,4 @@ You can also run the command with the `--yes` flag to skip this - though we don'
 
 You've now learnt how to speed up commits.
 
-Next: Release - How to speed up npm / jsr package releases?
+Next: Uncommit - How to speed up fixing fucked up commits?

@@ -68,6 +68,7 @@ Function New-Shortcuts {
             "fkstart"     = "kickstart"
             "fklaunch"    = "launch"
             "fkcommit"    = "commit"
+            "fkuncommit"  = "uncommit"
             "fkbuild"     = "build"
             "fkrelease"   = "release"
             "fksurrender" = "surrender"

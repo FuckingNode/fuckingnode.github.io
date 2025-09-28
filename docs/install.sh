@@ -106,6 +106,7 @@ create_shortcuts() {
         ["fkstart"]="kickstart"
         ["fklaunch"]="launch"
         ["fkcommit"]="commit"
+        ["fkuncommit"]="uncommit"
         ["fkbuild"]="build"
         ["fkrelease"]="release"
         ["fksurrender"]="surrender"
