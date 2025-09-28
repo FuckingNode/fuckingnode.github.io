@@ -195,16 +195,16 @@ someCmd:
   - <powershell -c 'echo foo'
 ```
 
-They're an array of special strings / objects with a special prefix indicating type of cmd. Cmd type prefixes are:
+They're an array of special strings / objects with a special prefix indicating type of Cmd. The type modifies the command by prefixing it before execution. Cmd type prefixes are:
 
-| Cmd type prefix | Cmd type | Description |
+| Cmd type prefix | Cmd type | Behavior |
 | :--- | :--- | ---: |
-| `~` | **SHELL SCRIPT** | Auto-prefixed with `powershell -c` on Windows and `bash -c` on macOS/Linux. Can be any command your shell recognizes. |
-| `$` | **PROJECT SCRIPT** | Auto-prefixed with your runtime’s script run prefix (e.g. `npm run`, `deno task`). Can be any script your project has. |
-| `=` | **PROJECT FILE** | Auto-prefixed with your runtime’s file run prefix. Should start with the path to a file, followed by any args you wish to pass. |
-| `<` | **RAW EXEC** | Not auto-prefixed. Use this for manually invoking other programs. |
+| `~` | **SHELL SCRIPT** | Auto-prefixes with `powershell -c` on Windows and `bash -c` on macOS/Linux. |
+| `$` | **PROJECT SCRIPT** | Auto-prefixes with your runtime’s script run prefix (e.g. `npm run`, `deno task`). |
+| `=` | **PROJECT FILE** | Auto-prefixes with your runtime’s file run prefix. |
+| `<` | **RAW EXEC** | Doesn't auto-prefix. Use this for manually invoking other programs. |
 
-For cross-platform scripting, you can use a `{ msft: cmd, posix: cmd }`, where MSFT runs on Windows and POSIX runs on macOS and Linux. Each Cmd needs to be prefixed. FuckingNode won't check if they're a different Cmd type whatsoever.
+For cross-platform scripting, you can use a `{ msft: Cmd, posix: Cmd }`, where MSFT runs on Windows and POSIX runs on macOS and Linux. Each Cmd needs to be prefixed. FuckingNode won't check if they're a different Cmd type whatsoever.
 
 It's something like this:
 
@@ -216,7 +216,7 @@ Info:
 
 - All commands run in order and block each other.
 - Colons are not required, but double colons are accepted. `~foo` is equal to `~"foo"`.
-- Output of commands is not live. This means, if a command writes to the stdout step by step, you won't see it until it ends execution.
+- Cmd output is not live, meaning if a command writes to the stdout step by step, you won't see that until it ends execution.
 
 You can use CmdSets for the following project settings:
 
