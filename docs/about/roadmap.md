@@ -1,12 +1,14 @@
 # Roadmap & release history
 
-What we're planning to do. Only includes minor and major releases, patch releases only fix errors, meaning they aren't planned, as our plan and hope is to write errorless code (which we'll never do, but we'll try our best to get as close as possible to that).
+What we're planning to do. Only includes minor and major releases, patch releases only fix errors, meaning they aren't really planned, as our plan and hope is to write errorless code (which we'll never do, but we'll try our best to get as close as possible to that).
 
 We'll expand (and rarely, but not impossibly, shrink) this roadmap as we make progress and/or change our plans.
 
 This page also lists all minor and major releases since 2.X. Patches aren't listed, and most bugfixes aren't included (as we don't "plan" to fix bugs).
 
-## 5.X (Upcoming)
+**Patch releases are made on a weekly basis, and feature releases are made on a monthly basis.** You can check more info in [our release schedule document here](https://github.com/FuckingNode/FuckingNode/blob/master/RELEASE_SCHEDULE.md).
+
+## 5.X (Released)
 
 - [x] Improve `setup`.
     - [x] Add more setups (LICENSEs, gitignores, etc...).

@@ -1,6 +1,6 @@
 # Error codes
 
-Maybe you want to make a tool that automates our automation tool, or maybe you're just too lazy to read the error message. However, most (if not all) possible exceptions that abort execution are called "FknErrors" (internal name, shown to you), and include a readable, identifiable error code. These are all listed here, with a brief explanation of their meaning.
+Maybe you want to make a tool that automates our automation tool, or maybe you're just too lazy to read the error message. However, most (if not all) possible exceptions that abort execution are called "FknErrors", and include a readable, identifiable error code. These are all listed here, with a brief explanation of their meaning.
 
 They follow this convention:
 
@@ -8,14 +8,14 @@ They follow this convention:
 // IF IT'S TWO PARTS
 CATEGORY__ERROR
 // IF IT'S THREE PARTS
-CATEGORY__COMPONENT_ERROR
+CATEGORY__COMPONENT__ERROR
 ```
 
 For example, `Env__NoPkgFile` (category:`Environment`, error:`NoPackageFile`).
 
 ---
 
-## Operating system category [Os]
+## Operating system [Os]
 
 Errors caused by the underlying OS.
 
@@ -38,7 +38,7 @@ It's most often caused by either:
 - The entity indeed not existing (perhaps you had a typo).
 - On Windows, `echo 'hi'` or `Write-Output 'hi'` don't exist, `cmd echo 'hi'` or `powershell Write-Output 'hi'`. If you want to use Windows shell command you need to explicitly call a shell executable (preferably PowerShell). Blame it on Microsoft, not us.
 
-## File system category [Fs]
+## File system [Fs]
 
 Errors related to the filesystem.
 
@@ -66,31 +66,47 @@ Happens whenever we ask for a DIRECTORY yet you give us a path that points to a 
 
 Usually happens with kickstart. You provided a path that is _not_ empty, but _has to_ be empty. Thus, we demand emptying of the directory.
 
-## Git category [Git]
+## Configuration [Cfg]
+
+Errors related to configuration.
+
+### Invalid CmdKey
+
+`Cfg__InvalidCmdK`
+
+[Cmds](../manual/fknode-yaml.md#cmdsets) require to start with a key character, either `~`, `$`, `=`, or `<`. If the first character of a Cmd is not any of those, this error throws.
+
+## Git [Git]
 
 Errors related to Git operations.
 
 ### No branch
 
-> `Git__NoBranch`
+`Git__NoBranch`
 
 Happens when the user specifies a branch that does indeed not exist.
 
 ### No branch at all
 
-> `Git__NoBranchAA`
+`Git__NoBranchAA`
 
 Happens when there's no branches at all. Git repos are supposed to always have a branch, so it is very unlikely - and if it happens it's most likely a bug.
 
-### Unknown Errors
+### Forbidden commit
 
-All errors in this category are `Git__UE__[ACTION]`, which can be `IsRepo`, `Push`, or `Commit`. Any unexpected error when performing any of these actions for any project will trigger a Task category `FknError`.
+`Git__Forbidden`
 
-If unclear, `Git__UE__IsRepo` fires if an error happens trying to determine if a directory is a Git repo.
+Happens when a forbidden file, like `.env`, is committed. These should be in your `gitignore`, but if for some reason they weren't there, FuckingNode disallows committing them.
 
-A completely unknown error will fire `Git__UE` with no specified action.
+As of now, forbidden files are: `".env", ".env.local", ".sqlite", ".db", "node_modules", ".bak"`
 
-## Environment category [Env]
+### Other errors
+
+There are many Git errors, one for each operation FuckingNode may perform. Except for the above, these are considered obvious to understand, + they always include an error message mentioning the exact Git command that caused the failure together with its output.
+
+To not spend too much time writing documentation they've been omitted.
+
+## Environment [Env]
 
 Errors related to environments; not in the sense of env variables, but in the sense of "project environments". That's how we refer to the structure we make of each of your projects in order to work with it.
 
@@ -110,7 +126,7 @@ A "project" doesn't have the file that makes it a project (`package.json`, `Carg
 
 `Env__PkgFileUnparsable`
 
-If your package file is plain invalid (invalid JSON in a `package.json` file for example) or lacks the `name` field, we consider it unparsable.
+If a project's package file is plain invalid (invalid JSON in a `package.json` file for example) or lacks critical information (like `name` in `package.json` or `go` in `go.mod`), we consider it unparsable and throw this error.
 
 ### Cannot determine env
 
@@ -124,19 +140,19 @@ Differentiating between npm, pnpm, Yarn, Bun, Deno, Rust, or Go projects, or no 
 
 _The name's a bit of a joke, but_ this error happens when the same project has two or more lockfiles. Lockfiles are our main tool to determine the "state" (env) of your project; your project is not Schrödinger's cat and shouldn't be in several states at the same time.
 
-## Task category [Task]
+## Task [Task]
 
-All errors in this category are `Task__[TASK TYPE]`, which can be `Release`, `Commit`, `Launch`, `Update`, `Lint`, `Pretty`, or `Build`. Any unexpected error when running any of these tasks for any project will trigger a Task category `FknError`.
+All errors in this category are `Task__[TASK TYPE]`, which can be `Release`, `Commit`, `Launch`, `Update`, `Lint`, `Pretty`, or `Build`. Any unexpected error when running any of these tasks for any project will trigger a Task category error.
 
-## Parameter category [Param]
+## Parameter [Param]
 
-All errors in this category are `Param__[PARAM TYPE]Invalid`, which can be `Target`, `CIntensity`, `Setup`, `Ver`, `GitTarget`, `GitTargetAlias`, or `Whatever` for anything else. When running a command that requires parameters (`fkstart <GIT TARGET>`, `fksetup <SETUP>`, and so on...), any missing or invalid parameter will trigger a Task category `FknError`.
+All errors in this category are `Param__[PARAM TYPE]Invalid`, which can be `Target`, `CIntensity`, `Setup`, `Ver`, `GitTarget`, `GitTargetAlias`, or `Whatever` for anything else. When running a command that requires parameters (`fkstart <GIT TARGET>`, `fksetup <SETUP>`, and so on...), any missing or invalid parameter will trigger a Task category error.
 
 If unclear, `Ver` refers to "version" (for the `fkrelease` command), `CIntensity` refers to "cleaner intensity", and both `GitTarget` and `GitTargetAlias` refer to the kickstart parameter, respectively referring to Git URLs and Git aliases.
 
-## Interop category [Interop]
+## Interop [Interop]
 
-All errors in this category are `Interop__[ACTION TYPE]Unable`, which can be `Publish`, `Migrate`, or `JSRun`. Attempting to use a feature in a platform where it's unsupported (most likely Cargo or Go) will trigger a Task category `FknError`.
+All errors in this category are `Interop__[ACTION TYPE]Unable`, which can be `Publish`, `Migrate`, or `JSRun`. Attempting to use a feature in a platform where it's unsupported (most likely Cargo or Go) will trigger a Task category error.
 
 If unclear, `JSRunUnable` means trying to define a task that would go like `npm run X` for Cargo or Go - you cannot do "JS-like run" with these two.
 
@@ -144,31 +160,22 @@ If unclear, `JSRunUnable` means trying to define a task that would go like `npm 
 
 Errors that are probably our fault for writing bad code. These errors are extremely unlikely to appear, but they're worth documenting.
 
-### Non existent app path
-
-`Internal__NonexistentAppPath`
-
-Almost impossible, unless we make a mistake and don't realize until release. Happens if somewhere in the code we reference a path to an internal config file that doesn't exist.
-
-### Improper assignment
-
-`Internal__ImproperAssignment`
-
-Happens if the CLI attempts to proceed with actions that are unsupported with the current project environment. Technically an Interop error should take precedence, making this nonexistent, but sometimes the TS compiler won't shut up, so this error is a thing.
-
 ### Invalid embedded file
 
 `Internal__InvalidEmbedded`
 
-If a developer references a file embedded within the binary that's indeed not embedded within the binary, this error happens.
+If FuckingNode references a file embedded within the binary that's indeed not embedded within the binary, this error happens.
 
 ### Lazy
 
 `Internal__Lazy`
 
-If we're lazy to implement a feature but want to quickly make a release for whatever reason, instead of removing references to the feature we'll show this error, indicating we were indeed lazy to implement it. As of now it's impossible (no code leads to it), but as we get bigger ideas for major releases you MIGHT get to see it once.
+More casual way to call a "NotImplemented" error. If we're lazy to finish a feature or can't finish it on time to fullfil our [release schedule](https://github.com/FuckingNode/FuckingNode/blob/master/RELEASE_SCHEDULE.md), instead of removing references to the feature we'll make it trigger this error, indicating we were indeed lazy to implement it.
 
 ## External errors
+
+!!! warning
+    This category will be removed by version 5.1, and these errors will be moved somewhere else.
 
 Errors that depend on something external.
 
@@ -180,8 +187,12 @@ When doing a release, if your package manager's publish command fails, this erro
 
 ### Setting / Favorite IDE
 
+`External__Setting__FavIde`
+
 If you changed your favorite IDE to something unsupported, then got us to attempt to launch it, this happens. You cannot directly set this setting to something invalid, you'd have to manually edit the config file - making this an "external" error.
 
 ### Project / Not found
+
+`External__Proj__NotFound`
 
 If a project from your list isn't found (in the sense of the filepath not being found), this error happens. You cannot add a project that doesn't exist unless modifying the config file; or adding one that does exist, then moving the directory - making this an "external" error too.

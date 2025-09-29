@@ -195,21 +195,21 @@ someCmd:
   - <powershell -c 'echo foo'
 ```
 
-They're an array of special strings / objects with a special prefix indicating type of Cmd. The type modifies the command by prefixing it before execution. Cmd type prefixes are:
+They're an array of special strings (or objects) with a key prefix indicating type of Cmd. The type modifies the command by prefixing it before execution. Cmd keys are:
 
-| Cmd type prefix | Cmd type | Behavior |
+| Cmd key | Cmd type | Behavior |
 | :--- | :--- | ---: |
 | `~` | **SHELL SCRIPT** | Auto-prefixes with `powershell -c` on Windows and `bash -c` on macOS/Linux. |
 | `$` | **PROJECT SCRIPT** | Auto-prefixes with your runtime’s script run prefix (e.g. `npm run`, `deno task`). |
 | `=` | **PROJECT FILE** | Auto-prefixes with your runtime’s file run prefix. |
 | `<` | **RAW EXEC** | Doesn't auto-prefix. Use this for manually invoking other programs. |
 
-For cross-platform scripting, you can use a `{ msft: Cmd, posix: Cmd }`, where MSFT runs on Windows and POSIX runs on macOS and Linux. Each Cmd needs to be prefixed. FuckingNode won't check if they're a different Cmd type whatsoever.
+For cross-platform scripting, you can use a `{ msft: Cmd, posix: Cmd }`, where MSFT runs on Windows and POSIX runs on macOS and Linux. Each Cmd needs to be prefixed with a key (they don't need to be the same).
 
 It's something like this:
 
 ```yaml
-{ msft: ~Write-Host 'Ran from Windows!', posix: ~echo 'Ran from Linux/macOS!' }
+{ msft: ~Write-Host 'Hi from Windows!', posix: ~echo 'Hi from Linux/macOS!' }
 ```
 
 Info:
