@@ -8,7 +8,9 @@ This page also lists all minor and major releases since 2.X. Patches aren't list
 
 **Patch releases are made on a weekly basis, and feature releases are made on a monthly basis.** You can check more info in [our release schedule document here](https://github.com/FuckingNode/FuckingNode/blob/master/RELEASE_SCHEDULE.md).
 
-## 5.X (Released)
+## 5.X
+
+## Version 5.0 (Released)
 
 - [x] Improve `setup`.
     - [x] Add more setups (LICENSEs, gitignores, etc...).

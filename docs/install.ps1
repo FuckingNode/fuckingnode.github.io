@@ -8,23 +8,26 @@ $INSTALL_DIR = "C:\$($APP_NAME.CASED)"
 $EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
 
 Function Remove-IfNeeded {
-    if ($args.Count -gt 0 -and ($args[0] -as [int])) {
-        Write-Output "Updating existing install (PID $args[0])"
-        Stop-Process -Id $args[0] -Force
-        Remove-Item $EXE_PATH -Force
+    if ($args.Count -gt 0) {
+        $procId = $args[0] -as [int]
+        if ($procId) {
+            Write-Output "Updating existing install (PID $procId)"
+            Stop-Process -Id $procId -Force
+            Remove-Item $EXE_PATH -Force
+        }
     }
 }
 
 # get latest release URL
 Function Get-LatestReleaseUrl {
     try {
-        Write-Output "Fetching latest release from GitHub..."
+        Write-Host "Fetching latest release from GitHub..."
         $response = Invoke-RestMethod -Uri "https://api.github.com/repos/FuckingNode/FuckingNode/releases/latest"
         $asset = $response.assets | Where-Object { $_.name -notlike "*.asc" -and $_.name -like "*.exe" }
         if (-not $asset) {
             Throw "No .exe file found in the latest release."
         }
-        Write-Output "Fetched."
+        Write-Host "Fetched."
         return $asset.browser_download_url
     }
     catch {
@@ -112,7 +115,7 @@ Function Install-App {
         Write-Output "Downloaded successfully to $EXE_PATH"
     }
     catch {
-        Throw "Failed to download or save the file: $_"
+        Throw "Failed to download fuckingnode.exe: $_"
     }
 }
 

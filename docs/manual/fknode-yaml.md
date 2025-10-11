@@ -215,7 +215,7 @@ It's something like this:
 Info:
 
 - All commands run in order and block each other.
-- Colons are not required, but double colons are accepted. `~foo` is equal to `~"foo"`.
+- Colons are not required. Single and double colons are accepted. `~foo` is equal to `~"foo"` and  `~'foo'`.
 - Cmd output is not live, meaning if a command writes to the stdout step by step, you won't see that until it ends execution.
 
 You can use CmdSets for the following project settings:
