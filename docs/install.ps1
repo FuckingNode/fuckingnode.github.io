@@ -7,11 +7,11 @@ $APP_NAME = @{
 $INSTALL_DIR = "C:\$($APP_NAME.CASED)"
 $EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
 
-Function Remove-IfNeeded() {
-   if ($null -ne $args[0] -as [double]) {
+Function Remove-IfNeeded {
+    if ($args.Count -gt 0 -and ($args[0] -as [int])) {
         Stop-Process -Id $args[0] -Force
         Remove-Item $EXE_PATH -Force
-   }
+    }
 }
 
 # get latest release URL
