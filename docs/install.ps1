@@ -8,13 +8,18 @@ $INSTALL_DIR = "C:\$($APP_NAME.CASED)"
 $EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
 
 Function Remove-IfNeeded {
-    if ($args.Count -gt 0) {
+    if ($args.Count -gt 0) {   
         $procId = $args[0] -as [int]
-        if ($procId) {
-            Write-Output "Updating existing install (PID $procId)"
-            Stop-Process -Id $procId -Force
-            Remove-Item $EXE_PATH -Force
-        }
+    }
+    else {
+        $proc = Get-Process -Name $APP_NAME.CLI -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($proc) { $procId = $proc.Id }
+    }
+    
+    if ($procId) {
+        Write-Output "FuckingNode found to be running. Removing existing install (PID $procId) for updating."
+        Stop-Process -Id $procId -Force
+        Remove-Item $EXE_PATH -Force
     }
 }
 
