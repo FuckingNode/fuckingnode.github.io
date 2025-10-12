@@ -7,11 +7,34 @@ $APP_NAME = @{
 $INSTALL_DIR = "C:\$($APP_NAME.CASED)"
 $EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
 
-Function Remove-IfNeeded() {
-   if ($null -ne $args[0] -as [double]) {
-        Stop-Process -Id $args[0] -Force
+# DETACH PROCESS
+if ($args[1] -ne "NA") {
+    # powershell path (pwsh on PS Core, powershell on Windows PS)
+    $exe = if ($PSVersionTable.PSEdition -eq "Core") { "pwsh" } else { "powershell" }
+    $script = $PSCommandPath
+
+    Start-Process -FilePath $exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$script`" _ NA"
+    # quit parent
+    exit
+}
+
+Start-Sleep -Seconds 1
+Write-Output "(Check... DETACHED $PID)"
+
+Function Remove-IfNeeded {
+    if ($args.Count -eq 1) {   
+        $procId = $args[0] -as [int]
+    }
+    else {
+        $proc = Get-Process -Name $APP_NAME.CLI -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($proc) { $procId = $proc.Id }
+    }
+    
+    if ($procId) {
+        Write-Output "FuckingNode found to be running. Removing existing install (PID $procId) for updating."
+        Stop-Process -Id $procId -Force
         Remove-Item $EXE_PATH -Force
-   }
+    }
 }
 
 # get latest release URL
@@ -49,7 +72,7 @@ Function Get-LatestReleaseUrl {
 # creates a .bat shortcut to allow for fknode to exist alongside fuckingnode in the CLI
 Function New-Shortcuts {
     try {
-        Write-Host "Creating shortcuts for CLI..."
+        Write-Output "Creating shortcuts for CLI..."
 
         # all aliases should be
         # (appName).exe <a command> [ANY ARGS PASSED]
@@ -86,7 +109,7 @@ Function New-Shortcuts {
             $batContent = "@echo off`n%~dp0$($appName).exe $cmd %*"
             $batPath = Join-Path -Path $INSTALL_DIR -ChildPath "$name.bat"
             Set-Content -Path $batPath -Value $batContent -Encoding ASCII
-            Write-Host "Shortcut created successfully at $batPath"
+            Write-Output "Shortcut created successfully at $batPath"
         }
     }
     catch {
@@ -101,17 +124,17 @@ Function Install-App {
         [string]$url
     )
     try {
-        Write-Host "Downloading from $url..."
+        Write-Output "Downloading from $url..."
 
         if (-not (Test-Path $INSTALL_DIR)) {
             New-Item -ItemType Directory -Path $INSTALL_DIR | Out-Null
         }
 
         Invoke-WebRequest -Uri $url -OutFile $EXE_PATH
-        Write-Host "Downloaded successfully to $EXE_PATH"
+        Write-Output "Downloaded successfully to $EXE_PATH"
     }
     catch {
-        Throw "Failed to download or save the file: $_"
+        Throw "Failed to download fuckingnode.exe: $_"
     }
 }
 
@@ -176,7 +199,7 @@ function Get-Env {
 # Function: Add App to PATH
 Function Add-AppToPath {
     try {
-        Write-Host "Adding shorthand to PATH..."
+        Write-Output "Adding shorthand to PATH..."
 
         if ([string]::IsNullOrWhiteSpace($INSTALL_DIR)) {
             Throw "Install DIR is undefined or empty."
@@ -189,10 +212,10 @@ Function Add-AppToPath {
             $Path += $INSTALL_DIR
             Write-Env -Key 'Path' -Value ($Path -join ';')
             $env:PATH = $Path -join ';'
-            Write-Host "Added $INSTALL_DIR to PATH"
+            Write-Output "Added $INSTALL_DIR to PATH"
         }
         else {
-            Write-Host "'${INSTALL_DIR}' is already in your PATH."
+            Write-Output "'${INSTALL_DIR}' is already in your PATH."
         }
     }
     catch {
@@ -203,13 +226,13 @@ Function Add-AppToPath {
 
 Function Installer {
     try {
-        Write-Host "Hi! We'll install $($APP_NAME.CASED) for you. Just a sec!"
+        Write-Output "Hi! We'll install $($APP_NAME.CASED) for you. Just a sec!"
         Remove-IfNeeded
         Install-App -url (Get-LatestReleaseUrl)
         Add-AppToPath
-        Write-Host "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
-        Write-Host "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
-        Write-Host "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
+        Write-Output "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
+        Write-Output "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
+        Write-Output "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
 
         $response = Read-Host "Do you wish to create these shortcuts? [Y/N]"
 
@@ -217,9 +240,9 @@ Function Installer {
             New-Shortcuts
         }
         else {
-            Write-Host "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
+            Write-Output "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
         }
-        Write-Host "Installed successfully! Restart your terminal for it to work."
+        Write-Output "Installed successfully! Restart your terminal for it to work."
     }
     catch {
         Write-Error $_
