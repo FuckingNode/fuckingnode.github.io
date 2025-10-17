@@ -2,13 +2,11 @@
 
 # error handling
 set -e
-set -u
+# set -u
 
 # constants
-APP_NAME="FuckingNode"
-CLI_NAME="fuckingnode"
-INSTALL_DIR="/usr/local/$CLI_NAME"
-EXE_PATH="$INSTALL_DIR/$CLI_NAME"
+INSTALL_DIR="/usr/local/fuckingnode"
+EXE_PATH="/usr/local/fuckingnode/fuckingnode"
 
 # get where we are so it knows what to use
 get_platform_arch() {
@@ -121,10 +119,10 @@ create_shortcuts() {
 
     for name in "${!commands[@]}"; do
         cmd=${commands[$name]}
-        script_path="$INSTALL_DIR/$name.sh"
+        script_path="$INSTALL_DIR/$name"
 
         echo "#!/bin/bash" | sudo tee "$script_path" >/dev/null
-        echo "\"\$(dirname \"\$0\")/$CLI_NAME\" $cmd \"\$@\"" | sudo tee -a "$script_path" >/dev/null
+        echo "\"\$(dirname \"\$0\")/fuckingnode\" $cmd \"\$@\"" | sudo tee -a "$script_path" >/dev/null
 
         sudo chmod +x "$script_path"
 
@@ -150,25 +148,31 @@ add_app_to_path() {
     # define target files
     FILES=("$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
 
-    local MODIFIED=false
+    local modified=0
+
+    modified=0
 
     # append to each file if it exists and doesn't already contain the entry
     for file in "${FILES[@]}"; do
         if [ -f "$file" ]; then
-            if ! grep -q "export PATH=\"$INSTALL_DIR:\$PATH\"" "$file"; then
+            if ! grep -q "$INSTALL_DIR" "$file"; then
                 echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >>"$file"
-                MODIFIED=true
+                echo "Added $INSTALL_DIR to PATH in $file"
+                modified=1
             else
                 echo "$INSTALL_DIR is already in $file."
             fi
+        else
+            echo "File $file not found."
         fi
     done
 
     # apply changes if any file was modified
-    if [ "$MODIFIED" = true ]; then
-        source "$HOME/.profile" 2>/dev/null
-        source "$HOME/.bashrc" 2>/dev/null
-        source "$HOME/.bash_profile" 2>/dev/null
+    if (( modified == 1 )); then
+        echo "Reloading shell config files..."
+        source "$HOME/.profile" 2>/dev/null || true
+        source "$HOME/.bashrc" 2>/dev/null || true
+        source "$HOME/.bash_profile" 2>/dev/null || true
         echo "Successfully added $INSTALL_DIR to PATH."
     else
         echo "No PATH was modified."
@@ -177,10 +181,11 @@ add_app_to_path() {
 
 # installer itself
 installer() {
-    echo "Hi! We'll install $APP_NAME ($ARCH edition) for you. Just a sec!"
+    echo "Hi! We'll install FuckingNode ($ARCH edition) for you. Just a sec!"
     echo ""
     echo "Please note we'll use sudo a lot (many files to be created)."
     echo "They're all found at $INSTALL_DIR."
+    echo "(Don't run the script itself with sudo)."
     echo ""
     echo "This script relies on you running from Bash 4 or later."
     echo ""
