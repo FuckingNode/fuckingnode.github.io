@@ -193,16 +193,10 @@ installer() {
     install_app
     add_app_to_path
     echo "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
-    echo "These are made by creating a bunch of scripts (fknode.sh, fkn.sh...) next to the main installation."
-    echo "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
-
-    read -p "Do you wish to create these shortcuts? [Y/N] " response
-
-    if [[ "$response" =~ ^[Yy]$ ]]; then
-        create_shortcuts
-    else
-        echo "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
-    fi
+    echo "We will create a bunch of shell scripts next to the main installation for these to work."
+    echo ""
+    create_shortcuts
+    echo ""
     echo "Installed successfully! Restart your terminal for it to work."
 }
 

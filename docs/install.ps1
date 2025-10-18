@@ -232,16 +232,8 @@ Function Installer {
         Add-AppToPath
         Write-Output "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
         Write-Output "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
-        Write-Output "We highly recommend them, but JUST IN CASE they conflicted with any other local command, we let you choose."
-
-        $response = Read-Host "Do you wish to create these shortcuts? [Y/N]"
-
-        if ($response -match '^[Yy]$') {
-            New-Shortcuts
-        }
-        else {
-            Write-Output "Okay, we WON'T create shortcuts. Beware, as documentation and help menus might still use them to refer to commands."
-        }
+        Write-Output "We will create a bunch of shell scripts next to the main installation for these to work."
+        New-Shortcuts
         Write-Output "Installed successfully! Restart your terminal for it to work."
     }
     catch {
