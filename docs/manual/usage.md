@@ -156,7 +156,7 @@ When linting, we will automatically run your linter. By default, we use ESLint -
 
 More precisely, `--lint` runs `eslint --fix .` on each of your projects, unless overridden.
 
-To override it, create a script in your `package.json` scripts object that runs your preferred linter, then copy the name of the script and paste it as the value for the `lintCmd` key on your `fknode.yaml`.
+To override it, create a script in your `package.json` scripts object that runs your preferred linter, then copy the name of the script and paste it as the value for the `lintScript` key on your `fknode.yaml`.
 
 For example:
 
@@ -167,7 +167,7 @@ scripts: {
 ```
 
 ```yaml title="fknode.yaml" linenums="1"
-lintCmd: "linter"
+lintScript: "linter"
 ```
 
 ### Prettifying your code
@@ -176,7 +176,7 @@ When prettying, we will automatically run your prettifier. By default, we use Pr
 
 More precisely, `--pretty` runs `prettier --w .` on each of your projects, unless overridden.
 
-To override it, do the same as with the linter but setting the `prettyCmd` key instead.
+To override it, do the same as with the linter but setting the `prettyScript` key instead.
 
 For example:
 
@@ -187,7 +187,7 @@ scripts: {
 ```
 
 ```yaml title="fknode.yaml" linenums="2"
-prettyCmd: "prettifier"
+prettyScript: "prettifier"
 ```
 
 ### Destroying your files

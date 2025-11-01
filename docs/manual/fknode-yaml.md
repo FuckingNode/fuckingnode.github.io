@@ -106,7 +106,7 @@ commitMessage: "Automated maintenance commit by FuckingNode"
 
 ### updaterOverride
 
-Overrides the default command for the updating dependencies with the provided runtime script command. Works the same way as [lintCmd](#lintscript) or [prettyCmd](#prettyscript), we simply made the name more verbose because in most cases you don't need (and should not) mess around with it.
+Overrides the default command for the updating dependencies with the provided runtime script command. Works the same way as [lintScript](#lintscript) or [prettyScript](#prettyscript), we simply made the name more verbose because in most cases you don't need (and should not) mess around with it.
 
 - **Type**: `string`
 - **Example**:
@@ -212,11 +212,20 @@ It's something like this:
 { msft: ~Write-Host 'Hi from Windows!', posix: ~echo 'Hi from Linux/macOS!' }
 ```
 
-Info:
+All commands run in order and block each other. Also, colons are not required. Single and double colons are accepted. `~foo` is equal to `~"foo"` and  `~'foo'`.
 
-- All commands run in order and block each other.
-- Colons are not required. Single and double colons are accepted. `~foo` is equal to `~"foo"` and  `~'foo'`.
-- Cmd output is not live, meaning if a command writes to the stdout step by step, you won't see that until it ends execution.
+By default, output for each Cmd is not live; this is, invisible until the command ends execution. However, sometimes you might not want that, for example for a live server which "never terminates" and you might want to interact with (to refresh it, for example).
+
+If you want a command to be interactive, you may manually specify it as a _detached cmd_, by using the special `;;` prefix (between the Cmd key and the actual command).
+
+For example:
+
+```yaml
+launchCmd:
+  - $;;some-script
+```
+
+This will "detach" the script, allowing to interact with it. ++ctrl+c++-ing out of it will end the detached process and continue the sequence if any Cmd (detached or not) exists after it.
 
 You can use CmdSets for the following project settings:
 
