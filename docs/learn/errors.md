@@ -70,9 +70,15 @@ Usually happens with kickstart. You provided a path that is _not_ empty, but _ha
 
 Errors related to configuration.
 
+### Invalid favorite IDE
+
+`Cfg__User__FavIDE`
+
+If you manually set your favorite IDE to an invalid value this error happens.
+
 ### Invalid CmdKey
 
-`Cfg__InvalidCmdK`
+`Cfg__FknYaml__InvalidCmdK`
 
 [Cmds](../manual/fknode-yaml.md#cmdsets) require to start with a key character, either `~`, `$`, `=`, or `<`. If the first character of a Cmd is not any of those, this error throws.
 
@@ -140,6 +146,12 @@ Differentiating between npm, pnpm, Yarn, Bun, Deno, Rust, or Go projects, or no 
 
 _The name's a bit of a joke, but_ this error happens when the same project has two or more lockfiles. Lockfiles are our main tool to determine the "state" (env) of your project; your project is not Schrödinger's cat and shouldn't be in several states at the same time.
 
+### Env not found
+
+`Env__NotFound`
+
+If a project from your list isn't found (in the sense of the filepath not being found), this error may happen.
+
 ## Task [Task]
 
 All errors in this category are `Task__[TASK TYPE]`, which can be `Release`, `Commit`, `Launch`, `Update`, `Lint`, `Pretty`, or `Build`. Any unexpected error when running any of these tasks for any project will trigger a Task category error.
@@ -179,20 +191,8 @@ More casual way to call a "NotImplemented" error. If we're lazy to finish a feat
 
 Errors that depend on something external.
 
-### Publish
-
-`External__Publish`
-
-When doing a release, if your package manager's publish command fails, this error code appears.
-
 ### Setting / Favorite IDE
 
 `External__Setting__FavIde`
 
 If you changed your favorite IDE to something unsupported, then got us to attempt to launch it, this happens. You cannot directly set this setting to something invalid, you'd have to manually edit the config file - making this an "external" error.
-
-### Project / Not found
-
-`External__Proj__NotFound`
-
-If a project from your list isn't found (in the sense of the filepath not being found), this error happens. You cannot add a project that doesn't exist unless modifying the config file; or adding one that does exist, then moving the directory - making this an "external" error too.

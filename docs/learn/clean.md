@@ -128,6 +128,7 @@ We basically run the CLI commands you'd run by yourself recursively across all o
 ## Availability
 
 Where `PARTIAL` indicates partial / incomplete support, and `YES` and `NO` indicate the obvious.
+This table is only updated when compatibility changes, don't mind the version number being "outdated".
 
 | Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno    | Bun     | Go      | Cargo   |
 | :--------- | ---------- | ----------- | ----------- | ------- | ------- | ------- | ------- |

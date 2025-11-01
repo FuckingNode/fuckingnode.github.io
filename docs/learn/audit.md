@@ -119,6 +119,7 @@ FuckingNode audit should not be allowed to have the final say over whether break
 ## Availability
 
 Where `EXP` indicates only experimental support, and `YES` and `NO` indicate the obvious.
+This table is only updated when compatibility changes, don't mind the version number being "outdated".
 
 | Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno | Bun | Go | Cargo |
 | :--------- | ---------- | ----------- | ----------- | ---- | --- | -- | ----- |
