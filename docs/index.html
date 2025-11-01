@@ -1,69 +1,59 @@
 <!-- yes, hardcoded HTML because, you know, who needs react? -->
 <!-- ALSO this is kinda unfinished -->
 <!-- TODO:
-- make konbini images webp
-- preferably, use product screenshots and not the konbini images anyway
-- highlight more features in the home page
+- make all images webp
+- highlight a few more features in the home page
 - add a backdrop video
 - idk what else, make it better overall?
 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
-    >
+    />
     <meta
       name="description"
       content="The fucking chaos of maintaining JavaScript projects ends here."
-    >
-    <meta name="author" content="ZakaHaceCosas">
-    <link
-      rel="canonical"
-      href="https://fuckingnode.github.io/index.html"
-    >
-    <link rel="next" href="https://fuckingnode.github.io/manual/">
-    <link rel="icon" href="https://fuckingnode.github.io/fkn_icon.webp">
-    <meta property="og:type" content="website">
+    />
+    <meta name="author" content="ZakaHaceCosas" />
+    <link rel="canonical" href="https://fuckingnode.github.io/index.html" />
+    <link rel="next" href="https://fuckingnode.github.io/manual/" />
+    <link rel="icon" href="https://fuckingnode.github.io/fkn_icon.webp" />
+    <meta property="og:type" content="website" />
     <meta
       property="og:title"
       content="FuckingNode - The fucking chaos of maintaining JavaScript projects ends here."
-    >
+    />
     <meta
       property="og:description"
       content="Meet FuckingNode, one of the best automation CLIs out there for NodeJS, Deno, and Bun developers. Save up storage, automate tasks, reduce human mistakes, and more."
-    >
-    <meta
-      property="og:image"
-      content="https://fuckingnode.github.io/og.webp"
-    >
-    <meta property="og:image:type" content="image/webp">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="1080">
-    <meta
-      property="og:url"
-      content="https://fuckingnode.github.io/"
-    >
-    <meta name="twitter:card" content="summary_large_image">
+    />
+    <meta property="og:image" content="https://fuckingnode.github.io/og.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:url" content="https://fuckingnode.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
       content="FuckingNode - The fucking chaos of maintaining JavaScript projects ends here."
-    >
+    />
     <meta
       name="twitter:description"
       content="Meet FuckingNode, one of the best automation CLIs out there for NodeJS, Deno, and Bun developers. Save up storage, automate tasks, reduce human mistakes, and more."
-    >
+    />
     <meta
       name="twitter:image"
       content="https://fuckingnode.github.io/og.webp"
-    >
-    <meta name="theme-color" content="#b36044">
-    <meta name="color-scheme" content="dark">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    />
+    <meta name="theme-color" content="#b36044" />
+    <meta name="color-scheme" content="dark" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FuckingNode</title>
     <style>
       :root {
@@ -168,7 +158,11 @@
       nav a:hover {
         color: var(--accent);
       }
-
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+      }
       .hero {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -189,9 +183,12 @@
         color: var(--text-muted);
         margin-bottom: 30px;
       }
-      .btn, .btn2 {
-        display: inline-block;
-        padding: 14px 36px;
+      .btn,
+      .btn2 {
+        width: fit-content;
+        flex: 1;
+        padding: 10px 20px;
+        text-align: center;
         border-radius: 8px;
         background: linear-gradient(90deg, #f87755, var(--accent));
         color: #fff;
@@ -218,21 +215,22 @@
         color: #fff;
         font-weight: 600;
       }
-      .hero-visual {
-        text-align: center;
-      }
-      .hero-visual img {
-        max-width: 90%;
+      .hero img {
+        width: 100%;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         transition: transform 3s cubic-bezier(0, 1, 0, 1);
       }
-      .hero-visual img:hover {
-        transform: rotate(3deg) scale(1.1);
+      .hero img:hover {
+        transform: rotate(2deg) scale(1.1);
       }
 
       section {
-        padding: 100px 40px;
-        min-height: 50vh;
+        padding: 50px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         margin: 0 auto;
       }
       section h3 {
@@ -349,7 +347,8 @@
         border-collapse: collapse;
         color: var(--text-main);
       }
-      th, td {
+      th,
+      td {
         border: 1px solid #1f2328;
         padding: 2px;
         text-align: center;
@@ -383,8 +382,7 @@
         width: 100%;
       }
       .accordion {
-        max-width: 800px;
-        margin: 0 auto;
+        width: 90%;
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -446,7 +444,8 @@
         .mobile-message {
           display: flex !important;
         }
-        header, section {
+        header,
+        section {
           display: none;
         }
       }
@@ -472,6 +471,12 @@
         color: #999;
       }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const text = document.getElementById("random-text");
@@ -501,6 +506,8 @@
           "resign node",
           "ungo --remove--all-motherfuckers-too",
           "clean",
+          "uncommit",
+          "",
         ];
         // uses time instead of Math.random() so it changes more often
         text.innerText = options[
@@ -538,26 +545,24 @@
       <div class="hero-text">
         <div style="overflow: hidden">
           <h2>
-            The fucking chaos of maintaining JavaScript projects ends here
+            The f*cking chaos of maintaining JavaScript projects ends here
           </h2>
         </div>
         <p>
           FuckingNode is a unique, state of the art CLI to automate headache
-          giving tasks and make it easier to develop in N*deJS, Deno, or Bun.
+          giving tasks and make it easier to develop in NodeJS, Deno, or Bun.
         </p>
         <div class="buttons">
           <a href="manual/" class="btn">Get started!</a>
           <a href="#wtf" class="btn2">Learn more</a>
           <a href="https://youtube.com/watch?v=J675ZcYBrHM" class="btn2"
-          >Watch the video</a>
+          >See the video</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <img
-          src="https://fuckingnode.github.io/hero.webp"
-          alt="FuckingNode doing some cleanup"
-        >
-      </div>
+      <img
+        src="https://fuckingnode.github.io/hero.webp"
+        alt="FuckingNode doing some cleanup"
+      />
     </section>
 
     <section id="wtf">
@@ -627,42 +632,66 @@
 
     <section id="more-features" style="min-height: 0; padding-bottom: 0px">
       <h3>Some other problems we solve with very cool features</h3>
-    </section>
 
-    <section class="feature">
-      <div class="feature-text">
-        <h2>You're a coder, not a cloner</h2>
-        <p>
-          Cloning a project, installing dependencies, opening your
-          IDE...<br />Save the commands and clicks up, and focus on coding.
-        </p>
+      <div class="feature">
+        <div class="feature-text">
+          <h2>You're a coder and not a cloner</h2>
+          <p>
+            Getting the Git URL, cloning a project, installing dependencies,
+            opening your IDE... Too much.<br />We kickstart your projects with a
+            compact command so you can save the commands and clicks up, and
+            focus on coding.
+          </p>
+        </div>
+        <img
+          src="https://fuckingnode.github.io/website_1.png"
+          alt="Kickstart"
+        />
       </div>
-      <img src="https://fuckingnode.github.io/konbini_2.png" alt="Kickstart">
-    </section>
 
-    <section class="feature">
-      <img src="https://fuckingnode.github.io/konbini_7.png" alt="Setup">
-      <div class="feature-text">
-        <h2>You spend a bit too much time messing with config files</h2>
-        <p>
-          <a
-            href="https://x.com/justinhhorner/status/1965028988956619214"
-            style="text-decoration: underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Agreeable, right?</a> You should be writing code, not config. We
-          brought it for you, just run <code>setup</code> and we'll take care.
-        </p>
+      <div class="feature">
+        <img src="https://fuckingnode.github.io/website_2.png" alt="Setup" />
+        <div class="feature-text">
+          <h2>You write too much config</h2>
+          <p>
+            <a
+              href="https://x.com/justinhhorner/status/1965028988956619214"
+              style="text-decoration: underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Agreeable, right?</a>
+            You should be writing code, not config. We brought it for you, just
+            run <code>setup</code> and we'll take care.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h2>Commits are uh...</h2>
+          <p>
+            Forgetting to add files, to prettify the code, to run the damn test
+            suite... Things that happen a bit too often. With FuckingNode you
+            can forget them, just run <code>commit</code> with a few args and
+            we'll do everything.<br />You can also stage files and push from the
+            same command, for minimal typing and max speed&trade;.
+          </p>
+        </div>
+        <img
+          src="https://fuckingnode.github.io/website_3.png"
+          alt="Commit"
+        />
       </div>
     </section>
-
-    <p style="text-align: center;">There's actually a lot more features, find out by looking at our docs.</p>
+    <br /><br />
+    <p style="text-align: center; opacity: 0.8">
+      <i>There are actually many more features, find out about them by looking
+        at our documentation.</i>
+    </p>
 
     <section id="faq">
       <h3>FAQ</h3>
-      <p class="section-desc">
-        Actually useful answers for you.
-      </p>
+      <p class="section-desc">Actually useful answers for you.</p>
 
       <div class="accordion">
         <details>
@@ -674,8 +703,8 @@
             You just need to add all your projects to the FuckingNode list,
             using <code>fuckingnode add</code>. If you have a single folder with
             all of your projects (like most people do), you'll enjoy the fact
-            that glob patterns like /* do work.<br /><br />Once added, <code
-            >clean</code> will take care of all added projects one by one.
+            that glob patterns like /* do work.<br /><br />Once added,
+            <code>clean</code> will take care of all added projects one by one.
           </p>
         </details>
         <details>
@@ -686,7 +715,7 @@
           <p>
             <code>fuckingnode commit</code>, besides preventing the "oh i forgot
             the test suite" headache, also prevents commits that include .env or
-            node_modules/. Your welcome.
+            node_modules/ even if not in the .gitignore. You're welcome.
           </p>
         </details>
         <details>
@@ -706,22 +735,23 @@
         <details>
           <summary>Can this format my code automatically?</summary>
           <p>
-            This can format and lint your code + update dependencies + remove
-            outdated build artifacts for every fucking project you
-            have.<br /><br />And yes, it can do it automatically (that's its
-            purpose).
+            This isn't a formatter itself, it's an automation tool. If the
+            appropriate tooling is available, this <i>can</i> format your code;
+            it can also lint your code, update dependencies, and remove outdated
+            build artifacts for every fucking project you have.<br /><br />And
+            yes, it can do it automatically (that's its purpose).
           </p>
         </details>
         <details>
           <summary>How to "add a project"? Is it needed?</summary>
           <p>
-            Just run <code>fkadd</code> from its root (or <code>fkadd
-              [filepath]</code>) and it'll be auto-added. If it's a monorepo
-            it'll ask what to do with its workspaces.<br /><br />It's not <i
-            >needed</i>, since most features are either runtime agnostic or can
-            detect the current-working-directory as a project, but it is highly
-            recommended, as the <i>main feature</i> (automated, bulk cleanup) <b
-            >does</b> require it.
+            Just run <code>fkadd</code> from its root (or
+            <code>fkadd [filepath]</code>) and it'll be auto-added. If it's a
+            monorepo it'll ask what to do with its workspaces.<br /><br />It's
+            not <i>needed</i>, since most features are either runtime agnostic
+            or can detect the current-working-directory as a project, but it is
+            highly recommended, as the <i>main feature</i> (automated, bulk
+            cleanup) <b>does</b> require it.
           </p>
         </details>
         <details>
@@ -753,103 +783,23 @@
       </div>
     </section>
 
-    <section id="platform-support">
-      <h3>Platform Support</h3>
+    <section
+      id="platform-support"
+      style="margin-bottom: 0px; padding-bottom: 0px"
+    >
+      <h3>Use it anywhere</h3>
       <p class="section-desc">
-        Does FuckingNode fuck around your runtime? Probably.<br />Don't ask why
-        did we add support for Rust, neither do we know.
+        Works anywhere JavaScript does. For no reason, works with Rust
+        too.<br />And some features just work, everywhere&trade;.
       </p>
-      <div style="overflow-x: auto">
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>NodeJS</th>
-              <th>Deno</th>
-              <th>Bun</th>
-              <th>Go</th>
-              <th>Cargo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Cleaning your projects</td>
-              <td>✅</td>
-              <td>🟡</td>
-              <td>🟡</td>
-              <td>🟡</td>
-              <td>🟡</td>
-            </tr>
-            <tr>
-              <td>Kickstart projects</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>Smart commits</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>🟡</td>
-              <td>🟡</td>
-            </tr>
-            <tr>
-              <td>Semi-automated releases</td>
-              <td>✅ npm</td>
-              <td>✅ jsr</td>
-              <td>✅ npm</td>
-              <td>❌</td>
-              <td>✅ crates</td>
-            </tr>
-            <tr>
-              <td>Stats</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>🟡</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>FuckingNode Surrender&trade;</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>Setups</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>FuckingNode Audit&trade;</td>
-              <td>✅</td>
-              <td>❌</td>
-              <td>✅</td>
-              <td>❌</td>
-              <td>❌</td>
-            </tr>
-            <tr>
-              <td>Auto-launch</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <img
+        src="./runtimes.png"
+        alt="Logos of all supported runtimes."
+        style="width: 75%"
+      >
     </section>
 
-    <section style="margin-top: 20vh; margin-bottom: 15vh">
+    <section style="margin-top: 0px; padding-top: 0px">
       <h3>You scrolled until the FuckingEnd</h3>
       <p class="section-desc">
         If you don't love FuckingNode by this point, you simply don't love
@@ -858,17 +808,19 @@
         can to save your valuable time.<br />There's literally no reason for you
         to leave without trying it.<br /><b>Download it and give it a go!</b>
         You <i>will</i> love it.
-      </p><a
+      </p>
+      <a
         href="manual/"
         class="cool-button"
-        style="margin-left: 50%; translate: -50%"
       >
         <div class="cool-button-body">Get started now!</div>
       </a>
     </section>
 
     <footer style="text-align: left">
-      Copyright &copy; 2024-2025 ZakaHaceCosas.
+      Copyright &copy; 2024-2025 <a style="text-decoration: underline;" href="https://zakahacecosas.github.io/"
+      >ZakaHaceCosas</a> and the open source contributors.<br />Made in Spain
+      with love towards you and not towards JS.
     </footer>
   </body>
 </html>
