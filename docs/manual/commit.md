@@ -1,6 +1,6 @@
 ---
 title: "FuckingNode Committer"
-description: "Safest way to 'git commit' out there. Never again push a .env to remote, never again forget to run your test suite, never again type two commands ('git add' then 'git commit') when you can type just one."
+description: "Safest way to 'git commit' out there. Never again push a .env to remote, forget to run your test suite, or type 'git add' then 'git commit' when you can type just one command."
 ---
 
 # Using FuckingNode: Make a commit

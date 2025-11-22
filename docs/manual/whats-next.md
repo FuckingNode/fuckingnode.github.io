@@ -17,7 +17,7 @@ Note "we" should actually be "I", as this is maintained by a single developer (m
 
 [**Platform support table**](../learn/cross-runtime-support.md)
 
-[Go back to the beginning?](../index.md)
+[Go back to the beginning?](./index.md)
 
 ## Other pages you may also find useful
 
