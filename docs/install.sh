@@ -139,41 +139,86 @@ add_app_to_path() {
         exit 1
     fi
 
-    # check if it's already in PATH
-    if [[ ":$PATH:" == *":$INSTALL_DIR:"* ]]; then
-        echo "$INSTALL_DIR is already in PATH."
-        return
-    fi
+    # detect current shell name (bash, zsh, fish, etc.)
+    local shell_name
+    shell_name="$(basename "${SHELL:-}")"
 
-    # define target files
-    FILES=("$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
+    echo "Detected shell: ${shell_name:-unknown}"
+
+    # default bash-like files
+    local FILES_BASH=("$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
+    # zsh config
+    local FILES_ZSH=("$HOME/.zshrc")
+    # fish config
+    local FISH_CONFIG="$HOME/.config/fish/config.fish"
 
     local modified=0
 
-    modified=0
+    case "$shell_name" in
+        bash|"")
+            echo "Configuring PATH for Bash-compatible shells..."
+            for file in "${FILES_BASH[@]}"; do
+                if [ -f "$file" ]; then
+                    if ! grep -q "$INSTALL_DIR" "$file"; then
+                        echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >>"$file"
+                        echo "Added $INSTALL_DIR to PATH in $file"
+                        modified=1
+                    else
+                        echo "$INSTALL_DIR is already in $file."
+                    fi
+                fi
+            done
+            ;;
 
-    # append to each file if it exists and doesn't already contain the entry
-    for file in "${FILES[@]}"; do
-        if [ -f "$file" ]; then
-            if ! grep -q "$INSTALL_DIR" "$file"; then
-                echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >>"$file"
-                echo "Added $INSTALL_DIR to PATH in $file"
+        zsh)
+            echo "Configuring PATH for zsh..."
+            for file in "${FILES_ZSH[@]}"; do
+                # create file if it doesn't exist
+                if [ ! -f "$file" ]; then
+                    touch "$file"
+                fi
+                if ! grep -q "$INSTALL_DIR" "$file"; then
+                    echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >>"$file"
+                    echo "Added $INSTALL_DIR to PATH in $file"
+                    modified=1
+                else
+                    echo "$INSTALL_DIR is already in $file."
+                fi
+            done
+            ;;
+
+        fish)
+            echo "Configuring PATH for fish..."
+            mkdir -p "$(dirname "$FISH_CONFIG")"
+            if [ ! -f "$FISH_CONFIG" ]; then
+                touch "$FISH_CONFIG"
+            fi
+            if ! grep -q "$INSTALL_DIR" "$FISH_CONFIG" 2>/dev/null; then
+                # fish uses fish_add_path to manage PATH cleanly
+                echo "fish_add_path \"$INSTALL_DIR\" 2>/dev/null; or set -gx PATH \"$INSTALL_DIR\" \$PATH" >>"$FISH_CONFIG"
+                echo "Added $INSTALL_DIR to PATH in $FISH_CONFIG"
                 modified=1
             else
-                echo "$INSTALL_DIR is already in $file."
+                echo "$INSTALL_DIR is already in $FISH_CONFIG."
             fi
-        else
-            echo "File $file not found."
-        fi
-    done
+            ;;
 
-    # apply changes if any file was modified
+        *)
+            echo "Unknown shell '$shell_name'. Falling back to Bash-style config files."
+            for file in "${FILES_BASH[@]}"; do
+                if [ -f "$file" ]; then
+                    if ! grep -q "$INSTALL_DIR" "$file"; then
+                        echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >>"$file"
+                        echo "Added $INSTALL_DIR to PATH in $file"
+                        modified=1
+                    fi
+                fi
+            done
+            ;;
+    esac
+
     if (( modified == 1 )); then
-        echo "Reloading shell config files..."
-        source "$HOME/.profile" 2>/dev/null || true
-        source "$HOME/.bashrc" 2>/dev/null || true
-        source "$HOME/.bash_profile" 2>/dev/null || true
-        echo "Successfully added $INSTALL_DIR to PATH."
+        echo "PATH config updated. Please restart your terminal or re-source your shell config (e.g., 'source ~/.bashrc', 'source ~/.zshrc', or 'exec fish')."
     else
         echo "No PATH was modified."
     fi
