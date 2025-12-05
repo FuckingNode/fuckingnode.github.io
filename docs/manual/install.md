@@ -27,6 +27,12 @@ Copy and paste the following code in a terminal session.
 curl -fsSL fuckingnode.github.io/install.sh | bash
 ```
 
+On Linux an macOS you're provided with an uninstall script we hope you never need.
+
+```bash
+curl -fsSL fuckingnode.github.io/remove.sh | bash
+```
+
 ### :simple-nixos: Nix / NixOS
 
 !!! warning
