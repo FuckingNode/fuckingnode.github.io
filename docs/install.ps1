@@ -9,12 +9,16 @@ $EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
 
 # DETACH PROCESS
 if ($args[1] -ne "NA") {
+    Write-Output "(Detaching)"
+    Start-Sleep -Seconds 1
     # powershell path (pwsh on PS Core, powershell on Windows PS)
     $exe = if ($PSVersionTable.PSEdition -eq "Core") { "pwsh" } else { "powershell" }
     $script = $PSCommandPath
 
     Start-Process -FilePath $exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$script`" _ NA"
     # quit parent
+    Write-Output "(Quitting)"
+    Start-Sleep -Seconds 1
     exit
 }
 
