@@ -8,7 +8,9 @@ $INSTALL_DIR = "C:\$($APP_NAME.CASED)"
 $EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
 
 # DETACH PROCESS
-if ($args[1] -ne "NA") {
+$IsIex = -not $PSCommandPath
+
+if (-not $IsIex -and $args[1] -ne "NA") {
     Write-Output "(Detaching)"
     Start-Sleep -Seconds 1
     # powershell path (pwsh on PS Core, powershell on Windows PS)
