@@ -125,12 +125,14 @@ Currently supported settings are the following. Change them with `settings chang
 | :--- | :--- | ---: |
 | `default-intensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | Changes the default intensity for the `clean` command. `normal` by default. |
 | `update-freq` | A fixed number, represents DAYS. | Changes how frequently the CLI sends an HTTP request for updates. Recommend to be high, as we don't frequently update. Defaults to `5`. |
-| `fav-editor`  | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart` and `launch`. VSCode by default. |
+| `fav-editor` | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart` and `launch`. VSCode by default. |
 | `default-manager` | `npm`, `pnpm`, `yarn`, `deno`, `bun`, `go`, or `cargo` | Default package manager, for use when we can't guess what to use. Makes most sense to set to a JS one; defaults to `npm`. |
-| `notifications`  | `true`, `false` | Whether to [use system notifications](../learn/notifications.md). Highly recommended, enabled by default. |
-| `notification-threshold`  | `true`, `false` | Disabled by default, makes system notifications only fire up if the task to be notified about takes less than the threshold value. |
-| `notification-threshold-value`  | A fixed number, represents MILLISECONDS. | Threshold value. Defaults to `10000` (10 seconds). |
+| `notifications` | `true`, `false` | Whether to [use system notifications](../learn/notifications.md). Highly recommended, enabled by default. |
+| `notification-threshold` | `true`, `false` | Disabled by default, makes system notifications only fire up if the task to be notified about takes less than the threshold value. |
+| `notification-threshold-value` | A fixed number, represents MILLISECONDS. | Threshold value. Defaults to `10000` (10 seconds). |
 | `always-short-circuit-cleanup` | `true`, `false` | Disabled by default, makes `clean` immediately halt if an error happens. See [this](usage.md#note-about-error-handling). |
+| `kickstart-root` | A file path | Unset by default, automatically roots kickstarted projects to there instead of the current working directory. Useful if you have a main "projects" folder or something similar. |
+| `workspace-policy` | `standalone` or `unified` | Unset by default. If set, when adding a project with workspaces, you won't be prompted for how to handle them; `standalone` handling will add each workspace individually and `unified` handling will add just the root. |
 
 ### View current settings
 

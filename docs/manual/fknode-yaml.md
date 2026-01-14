@@ -281,6 +281,19 @@ releaseCmd:
   - $release # e.g. 'npm run release'
 ```
 
+### kickstartCmd
+
+Specifies a CmdSet to be executed upon cloning the project with the `kickstart`.
+
+- **Type**: `CmdSet`
+- **Example**:
+
+```yaml
+kickstartCmd:
+  - =tasks/setup-env.mjs
+  - ~echo 'project is now ready to work on!'
+```
+
 ---
 
 ## Full sample
@@ -318,6 +331,9 @@ buildCmd:
   - =build.ts
   - ~mv ./out ./dist
 buildForRelease: true
+kickstartCmd:
+  - =tasks/setup-env.mjs
+  - ~echo 'project is now ready to work on!'
 ```
 
 ---
