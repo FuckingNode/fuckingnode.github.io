@@ -165,7 +165,7 @@
       }
       .hero {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 3fr;
         align-items: center;
         min-height: 100vh;
         padding: 0 40px;
@@ -216,7 +216,7 @@
         font-weight: 600;
       }
       .hero img {
-        width: 100%;
+        width: 75%;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         transition: transform 3s cubic-bezier(0, 1, 0, 1);
       }
@@ -242,7 +242,7 @@
         text-align: center;
         margin-bottom: 60px;
         color: var(--text-muted);
-        max-width: 800px;
+        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
         font-size: 1.25em;
@@ -504,10 +504,14 @@
           "surrender",
           "setup npmrc-exact",
           "resign node",
-          "ungo --remove--all-motherfuckers-too",
+          "ungo --remove-all-motherfuckers-too",
           "clean",
           "uncommit",
-          "",
+          "kickstart cb:NotabenaDesu/Notabena",
+          "unnode --remove-all-motherfuckers-too",
+          "commit 'revert past commit' -A",
+          "im-done-with npm",
+          "terminate node"
         ];
         // uses time instead of Math.random() so it changes more often
         text.innerText = options[
@@ -560,8 +564,8 @@
         </div>
       </div>
       <img
-        src="https://fuckingnode.github.io/hero.webp"
-        alt="FuckingNode doing some cleanup"
+        src="https://fuckingnode.github.io/hero.png"
+        alt="FuckingNode doing a global cleanup"
       />
     </section>
 
@@ -580,7 +584,7 @@
     <section id="features" class="features">
       <h3>What can it <i>actually</i> do?</h3>
       <p class="section-desc">
-        All these things <b>by just running one command</b>.
+        FuckingNode does <b>all these things</b> across <b>all your projects</b> by <b>just running one command</b>.
       </p>
       <div class="grid">
         <div class="card">
@@ -683,6 +687,32 @@
         <img
           src="https://fuckingnode.github.io/website_3.png"
           alt="Commit"
+        />
+      </div>
+      
+      <div class="feature">
+        <img
+          src="https://fuckingnode.github.io/website_4.png"
+          alt="Launch"
+        />
+        <div class="feature-text">
+          <h2>Startup feels like firing up an engine</h2>
+          <p>
+            Open VSCode, wait for it to load, open the terminal, type in the <code>bun run dev</code> (or whatever) command, and after four steps you've done one task (well, zero, you just got in).<br/><br/>Just run <code>launch</code>. From anywhere, no need to remember file paths. You might as well link that to a desktop shortcut.<br/><br/>Up to you, as long as it makes your workflow faster (it does).
+          </p>
+        </div>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-text">
+          <h2>Make an effort even to give up?</h2>
+          <p>
+            If you're writing a JavaScript next-gen world-changing project, there's a high chance it'll end up in the deprecation graveyard. And, even for giving up (not working on a project anymore), you've got to work? Writing notices is boring, using AI makes you look dumb...<br/><br/>Screw it, just use our worlds-first deprecation automation. For real.
+          </p>
+        </div>
+        <img
+          src="https://fuckingnode.github.io/website_5.png"
+          alt="Surrender"
         />
       </div>
     </section>
@@ -823,7 +853,7 @@
     <footer style="text-align: left">
       Copyright &copy; 2024-2025 <a
         style="text-decoration: underline"
-        href="https://zakahacecosas.github.io/"
+        href="https://me.zhc.es/"
       >ZakaHaceCosas</a> and the open source contributors.<br />Made in Spain
       with love towards you and not towards JS.
     </footer>
