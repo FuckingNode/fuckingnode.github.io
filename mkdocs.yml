@@ -45,6 +45,7 @@ nav:
     - Roadmap: "about/roadmap.md"
     - Brand guidelines: "about/branding.md"
     - Community: "about/social.md"
+    - Donate: "https://buymeacoffee.com/zakahacecosas"
 
 theme:
     name: material

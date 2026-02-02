@@ -36,7 +36,7 @@ Happens when FuckingNode attempts to invoke an entity and doesn't find it. In si
 It's most often caused by either:
 
 - The entity indeed not existing (perhaps you had a typo).
-- On Windows, `echo 'hi'` or `Write-Output 'hi'` don't exist, `cmd echo 'hi'` or `powershell Write-Output 'hi'`. If you want to use Windows shell command you need to explicitly call a shell executable (preferably PowerShell). Blame it on Microsoft, not us.
+- On Windows, `echo 'hi'` or `Write-Output 'hi'` don't exist, `cmd echo 'hi'` or `powershell Write-Output 'hi'` do. If you want to use Windows shell command you need to explicitly call a shell executable (preferably PowerShell). Blame it on Microsoft, not us.
 
 ## File system [Fs]
 

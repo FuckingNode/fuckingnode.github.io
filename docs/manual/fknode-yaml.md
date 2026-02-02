@@ -177,11 +177,50 @@ releaseCmd: # ...
 buildForRelease: true # now when running release, buildCmd will auto-run first
 ```
 
+### kickstarter
+
+Sets defaults for whenever the project is kickstarted.
+
+Just as with your repository's guidelines, you cannot "enforce" them, they're just a _recommendation that autocompletes_ if the cloner wants to follow them.
+
+None of the keys is required, omitting them or setting them to null equals default behavior.
+
+#### kickstarter / install
+
+Set the default handling for dependencies.
+
+- `"no"` - Doesn't try to install anything. Useful for non-code repositories, like a doc site.
+- `"use (command)"` - Prompts the user to use a specific install command (as in whole command, you can type `use foobar --a=b` and it'll invoke the `foobar` binary with options `--a=b`). The user can accept or reject execution (in which case the kickstart will halt).
+
+```yaml
+kickstarter:
+  install: use bun run install.ts # maybe your project's so special you need to install dependencies your own way, who knows?
+...
+kickstarter:
+  install: no # don't install anything
+```
+
+#### kickstarter / workspaces
+
+Sets the default handling for workspaces, as in adding them to the user's FuckingNode project for future use.
+
+- `"force-liberty"` - Lets and forces the user to decide, even if they have set a default setting to avoid being prompted. This is annoying and should only be used if you genuinely think it's needed.
+- `"unified"` - Adds the root project as a project and nothing else.
+- `"standalone"` - Adds each workspaces as an individual project.
+
+```yaml
+kickstarter:
+  workspaces: standalone # each workspace is treated as an individual project, FuckingNode wise
+...
+kickstarter:
+  workspaces: unified # the root package.json (or whatever) is the only project, FuckingNode wise
+```
+
 ---
 
 ## CmdSets
 
-**CmdSets are a more complex but very powerful type of setting**, they allow to execute any shell command, project file, or whatever you need, whenever a certain trigger fires up. This allows you to make a great automation job.
+**CmdSets are a more complex but very powerful type of setting**, they allow to execute any shell command, project file, or whatever you need, whenever a certain trigger fires up. It can also run different commands platform-wise (Win32 / POSIX) and also run commands in parallel. This allows you to make a great automation job.
 
 They look like this:
 
@@ -216,7 +255,7 @@ All commands run in order and block each other. Also, colons are not required. S
 
 By default, output for each Cmd is not live; this is, invisible until the command ends execution. However, sometimes you might not want that, for example for a live server which "never terminates" and you might want to interact with (to refresh it, for example).
 
-If you want a command to be interactive, you may manually specify it as a _detached cmd_, by using the special `;;` prefix (between the Cmd key and the actual command).
+If you want a command to be interactive, you may manually specify it as a _detached Cmd_, by using the special `;;` prefix (between the Cmd key and the actual command).
 
 For example:
 
@@ -226,6 +265,16 @@ launchCmd:
 ```
 
 This will "detach" the script, allowing to interact with it. ++ctrl+c++-ing out of it will end the detached process and continue the sequence if any Cmd (detached or not) exists after it.
+
+If you want to run several commands at the same time, nest an array, like this:
+
+```yaml
+launchCmd:
+  - - $script-a
+    - $script-b
+```
+
+In that example, `$script-a` and `$script-b` will be evaluated and started at the same time as separate child processes of FuckingNode. The Cmd finishes when all processes have finished. You cannot nest a detached Cmd and doing so will result in undefined behavior.
 
 You can use CmdSets for the following project settings:
 

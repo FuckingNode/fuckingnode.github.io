@@ -21,7 +21,7 @@ Where `<runtime>` is either `node`, `deno`, `bun`, `go`, or `rust`.
 
 To prevent accidental runs, this command requires confirmation, and also runs a short countdown before executing (giving you time to ++ctrl+c++ out of it).
 
-While risky, we also added a `--remove-all-motherfuckers-too` flag (which will prompt an additional warning))which **deletes from your hard drive** any project written in said stack. This will show an additional warning and an additional countdown.
+While risky, we also added a `--remove-all-motherfuckers-too` flag (which will prompt an additional warning) which **deletes from your hard drive** any project written in said stack. This will show an additional warning and an additional countdown.
 
 ### The process
 
@@ -52,6 +52,6 @@ Then there's these, which remove the need to specify the runtime to remove, taki
 
 ---
 
-You've now learnt how to ensure your JavaScript project dies properly.
+You've now learnt how to ensure your JavaScript developer career dies properly.
 
-Next: Audit - how to make NodeJS security audits actually understandable.
+Next: Audit - how to make security audits actually understandable.
