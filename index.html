@@ -1,0 +1,852 @@
+<!-- yes, hardcoded HTML because, you know, who needs react? -->
+<!-- ALSO this is kinda unfinished, we could do
+- highlight a few more features in the home page
+- maybe add a backdrop video
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="The fucking chaos of maintaining JavaScript projects ends here."
+    />
+    <meta name="author" content="ZakaHaceCosas" />
+    <link rel="canonical" href="https://fuckingnode.github.io/index.html" />
+    <link rel="next" href="https://fuckingnode.github.io/manual/" />
+    <link rel="icon" href="https://fuckingnode.github.io/fkn_icon.webp" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="FuckingNode - The fucking chaos of maintaining JavaScript projects ends here."
+    />
+    <meta
+      property="og:description"
+      content="Meet FuckingNode, one of the best automation CLIs out there for NodeJS, Deno, and Bun developers. Save up storage, automate tasks, reduce human mistakes, and more."
+    />
+    <meta property="og:image" content="https://fuckingnode.github.io/og.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:url" content="https://fuckingnode.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="FuckingNode - The fucking chaos of maintaining JavaScript projects ends here."
+    />
+    <meta
+      name="twitter:description"
+      content="Meet FuckingNode, one of the best automation CLIs out there for NodeJS, Deno, and Bun developers. Save up storage, automate tasks, reduce human mistakes, and more."
+    />
+    <meta
+      name="twitter:image"
+      content="https://fuckingnode.github.io/og.webp"
+    />
+    <meta name="theme-color" content="#b36044" />
+    <meta name="color-scheme" content="dark" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FuckingNode</title>
+    <style>
+      :root {
+        --bg-dark: #0d1117;
+        --bg-darker: #090c10;
+        --text-main: #e6edf3;
+        --text-muted: #8b949e;
+        --accent: #b36044;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Segoe UI", "Inter", system-ui, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .cool-button {
+        padding: 2px;
+        background-image: linear-gradient(
+          to bottom right,
+          #000,
+          #210,
+          var(--accent),
+          #f87755
+        );
+        background-size: 2000%;
+        background-position: 0%;
+        width: 300px;
+        height: 60px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cool-button-body {
+        display: grid;
+        place-items: center;
+        background-color: #000;
+        color: #fff;
+        flex-grow: 1;
+        height: 100%;
+        transition: background-color 8s cubic-bezier(0, 1, 0, 1) box-shadow
+          12s ease;
+        font-size: x-large;
+      }
+
+      .cool-button:hover {
+        animation: buttonBorderSpin 4s cubic-bezier(0, 1, 0, 1) forwards;
+        box-shadow: 0 0 50px #f8775576;
+      }
+
+      .cool-button:hover .cool-button-body {
+        background-color: #00000000;
+      }
+
+      @keyframes buttonBorderSpin {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 40px;
+        background: rgba(9, 12, 16, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #1f2328;
+        z-index: 1000;
+      }
+      header h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+      nav a {
+        margin-left: 24px;
+        font-size: 0.95rem;
+        color: var(--text-main);
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: var(--accent);
+      }
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        align-items: center;
+        min-height: 100vh;
+        padding: 0 40px;
+      }
+      .hero-text {
+        max-width: 520px;
+      }
+      .hero-text h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .hero-text p {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+      }
+      .btn,
+      .btn2 {
+        width: fit-content;
+        flex: 1;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #f87755, var(--accent));
+        color: #fff;
+        font-weight: 600;
+        transition: transform 0.2s, box-shadow 0.3s;
+      }
+      .btn2 {
+        background: var(--bg-dark);
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px #f87755;
+      }
+      .btn2:hover {
+        transform: translateY(-3px);
+        background-color: var(--bg-darker);
+        box-shadow: 0 0 20px #ffffff40;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        border-radius: 6px;
+
+        color: #fff;
+        font-weight: 600;
+      }
+      .hero img {
+        width: 75%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: transform 3s cubic-bezier(0, 1, 0, 1);
+      }
+      .hero img:hover {
+        transform: rotate(2deg) scale(1.1);
+      }
+
+      section {
+        padding: 50px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+      section h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      section p.section-desc {
+        text-align: center;
+        margin-bottom: 60px;
+        color: var(--text-muted);
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.25em;
+      }
+
+      .features {
+        background: var(--bg-darker);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+      }
+      .card {
+        background: #161b22;
+        border: 1px solid #1f2328;
+        border-radius: 8px;
+        padding: 24px;
+
+        transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+        box-shadow: 0 0 25px var(--accent);
+      }
+      .card h4 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: var(--accent);
+      }
+      .card p {
+        color: var(--text-muted);
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        border-top: 1px solid #1f2328;
+        background: var(--bg-darker);
+      }
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.75), #0b0f17);
+        z-index: -1;
+      }
+      .hero h2 {
+        font-size: 3rem;
+        line-height: 3.75rem;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #f87755, var(--accent));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        animation: slideIn 1.2s ease forwards;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0.1;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .hero p {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        font-size: 1.2rem;
+        color: #c9d1d9;
+        opacity: 0;
+        animation: fadeUp 1.5s ease 0.8s forwards;
+      }
+      @keyframes fadeUp {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        color: var(--text-main);
+      }
+      th,
+      td {
+        border: 1px solid #1f2328;
+        padding: 2px;
+        text-align: center;
+      }
+      .feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        min-height: 45vh;
+        padding: 0 40px;
+        gap: 50px;
+      }
+      .feature .feature-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+      .feature h2 {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        margin-bottom: 20px;
+        color: var(--accent);
+      }
+      .feature p {
+        max-width: 700px;
+        font-size: 1rem;
+        color: #c9d1d9;
+      }
+      .feature img {
+        object-fit: scale-down;
+        width: 100%;
+      }
+      .accordion {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .accordion details {
+        background: #161b22;
+        border: 1px solid #1f2328;
+        border-radius: 8px;
+        padding: 16px 20px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .accordion details[open] {
+        border-color: var(--accent);
+        box-shadow: 0 0 15px var(--accent);
+      }
+
+      .accordion summary {
+        list-style: none;
+        font-weight: 600;
+        color: var(--text-main);
+        position: relative;
+        cursor: pointer;
+      }
+
+      .accordion summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .accordion summary::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        font-weight: bold;
+        transition: transform 0.3s;
+      }
+
+      .accordion details[open] summary::after {
+        content: "=";
+        transform: rotate(180deg);
+        color: var(--accent);
+      }
+
+      .accordion p {
+        margin-top: 12px;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      /* im lazy to make it responsive */
+      .mobile-message {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .mobile-message {
+          display: flex !important;
+        }
+        header,
+        section {
+          display: none;
+        }
+      }
+      .mobile-message {
+        height: 100vh !important;
+        width: 100vw !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        position: fixed;
+        z-index: 999;
+        box-sizing: border-box;
+        background: #000;
+      }
+      .mobile-message h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.25rem;
+      }
+      .mobile-message p {
+        margin: 0;
+        color: #999;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const text = document.getElementById("random-text");
+        const options = [
+          "terminate node",
+          "im-done-with foobar -gh",
+          "clean -- -l -p -d -u -c",
+          "setup license-gpl3",
+          "build project-foo",
+          "migrate bun",
+          "unnode",
+          "surrender project-foo",
+          "kickstart gh:SokoraDesu/Sokora",
+          "kickstart gh:FuckingNode/FuckingNode",
+          "kickstart gh:foobar/project-baz",
+          "commit 'migrate to bun' -A",
+          "uncommit",
+          "audit",
+          "i-really-hate react",
+          "setup license-mit",
+          "setup ts-strictest",
+          "add ./*",
+          "list --ignored",
+          "kickstart gh:FuckingNode/FuckingNode . bun",
+          "surrender",
+          "setup npmrc-exact",
+          "resign node",
+          "ungo --remove-all-motherfuckers-too",
+          "clean",
+          "uncommit",
+          "kickstart cb:NotabenaDesu/Notabena",
+          "unnode --remove-all-motherfuckers-too",
+          "commit 'revert past commit' -A",
+          "im-done-with npm",
+          "terminate node"
+        ];
+        // uses time instead of Math.random() so it changes more often
+        text.innerText = options[
+          Math.min(new Date().getSeconds(), options.length - 1)
+        ];
+      });
+    </script>
+  </head>
+  <body>
+    <div class="mobile-message">
+      <h2>This page isn't available on phones.</h2>
+      <p>
+        Sorry, but this page is not available for mobile devices, use a PC to
+        view it. This page is for a desktop-only app anyway.
+      </p>
+    </div>
+    <header>
+      <h1>
+        FuckingNode 5
+        <span style="color: var(--text-muted)" id="random-text"></span>
+      </h1>
+      <nav>
+        <a href="#wtf">WTF is this?</a>
+        <a href="#features">What can it do?</a>
+        <a href="#more-features">Some cool features</a>
+        <a href="#faq">FAQ</a>
+        <a href="#platform-support">Where can I use it?</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <!-- <video autoplay muted loop playsinline>
+        <source src="https://fuckingnode.github.io/fkn4.webm" type="video/webm">
+      </video> -->
+      <div class="hero-text">
+        <div style="overflow: hidden">
+          <h2>
+            The f*cking chaos of maintaining JavaScript projects ends here
+          </h2>
+        </div>
+        <p>
+          FuckingNode is a unique, state of the art CLI to automate headache
+          giving tasks and make it easier to develop in NodeJS, Deno, or Bun.
+        </p>
+        <div class="buttons">
+          <a href="manual/" class="btn">Get started!</a>
+          <a href="#wtf" class="btn2">Learn more</a>
+          <a href="https://youtube.com/watch?v=J675ZcYBrHM" class="btn2"
+          >See the video</a>
+        </div>
+      </div>
+      <img
+        src="https://fuckingnode.github.io/hero.avif"
+        alt="FuckingNode doing a global cleanup"
+      />
+    </section>
+
+    <section id="wtf">
+      <h3>What the f*ck is FuckingNode?</h3>
+      <p class="section-desc">
+        You hate running <code>eslint</code> every time. You hate npm taking
+        away your disk space. You have your SSD being full because of 20
+        libraries you're not even releasing anyway. You hate forgetting test
+        suites before committing code. You hate messing up while migrating a
+        NodeJS project to Bun. <b>You hate this fucking chaos, and so do
+          we.</b><br /><br />So, we built a solution.
+      </p>
+    </section>
+
+    <section id="features" class="features">
+      <h3>What can it <i>actually</i> do?</h3>
+      <p class="section-desc">
+        FuckingNode does <b>all these things</b> across <b>all your projects</b> by <b>just running one command</b>.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h4>Cleaning your projects</h4>
+          <p>
+            npm dedupe, pnpm prune, whatever you need. They all recursively run
+            across all of your projects.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Cleaning caches</h4>
+          <p>
+            npm is so slow it feels like it doesn't cache stuff, but it does -
+            taking GBs. We know how to clean it up.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Linting & prettifying</h4>
+          <p>
+            If enabled, every project gets passed through ESLint/Prettier (or
+            the tools of your choice). Automatically.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Cleaning outputs</h4>
+          <p>
+            Keep forgetting that <code>dist/</code> folder with stuff you
+            already released taking up storage? Forget about it, we clean it for
+            you.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Updating dependencies</h4>
+          <p>
+            You usually forget this, don't we all? We do it for you, and even
+            push the updated lockfile to Git if you want to.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Removing node_modules (?)</h4>
+          <p>
+            This is obviously optional, but if your hard drive surprises you
+            with literally no space left, you can surprise it with this
+            "feature".
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="more-features" style="min-height: 0; padding-bottom: 0px">
+      <h3>Some other problems we solve with very cool features</h3>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h2>You're a coder and not a cloner</h2>
+          <p>
+            Getting the Git URL, cloning a project, installing dependencies,
+            opening your IDE... Too much.<br />We kickstart your projects with a
+            compact command so you can save the commands and clicks up, and
+            focus on coding.
+          </p>
+        </div>
+        <img
+          src="https://fuckingnode.github.io/website_1.avif"
+          alt="Kickstart"
+        />
+      </div>
+
+      <div class="feature">
+        <img
+          src="https://fuckingnode.github.io/website_2.avif"
+          alt="Setup"
+        />
+        <div class="feature-text">
+          <h2>You write too much config</h2>
+          <p>
+            Agreeable, right? You should be writing code, not config. We brought it for you, just
+            run <code>setup</code> and we'll take care.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h2>Commits are uh...</h2>
+          <p>
+            Forgetting to add files, to prettify the code, to run the damn test
+            suite... Things that happen a bit too often. With FuckingNode you
+            can forget them, just run <code>commit</code> with a few args and
+            we'll do everything.<br />You can also stage files and push from the
+            same command, for minimal typing and max speed&trade;.
+          </p>
+        </div>
+        <img
+          src="https://fuckingnode.github.io/website_3.avif"
+          alt="Commit"
+        />
+      </div>
+      
+      <div class="feature">
+        <img
+          src="https://fuckingnode.github.io/website_4.avif"
+          alt="Launch"
+        />
+        <div class="feature-text">
+          <h2>Startup feels like firing up an engine</h2>
+          <p>
+            Open VSCode, wait for it to load, open the terminal, type in the <code>bun run dev</code> (or whatever) command, and after four steps you've done one task (well, zero, you just got in).<br/><br/>Just run <code>launch</code>. From anywhere, no need to remember file paths. You might as well link that to a desktop shortcut.<br/><br/>Up to you, as long as it makes your workflow faster (it does).
+          </p>
+        </div>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-text">
+          <h2>Make an effort even to give up?</h2>
+          <p>
+            If you're writing a JavaScript next-gen world-changing project, there's a high chance it'll end up in the deprecation graveyard. And, even for giving up (not working on a project anymore), you've got to work? Writing notices is boring, using AI makes you look dumb...<br/><br/>Screw it, just use our worlds-first deprecation automation. For real.
+          </p>
+        </div>
+        <img
+          src="https://fuckingnode.github.io/website_5.avif"
+          alt="Surrender"
+        />
+      </div>
+    </section>
+    <br /><br />
+    <p style="text-align: center; opacity: 0.8">
+      <i>There are actually many more features, find out about them by looking
+        at our documentation.</i>
+    </p>
+
+    <section id="faq">
+      <h3>FAQ</h3>
+      <p class="section-desc">Actually useful answers for you.</p>
+
+      <div class="accordion">
+        <details>
+          <summary>
+            What are the steps to get <code>clean</code> to work across all my
+            stuff ASAP?
+          </summary>
+          <p>
+            You just need to add all your projects to the FuckingNode list,
+            using <code>fuckingnode add</code>. If you have a single folder with
+            all of your projects (like most people do), you'll enjoy the fact
+            that glob patterns like /* do work.<br /><br />Once added,
+            <code>clean</code> will take care of all added projects one by one.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Accidentally committing .env is also a headache, you got a fix for
+            that?
+          </summary>
+          <p>
+            <code>fuckingnode commit</code>, besides preventing the "oh i forgot
+            the test suite" headache, also prevents commits that include .env or
+            node_modules/ even if not in the .gitignore. You're welcome.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Needing to hotfix a commit is also a headache. What about that?
+          </summary>
+          <p>
+            <code>fuckingnode uncommit</code> undoes the last commit and lets
+            you modify its files, then automatically commits them
+            back.<br /><br />If a commitCmd exists (like your test suite), it'll
+            run it again, to stop you if the code doesn't pass tests (note: if
+            that happens, you'll need to re-run the commit command as uncommit
+            will go out of loop; files remain in stage area so this isn't a big
+            problem).
+          </p>
+        </details>
+        <details>
+          <summary>Can this format my code automatically?</summary>
+          <p>
+            This isn't a formatter itself, it's an automation tool. If the
+            appropriate tooling is available, this <i>can</i> format your code;
+            it can also lint your code, update dependencies, and remove outdated
+            build artifacts for every fucking project you have.<br /><br />And
+            yes, it can do it automatically (that's its purpose).
+          </p>
+        </details>
+        <details>
+          <summary>How to "add a project"? Is it needed?</summary>
+          <p>
+            Just run <code>fkadd</code> from its root (or
+            <code>fkadd [filepath]</code>) and it'll be auto-added. If it's a
+            monorepo it'll ask what to do with its workspaces.<br /><br />It's
+            not <i>needed</i>, since most features are either runtime agnostic
+            or can detect the current-working-directory as a project, but it is
+            highly recommended, as the <i>main feature</i> (automated, bulk
+            cleanup) <b>does</b> require it.
+          </p>
+        </details>
+        <details>
+          <summary>
+            What if I don't want to maintain my project anymore? You can't "fix"
+            that headache... can you?
+          </summary>
+          <p>
+            Actually, yes.<br /><br />FuckingNode provides an automation (<code
+            >fuckingnode surrender</code>) to deprecate projects. It'll generate
+            a deprecation notice in the README for you, push that to Git, then
+            remove the code (and consequently node_modules) from your local
+            system so you don't waste storage to an abandoned project.
+          </p>
+        </details>
+        <details>
+          <summary>
+            Fuck it, I don't want to code in NodeJS anymore. You can't help with
+            that...?
+          </summary>
+          <p>
+            Actually...<br /><br /><code>fuckingnode terminate</code> entirely
+            uninstalls a language and removes package manager caches from it, as
+            well as typical installation leftovers. For NodeJS, it removes all
+            three package managers if installed. It works for any runtime/stack
+            we support.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section
+      id="platform-support"
+      style="margin-bottom: 0px; padding-bottom: 0px"
+    >
+      <h3>Use it anywhere</h3>
+      <p class="section-desc">
+        Works anywhere JavaScript does. For no reason, works with Rust
+        too.<br />And some features just work, everywhere&trade;.
+      </p>
+      <img
+        src="./runtimes.avif"
+        alt="Logos of all supported runtimes."
+        style="width: 75%"
+      >
+    </section>
+
+    <section style="margin-top: 0px; padding-top: 0px">
+      <h3>You scrolled until the FuckingEnd</h3>
+      <p class="section-desc">
+        If you don't love FuckingNode by this point, you simply don't love
+        yourself.<br />It's free, open source, has no paywalls, no tracking, no
+        20-step-long onboarding...<br />And it does everything, EVERYTHING it
+        can to save your valuable time.<br />There's literally no reason for you
+        to leave without trying it.<br /><b>Download it and give it a go!</b>
+        You <i>will</i> love it.
+      </p>
+      <a
+        href="manual/"
+        class="cool-button"
+      >
+        <div class="cool-button-body">Get started now!</div>
+      </a>
+    </section>
+
+    <footer style="text-align: left">
+      Copyright &copy; 2024-2025 <a
+        style="text-decoration: underline"
+        href="https://me.zhc.es/"
+      >ZakaHaceCosas</a> and the open source contributors.<br />Made in Spain
+      with love towards you and not towards JS.
+    </footer>
+  </body>
+</html>
