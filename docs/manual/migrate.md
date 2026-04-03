@@ -5,7 +5,7 @@ description: "Quickly migrate a JS project from one runtime to another."
 
 # Using FuckingNode: Migrate a project
 
-> `fuckingnode migrate <target> [project]`, or `fkmigrate <target> [project]`
+> `fkn migrate <target> [project]`
 
 The `migrate` command automatically migrates your project from one JS stack to another. For example, from npm to Bun, or from npm to pnpm, or from npm to anything better.
 
@@ -18,7 +18,7 @@ As this can take time, **if it takes long, you'll receive a [system notification
 Just run the following:
 
 ```bash
-fuckingnode migrate <TARGET> [PROJECT]
+fkn migrate <TARGET> [PROJECT]
 ```
 
 `TARGET` is the target package manager (the one to migrate to), can be either npm or pnpm or yarn or deno or bun. `PROJECT` is optional, specifies what project to be migrated, if not provided the CWD is used.

@@ -5,14 +5,14 @@ description: "Statistics are cool, I guess."
 
 # Using FuckingNode: `stats`
 
-> `fuckingnode stats <project>`
+> `fkn stats <project>`
 
-This is the simplest thing ever. Just run `fuckingnode stats *`, replacing `*` with the name of a project (from the `package.json`'s `"name"` field) or the path to the project's root, and you will see two things.
+This is the simplest thing ever. Just run `fkn stats *`, replacing `*` with the name of a project (from the `package.json`'s `"name"` field) or the path to the project's root, and you will see two things.
 
 ## Project outline
 
 ```txt
-@zakahacecosas/fuckingnode@4.0.0 /home/Zaka/Code/FuckingNode · deno runtime · deno pkg manager
+@zakahacecosas/fuckingnode@5.0.0 /home/Zaka/Code/FuckingNode · deno runtime · deno pkg manager
 
 Depends on 9 m*therf*ckers:
 @std/datetime@^0.225.3 > jsr # Dependency

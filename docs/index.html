@@ -725,7 +725,7 @@
           </summary>
           <p>
             You just need to add all your projects to the FuckingNode list,
-            using <code>fuckingnode add</code>. If you have a single folder with
+            using <code>fkn add</code>. If you have a single folder with
             all of your projects (like most people do), you'll enjoy the fact
             that glob patterns like /* do work.<br /><br />Once added,
             <code>clean</code> will take care of all added projects one by one.
@@ -737,7 +737,7 @@
             that?
           </summary>
           <p>
-            <code>fuckingnode commit</code>, besides preventing the "oh i forgot
+            <code>fkn commit</code>, besides preventing the "oh i forgot
             the test suite" headache, also prevents commits that include .env or
             node_modules/ even if not in the .gitignore. You're welcome.
           </p>
@@ -747,7 +747,7 @@
             Needing to hotfix a commit is also a headache. What about that?
           </summary>
           <p>
-            <code>fuckingnode uncommit</code> undoes the last commit and lets
+            <code>fkn uncommit</code> undoes the last commit and lets
             you modify its files, then automatically commits them
             back.<br /><br />If a commitCmd exists (like your test suite), it'll
             run it again, to stop you if the code doesn't pass tests (note: if
@@ -769,8 +769,8 @@
         <details>
           <summary>How to "add a project"? Is it needed?</summary>
           <p>
-            Just run <code>fkadd</code> from its root (or
-            <code>fkadd [filepath]</code>) and it'll be auto-added. If it's a
+            Just run <code>fkn add</code> from its root (or
+            <code>fkn add [filepath]</code>) and it'll be auto-added. If it's a
             monorepo it'll ask what to do with its workspaces.<br /><br />It's
             not <i>needed</i>, since most features are either runtime agnostic
             or can detect the current-working-directory as a project, but it is
@@ -785,7 +785,7 @@
           </summary>
           <p>
             Actually, yes.<br /><br />FuckingNode provides an automation (<code
-            >fuckingnode surrender</code>) to deprecate projects. It'll generate
+            >fkn surrender</code>) to deprecate projects. It'll generate
             a deprecation notice in the README for you, push that to Git, then
             remove the code (and consequently node_modules) from your local
             system so you don't waste storage to an abandoned project.
@@ -797,7 +797,7 @@
             that...?
           </summary>
           <p>
-            Actually...<br /><br /><code>fuckingnode terminate</code> entirely
+            Actually...<br /><br /><code>fkn terminate</code> entirely
             uninstalls a language and removes package manager caches from it, as
             well as typical installation leftovers. For NodeJS, it removes all
             three package managers if installed. It works for any runtime/stack

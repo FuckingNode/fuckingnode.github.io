@@ -5,7 +5,7 @@ description: "Made a fucked up commit? Easily undo it."
 
 # Using FuckingNode: Unmake a commit
 
-> `fuckingnode uncommit`, or `fkuncommit`
+> `fkn uncommit`
 
 The `uncommit` command in FuckingNode allows you to quickly remake a commit. It automatically undoes the last local commit (storing its name), then hangs for you to modify its files as needed, and once you tell it to run, it re-runs `commit` (including `commitCmd` if any) and remakes the commit with the same message.
 
@@ -14,7 +14,7 @@ The `uncommit` command in FuckingNode allows you to quickly remake a commit. It 
 To uncommit changes to your project, just run this from the root of the repo:
 
 ```bash
-fuckingnode uncommit
+fkn uncommit
 ```
 
 ### What to expect

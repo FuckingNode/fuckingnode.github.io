@@ -22,26 +22,25 @@ FuckingNode exists because it fixes all of the issues mentioned above.
 
 ### Bored of manually updating dependencies, linting code, or prettifying code? Of committing all of that? Of removing built output / artifacts?
 
-- [X] `fuckingnode clean -- -- --lint --pretty --commit --destroy --update`
-    - Shorthand: `fkclean -- -- -l -p -c -d -u`.
-    - Assuming [flagless features](../manual/fknode-yaml.md#flagless) are enabled, it can be shortened to just `fkclean`.
+- [X] `fkn clean -- -- --lint --pretty --commit --destroy --update`
+    - Shorthand: `fkn clean -- -- -l -p -c -d -u`.
+    - Assuming [flagless features](../manual/fknode-yaml.md#flagless) are enabled, it can be shortened to just `fkn clean`.
 
 ### Bored of finding and pasting or writing your own `tsconfig.json`?
 
-- [X] `fuckingnode setup ts-strictest`
-    - `ts-strictest` is an example, there are more setups available. Run `fuckingnode setup` to see them all.
+- [X] `fkn setup ts-strictest`
+    - `ts-strictest` is an example, there are more setups available. Run `fkn setup` to see them all.
 
 ### Bored of manually cloning, installing, and launching?
 
-- [X] `fuckingnode kickstart <git-url> [path] [manager]`
-    - Shorthand: `fkstart <git-url> [path] [manager]`
+- [X] `fkn kickstart <git-url> [path] [manager]`
     - `<git-url>` can be not just a Git URL, but also a shorthand (e.g., `gh:Owner/Repo` for GitHub, or `gl:*` for GitLab).
     - `[path]` is optional and specifies a custom path to clone to.
     - `[manager]` is optional and overrides the package manager to use for this project.
 
 ### Bored of manually writing a deprecation notice?
 
-- [X] `fuckingnode surrender <path> [message] [alternatives] [learn-more]`
+- [X] `fkn surrender <path> [message] [alternatives] [learn-more]`
     - `<path>` is the path to the project, or `.` to use the CWD.
     - `[message]` is optional and adds a custom message.
     - `[alternatives]` is optional and lets you write about alternatives to what is going to be deprecated.
@@ -49,15 +48,14 @@ FuckingNode exists because it fixes all of the issues mentioned above.
 
 ### Scared of the pain of making a commit forgetting your tests?
 
-- [X] `fuckingnode commit <message> <...files> [--branch=x] [--push]`
-    - Shorthand: `fkcommit <message> <...files> [--branch=x] [--push]`
+- [X] `fkn commit <message> <...files> [--branch=x] [--push]`
     - `<message>` is your commit message.
     - `--branch=*` is optional and specifies the branch to commit to. If unspecified, current active branch is used.
     - `--push` is optional and if passed the commit (and any previous local commit) will be pushed.
 
 ### Tired of the annoyance of npm or jsr package releases?
 
-- [X] `fuckingnode release <version> [--push] [--dry]`
+- [X] `fkn release <version> [--push] [--dry]`
     - `<version>` is the version to be released, we'll auto bump your package file's version field and create a Git tag with this version code. Must be SemVer parsable.
     - `--push` is optional and if passed, changes will be pushed to Git.
     - `--dry` is optional and if passed, changes will be done (and pushed if specified), but not published to npm / jsr.

@@ -5,7 +5,7 @@ description: "Safest way to 'git commit' out there. Never again push a .env to r
 
 # Using FuckingNode: Make a commit
 
-> `fuckingnode commit <message> [branch] [--push]`, or `fkcommit <message>`
+> `fkn commit <message> [branch] [--push]`
 
 The `commit` command in FuckingNode allows you to run maintenance tasks and any task of your liking before making a commit, and then having the commit made ONLY if these task succeed. This way you ensure you didn't forget to update dependencies before committing and avoid pushing a change that made a certain test not pass (if you chose, for example, your test runner to be the pre-commit task).
 
@@ -14,7 +14,7 @@ The `commit` command in FuckingNode allows you to run maintenance tasks and any 
 To commit changes to your project, use the following command:
 
 ```bash
-fuckingnode commit <message> <files> [--branch branch] [--push] [--keep-staged] [--yes]
+fkn commit <message> <files> [--branch branch] [--push] [--keep-staged] [--yes]
 ```
 
 `message` and `files` are obvious and mandatory. Anything after the message (which must be quoted) is considered a file until a `--`flag appears. All flags are optional.

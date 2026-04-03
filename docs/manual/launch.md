@@ -5,16 +5,16 @@ description: "Save up the clicks and keystrokes, and get your project instantly 
 
 # Using FuckingNode: Launch a project
 
-> `fuckingnode launch <project>`, or `fklaunch <project>`
+> `fkn launch <project>`
 
-The `launch` command is a command that automatically launches your favorite editor with a project open, and automatically runs a "launch task", e.g. `npm run start`. It can also auto-update your dependencies on launch. It can take a project's name from the `package.json` / `deno.json` / `Cargo.toml`, so it's as simple as doing `fklaunch my-project`.
+The `launch` command is a command that automatically launches your favorite editor with a project open, and automatically runs a "launch task", e.g. `npm run start`. It can also auto-update your dependencies on launch. It can take a project's name from the `package.json` / `deno.json` / `Cargo.toml`, so it's as simple as doing `fkn launch my-project`.
 
 ## Usage
 
 Just run the following:
 
 ```bash
-fuckingnode launch <PROJECT>
+fkn launch <PROJECT>
 ```
 
 `PROJECT` is obvious and mandatory. It can be a relative file path, absolute file path, or the project's name as mentioned before.

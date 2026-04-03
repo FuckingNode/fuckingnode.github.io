@@ -6,13 +6,13 @@ description: "FuckingNode is easy to config and to tweak, this page explains all
 # Setup FuckingNode
 
 !!! question "Don't mess terms up"
-    It's not the same to _setup FuckingNode_ (here) than to use _fuckingnode setup_ (a [separate utility](setup.md) we provide)
+    It's not the same to _setup FuckingNode_ (here) than to use _fkn setup_ (a [separate utility](setup.md) we provide)
 
 Here we'll learn everything about setting up and configuring the CLI to your liking.
 
 ## Adding a project
 
-> `fuckingnode add <project>`, or `fkadd <project>`
+> `fkn add <project>`
 
 _We care about user experience, and that's why we're constantly working to ensure peak performance..._ blah blah blah TL;DR: **you need to add projects yourself so we don't consume your time and CPU looking in your entire drive for JavaScript projects** (which trust me, would've been easier for me - kind off).
 
@@ -24,25 +24,25 @@ There are 4 ways to add projects:
 **1 /** You can add a relative or absolute path:
 
 ```bash
-fuckingnode add "../projects/something/"
+fkn add "../projects/something/"
 # or
-fuckingnode add "C:\Users\Zaka\projects\something"
-#                   ^^^^^^^^^^^ (or /home/whatever in linux / mac)
+fkn add "C:\Users\Zaka\projects\something"
+#           ^^^^^^^^^^^ (or /home/whatever in linux / mac)
 ```
 
 Spreading is supported.
 
 ```bash
-fuckingnode add ./foo ./bar ./baz
+fkn add ./foo ./bar ./baz
 ```
 
 **2 /** You can get in the root of the project and add with no args, or a dot (`.`)
 
 ```bash
 cd generic-js-project-name-here
-fuckingnode add .
+fkn add .
 # this below does the same and is two characters shorter :nerd:
-fuckingnode add
+fkn add
 ```
 
 This is our recommended way, as you can run it right after running `npm init` and you don't have to type a long folder name.
@@ -51,7 +51,7 @@ This is our recommended way, as you can run it right after running `npm init` an
 
 ```bash
 cd my-projects
-fuckingnode add ./*
+fkn add ./*
 # this will check every folder
 ```
 
@@ -68,22 +68,21 @@ C:\Users\Zaka\projects\electronJS-clone
 
 ## Removing a project
 
-> `fuckingnode remove <project>`, or `fkrem <project>`
+> `fkn remove <project>`
 
 As easy as using one of the previously mentioned methods, but instead of using `add`, using `remove`.
 
 ```bash
-fuckingnode remove "../projects/something/"
-fuckingnode remove "C:\Users\Zaka\projects\something"
-Spreading is supported.
-
-fuckingnode remove ./foo ./bar ./baz
+fkn remove "../projects/something/"
+fkn remove "C:\Users\Zaka\projects\something"
+# Spreading is supported.
+fkn remove ./foo ./bar ./baz
 ```
 
 However, there's one more thing. Thanks to our innovative expertise, you can use a project's _name_ (as in `package.json > "name"`, or your runtime's equivalent):
 
 ```bash
-fuckingnode remove flamethrower
+fkn remove flamethrower
 ```
 
 The above would work as long as you have one added project with this `package.json`:
@@ -100,17 +99,18 @@ It also works for `deno.json`, `Cargo.toml`...
 
 ## Listing projects
 
-Just run `fuckingnode list`. It'll beautifully show you all of your projects in a `name@version path` format, like below, but with colors and cool stuff.
+Just run `fkn list`. It'll beautifully show you all of your projects in a table like below, but with CLI colors and cool stuff.
 
 ```bash
-💡 Here are the m*therf*ckers you added so far:
+💡 Here are the motherfuckers you added  so far:
 
-sokora@0.3.0 /home/Zaka/Code/Sokora
-vuelto.pp.ua@v1.1.2 /home/Zaka/Code/vuelto
-personaplus-website@0.1.0 /home/Zaka/Code/personaplus-website
-personaplus@0.0.6-preapp.30 /home/Zaka/Code/personaplus
-@zakahacecosas/fuckingnode@4.0.0 /home/Zaka/Code/FuckingNode
-konbini@0.0.1 /home/Zaka/Code/konbini
+[bun+bun]   konbini v0.0.1 /home/zaka/Code/Konbini (clear)
+[bun+bun]   sokora v0.4 /home/zaka/Code/Sokora (clear)
+[bun+bun]   zen-pkgs v0.0.1 /home/zaka/Code/zen-os-search (clear)
+[node+npm]  personaplus v0.2.0 /home/Zaka/Code/personaplus (protected from updater)
+[deno+deno] /home/zaka/Code/dev-utils (clear)
+[deno+deno] @zakahacecosas/fuckingnode v5.2.4 /home/zaka/Code/FuckingNode (protected from cleaner)
+Shown as: [Runtime+PackageManager] ([Name] (v[Version])) [Root] [DivineProtection]...
 ```
 
 Later on we'll see how to "ignore" projects; here we'll tell you that you can pass `--ignored` to only list ignored projects, or `--alive` to only list non-ignored projects. If you try to mix both flags to create a loophole and break the matrix, you won't break anything; the flag you write first will overrule the second one.
@@ -155,11 +155,11 @@ As you can see, you're shown at the end the key used to change a setting (it app
 
 ### Change settings
 
-To change them, execute `fuckingnode settings change (KEY) (VALUE)`, for example:
+To change them, execute `fkn settings change (KEY) (VALUE)`, for example:
 
 ```bash
-fuckingnode settings change default-intensity "hard"
-fuckingnode settings change update-freq 15
+fkn settings change default-intensity "hard"
+fkn settings change update-freq 15
 ```
 
 ### Additional settings commands

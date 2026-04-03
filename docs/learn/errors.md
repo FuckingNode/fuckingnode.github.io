@@ -158,9 +158,9 @@ All errors in this category are `Task__[TASK TYPE]`, which can be `Release`, `Co
 
 ## Parameter [Param]
 
-All errors in this category are `Param__[PARAM TYPE]Invalid`, which can be `Target`, `CIntensity`, `Setup`, `Ver`, `GitTarget`, `GitTargetAlias`, or `Whatever` for anything else. When running a command that requires parameters (`fkstart <GIT TARGET>`, `fksetup <SETUP>`, and so on...), any missing or invalid parameter will trigger a Task category error.
+All errors in this category are `Param__[PARAM TYPE]Invalid`, which can be `Target`, `CIntensity`, `Setup`, `Ver`, `GitTarget`, `GitTargetAlias`, or `Whatever` for anything else. When running a command that requires parameters (`fkn kickstart <GIT TARGET>`, `fkn setup <SETUP>`, and so on...), any missing or invalid parameter will trigger a Task category error.
 
-If unclear, `Ver` refers to "version" (for the `fkrelease` command), `CIntensity` refers to "cleaner intensity", and both `GitTarget` and `GitTargetAlias` refer to the kickstart parameter, respectively referring to Git URLs and Git aliases.
+If unclear, `Ver` refers to "version" (for the `fkn release` command), `CIntensity` refers to "cleaner intensity", and both `GitTarget` and `GitTargetAlias` refer to the kickstart parameter, respectively referring to Git URLs and Git aliases.
 
 ## Interop [Interop]
 

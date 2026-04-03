@@ -5,7 +5,7 @@ description: "Prepare, release, deploy, and push your JS package, quickly and sa
 
 # Using FuckingNode: Automate a release
 
-> `fuckingnode release <version> [project] [--push] [--dry]`, or `fkrelease <version> [project] [--push] [--dry]`
+> `fkn release <version> [project] [--push] [--dry]`
 
 The `release` command in FuckingNode allows you to run maintenance tasks and any task of your liking before making a release, and then having the package release made ONLY if these task succeed. This way you ensure you didn't forget to update dependencies or bump version number before releasing, and avoid pushing a change that made a certain test not pass (if you chose, for example, your test runner to be the pre-release task).
 
@@ -16,7 +16,7 @@ It becomes more powerful when [linking it to `build`](./build.md#usage)
 To release changes to your project, use the following command:
 
 ```bash
-fuckingnode release <project> <version> [--push] [--dry]
+fkn release <project> <version> [--push] [--dry]
 ```
 
 `version` is a SemVer compliant version - as we **automatically bump version code on your package file for you** - and it is mandatory (if you already bumped the version by yourself, no changes are made). After, you can optionally pass the path to the project to release, otherwise the current working directory is used. You can also pass some flags; `--push` is optional and if passed, commits will be pushed to the remote repository. `--dry` is optional too, and if passed, changes will be committed (and pushed if specified), but not published to npm / jsr.
@@ -43,7 +43,7 @@ Update your deno.json's "version" field
 Create a deno.json.bak file, and add it to .gitignore
 Publish your changes to JSR
 
-- all of this at @zakahacecosas/fuckingnode@4.0.0 C:\Users\Zaka\projects\FuckingNode
+- all of this at @zakahacecosas/fuckingnode@5.0.0 C:\Users\Zaka\projects\FuckingNode
 Confirm? [y/N]
 ```
 

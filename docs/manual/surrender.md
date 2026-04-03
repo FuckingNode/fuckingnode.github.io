@@ -5,7 +5,7 @@ description: "Thanks to the world's only JavaScript CLI that knows what you'll a
 
 # Using FuckingNode: Automate giving up
 
-> `fuckingnode surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]`
+> `fkn surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]`
 
 The `surrender` command in FuckingNode is a _one of its kind_ command - it automates the process of deprecating a project. It updates dependencies of your project one last time, then updates your README file, makes a final commit, and pushes your changes to GitHub. Once changes are on the cloud, it removes the code from your local machine, too.
 
@@ -14,7 +14,7 @@ The `surrender` command in FuckingNode is a _one of its kind_ command - it autom
 To deprecate your project, use the following command:
 
 ```bash
-fuckingnode surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]
+fkn surrender <project> [message] [alternative] [learn-more] [--github OR --gitlab]
 ```
 
 `<project>` is the project's path or name, `message` is an optional message to leave in the README, `alternative` is an optional URL (or any text) to leave as an alternative to your project, and `learn-more` is an optional URL (or any text) to leave as a link to a page where a user can learn more about your deprecation. If `--github` or `--gh` are passed, GitHub flavored MarkDown will be used, and if `--gitlab` or `--gl` are passed instead, GitLab flavored MarkDown will be used instead. If mixing them, you won't crash the CLI or break the matrix, GitHub flavor will simply take precedence.
@@ -63,14 +63,14 @@ If you do hit `y` twice, the process will begin, with no way to stop it (in real
 
 There are different _aliases_ that invoke the exact same command, for you to choose from depending on your mood. They do not affect the process or parameters taken at all.
 
-- `fuckingnode surrender <project> (other params...)` (original)
-- `fuckingnode deprecate <project> (other params...)`
-- `fuckingnode nevermind <project> (other params...)`
-- `fuckingnode give-up <project> (other params...)`
-- `fuckingnode i-give-up <project> (other params...)`
-- `fuckingnode its-over <project> (other params...)`
-- `fuckingnode i-really-hate <project> (other params...)`
-- `fuckingnode im-done-with <project> (other params...)`
+- `fkn surrender <project> (other params...)` (original)
+- `fkn deprecate <project> (other params...)`
+- `fkn nevermind <project> (other params...)`
+- `fkn give-up <project> (other params...)`
+- `fkn i-give-up <project> (other params...)`
+- `fkn its-over <project> (other params...)`
+- `fkn i-really-hate <project> (other params...)`
+- `fkn im-done-with <project> (other params...)`
 
 ---
 

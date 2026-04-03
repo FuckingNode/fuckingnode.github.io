@@ -5,10 +5,10 @@ description: "You're meant to write code, not config files. Let us handle setup 
 
 # Using FuckingNode: Setup a project
 
-> `fuckingnode setup <setup> [project]`, or `fksetup <project> [project]`
+> `fkn setup <setup> [project]`
 
 !!! question "Don't mess terms up"
-    It's not the same to _setup FuckingNode_ ([configure the CLI first time](configuration.md)) than to use _fuckingnode setup_ (here)
+    It's not the same to _setup FuckingNode_ ([configure the CLI first time](configuration.md)) than to use _fkn setup_ (here)
 
 The `setup` command in FuckingNode basically adds a pre-made text-config file (like a preset `tsconfig.json` or a preset `fknode.yaml`). There's currently few _setups_ (we refer to each "preset" / "template" / ... as a _setup_); however they're easy to add, so soon we'll likely have a setup for every use case. _You could contribute your own, too :wink:._
 
@@ -17,7 +17,7 @@ The `setup` command in FuckingNode basically adds a pre-made text-config file (l
 To list available setups, run:
 
 ```bash
-fuckingnode setup
+fkn setup
 ```
 
 You'll see something like the following (but with more setups and CLI colors):
@@ -46,9 +46,9 @@ You can filter setups by typing part of the name, e.g. 'setup license' to show a
 Then, to apply a setup, run:
 
 ```bash
-fuckingnode setup <setup-name>
+fkn setup <setup-name>
 # for example
-fuckingnode setup ts-strictest
+fkn setup ts-strictest
 ```
 
 `setup-name` is obvious and mandatory, its the name of the setup to be applied. When listing setups you'll see their names (and a brief description).
@@ -56,14 +56,14 @@ fuckingnode setup ts-strictest
 This will add a setup to the project in the current working directory. You can add a setup to a project anywhere by passing a path as the 2nd argument.
 
 ```bash
-fuckingnode setup <setup-name> <path>
+fkn setup <setup-name> <path>
 # for example
-fuckingnode setup gitignore-js ./projects/some-js-framework
+fkn setup gitignore-js ./projects/some-js-framework
 ```
 
 Since we add more setups from time to time (and the table is already larger than what shown in the documentation), you might want a search option. If you type a setup that doesn't exist but partially matches existing setups, these will be shown.
 
-For example, running `fuckingnode setup ts-` returns something like this:
+For example, running `fkn setup ts-` returns something like this:
 
 ```txt
 

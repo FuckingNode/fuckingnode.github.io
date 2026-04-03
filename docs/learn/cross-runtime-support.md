@@ -1,6 +1,6 @@
 # Cross-runtime compatibility
 
-> `fuckingnode compat [item]`
+> `fkn compat [item]`
 
 !!! note "What we mean by _Cross-runtime_" While we always use the term
 "cross-runtime", we also include _cross-platform_ (Golang and Rust) support

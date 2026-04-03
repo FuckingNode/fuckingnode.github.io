@@ -105,50 +105,6 @@ install_app() {
     echo "Downloaded successfully to $EXE_PATH"
 }
 
-# make shortcuts
-create_shortcuts() {
-
-    echo "Creating shortcuts for CLI..."
-
-    # all aliases should be
-    # (appName).exe <a command> [ANY ARGS PASSED]
-    # so e.g. fkclean "b" = (appName) <command> "b"
-
-    declare -A commands=(
-        ["fknode"]=""
-        ["fkn"]=""
-        ["fkclean"]="clean"
-        ["fkstart"]="kickstart"
-        ["fklaunch"]="launch"
-        ["fkcommit"]="commit"
-        ["fkuncommit"]="uncommit"
-        ["fkbuild"]="build"
-        ["fkrelease"]="release"
-        ["fksurrender"]="surrender"
-        ["fkadd"]="add"
-        ["fkrem"]="remove"
-        ["fklist"]="list"
-        ["fkaudit"]="audit"
-        ["fkstats"]="stats"
-        ["fksetup"]="setup"
-        ["fkmigrate"]="migrate"
-    )
-
-    for name in "${!commands[@]}"; do
-        cmd=${commands[$name]}
-        script_path="$BIN_DIR/$name"
-
-        sudo tee "$script_path" >/dev/null <<EOF
-#!/usr/bin/env bash
-$EXE_NAME $cmd "\$@"
-EOF
-
-        sudo chmod +x "$script_path"
-
-        echo "Shortcut created successfully at $script_path"
-    done
-}
-
 # installer itself
 installer() {
     echo "Hi! We'll install FuckingNode ($ARCH edition) for you. Just a sec!"
@@ -163,10 +119,6 @@ installer() {
     migrate_old_install
     remove_if_needed
     install_app
-    echo "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
-    echo "We will create a bunch of shell scripts next to the main installation for these to work."
-    echo ""
-    create_shortcuts
     echo ""
     echo "Installed successfully!"
 }

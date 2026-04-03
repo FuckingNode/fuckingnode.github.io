@@ -5,7 +5,7 @@ description: "Make it easy to handle a multiple-step building process."
 
 # Using FuckingNode: Automate builds
 
-> `fuckingnode build <project>`, or `fkbuild <project>`
+> `fkn build <project>`
 
 The `build` command in FuckingNode allows you to run all the commands of your project's building / compilation process (which are usually several) from a single command. It'll show progress, and halt execution if any command fails. It makes your workflow slightly faster since it's just one command that you have to run.
 
@@ -16,8 +16,8 @@ To build your project, first define all the commands that should run in your `fk
 Once defined, just run `build` and it'll build the project in the current working directory. You can also explicitly specify a path.
 
 ```bash
-fuckingnode build # builds here
-fuckingnode build ./projects/some-project # builds there
+fkn build # builds here
+fkn build ./projects/some-project # builds there
 ```
 
 ---

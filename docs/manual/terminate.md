@@ -5,7 +5,7 @@ description: "Resign with ease."
 
 # Using FuckingNode: Automate quitting your career
 
-> `fuckingnode terminate <runtime> [--remove-all-motherfuckers-too]`
+> `fkn terminate <runtime> [--remove-all-motherfuckers-too]`
 
 If `surrender` isn't enough for you, we actually made an automation for quitting entirely too. You know how whenever you uninstall a program it usually leaves leftovers on your machine? Well, `terminate` will automatically uninstall any runtime that we support from your machine and remove leftovers, giving you both your storage back and the peace of not touching NodeJS again (unless you reinstall it, of course).
 
@@ -14,7 +14,7 @@ If `surrender` isn't enough for you, we actually made an automation for quitting
 Just run the following:
 
 ```bash
-fuckingnode terminate <runtime>
+fkn terminate <runtime>
 ```
 
 Where `<runtime>` is either `node`, `deno`, `bun`, `go`, or `rust`.
@@ -33,22 +33,22 @@ There are different _aliases_ that invoke the exact same command, for you to cho
 
 There's these, that do not affect to the parameters taken.
 
-- `fuckingnode terminate (params...)` (original)
-- `fuckingnode fuck-the-lang (params...)`
-- `fuckingnode ftl (params...)` (shortened from above)
-- `fuckingnode fuck-the-runtime (params...)`
-- `fuckingnode ftr (params...)` (shortened from above)
-- `fuckingnode never-again-using (params...)`
-- `fuckingnode resign (params...)`
+- `fkn terminate (params...)` (original)
+- `fkn fuck-the-lang (params...)`
+- `fkn ftl (params...)` (shortened from above)
+- `fkn fuck-the-runtime (params...)`
+- `fkn ftr (params...)` (shortened from above)
+- `fkn never-again-using (params...)`
+- `fkn resign (params...)`
 
 Then there's these, which remove the need to specify the runtime to remove, taking no arguments (except for the project removal flag).
 
-- `fuckingnode unnode` (removes node)
-- `fuckingnode undeno` (removes deno)
-- `fuckingnode unbun` (removes bun)
-- `fuckingnode ungo` (removes go)
-- `fuckingnode unrust` (removes rust)
-- `fuckingnode seriously-fuck-node` (removes node)
+- `fkn unnode` (removes node)
+- `fkn undeno` (removes deno)
+- `fkn unbun` (removes bun)
+- `fkn ungo` (removes go)
+- `fkn unrust` (removes rust)
+- `fkn seriously-fuck-node` (removes node)
 
 ---
 

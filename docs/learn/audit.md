@@ -12,7 +12,7 @@ However, as a mobile app that never interacted with cookies and very rarely used
 
 ### TL;DR
 
-`fuckingnode audit` analyzes vulnerabilities and helps you tell if they really affect your project or if they can be left alone without too much risk.
+`fkn audit` analyzes vulnerabilities and helps you tell if they really affect your project or if they can be left alone without too much risk.
 
 ## How it works
 
@@ -29,7 +29,7 @@ Due to where nowadays society is heading, it _is_ worth noting questions are not
 
 ```mermaid
 graph TD
-    A[fkaudit] -->|Command execution| B[Runs platform-specific audit command]
+    A[fkn audit] -->|Command execution| B[Runs platform-specific audit command]
     B -->|Parse JSON output| C[Stores text in a SV_KEYWORDS object]
     B -->|Parse JSON output| G[Stores severities separately]
     C -->|Analyzed| D[Questions asked to the user]

@@ -5,16 +5,16 @@ description: "How to cleanup your projects - and fall in love with FuckingNode."
 
 # Using FuckingNode: the most important command
 
-> `fuckingnode clean [...many optional arguments]`, or `fkclean [...many optional arguments]`
+> `fkn clean [...many optional arguments]`
 
 The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On top of that base, additional maintenance features and [cross-runtime support](../learn/cross-runtime-support.md) exist as well.
 
 ## The `clean` command
 
-The `fuckingnode clean` command is the base utility of the app. It accepts the following (all optional) arguments:
+The `fkn clean` command is the base utility of the app. It accepts the following (all optional) arguments:
 
 ```bash
-fuckingnode clean <PROJECT | -- | ...PROJECTS> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--commit]
+fkn clean <PROJECT | -- | ...PROJECTS> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--commit]
 ```
 
 When executed with no arguments, it'll do a cleanup using the default intensity (which is `normal` and can be changed from the [settings](configuration.md#settings)) across all of your projects.
@@ -74,11 +74,11 @@ The `maxim` level does what the previous levels do (unless using `hard-only`), a
 Now that we know this, we can choose whatever fits our needs each time we run a cleanup
 
 ```bash
-fuckingnode clean -- normal
-fuckingnode clean -- hard
-fuckingnode clean -- hard-only
-fuckingnode clean -- maxim
-fuckingnode clean -- maxim-only
+fkn clean -- normal
+fkn clean -- hard
+fkn clean -- hard-only
+fkn clean -- maxim
+fkn clean -- maxim-only
 ```
 
 Running without an intensity will use the **default intensity**. On a fresh install, it's always `normal`, however [that can be changed to your linking from the settings command](configuration.md#settings).
@@ -88,7 +88,7 @@ Notice the `--`. `clean` takes a project path / name as a first optional argumen
 You can also use spreading by using `--projects`, like this:
 
 ```bash
-fuckingnode clean --projects foo bar ./projects/baz
+fkn clean --projects foo bar ./projects/baz
 ```
 
 **Keep in mind**, when using spreading, you need to use a flag to interrupt spreading, so if you want to specify an intensity, it'll need a `--intensity` flag otherwise. The `--intensity` flag does _not_ work however if projects are not spreading.
@@ -101,18 +101,16 @@ It's completely opt-in and not required whatsoever. However, it can be really us
 
 ## Using additional features
 
-By default, `fuckingnode clean (project) (intensity)` only performs a cleanup of the desired level. Features we promised you (automated updating, linting, prettifying, destroying, and committing) are opt-in features.
+By default, `fkn clean (project) (intensity)` only performs a cleanup of the desired level. Features we promised you (automated updating, linting, prettifying, destroying, and committing) are opt-in features.
 
 There are two ways of activating them:
 
 **1 /** Simply pass them as a flag to use them. No args are required for any of them.
 
 ```bash
-fuckingnode clean -- -- --update --lint --pretty --destroy --commit
-# or
-fuckingnode clean -- -- -u -l -p -d -c
-# or even shorter
-fkclean -- -- -u -l -p -d -c
+fkn clean -- -- --update --lint --pretty --destroy --commit
+# or, shorter
+fkn clean -- -- -u -l -p -d -c
 ```
 
 **2 /** For a specific project to automatically use some features without the need of the `clean` command having the flag specified, use `flagless` in the `fknode.yaml` file:

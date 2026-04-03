@@ -1,11 +1,7 @@
 $ErrorActionPreference = "Stop"
 
-$APP_NAME = @{
-    CASED = "FuckingNode"
-    CLI   = "fuckingnode"
-}
-$INSTALL_DIR = "C:\$($APP_NAME.CASED)"
-$EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "$($APP_NAME.CLI).exe"
+$INSTALL_DIR = "C:\FuckingNode"
+$EXE_PATH = Join-Path -Path $INSTALL_DIR -ChildPath "fkn.exe"
 
 # DETACH PROCESS
 $IsIex = -not $PSCommandPath
@@ -32,7 +28,7 @@ Function Remove-IfNeeded {
         $procId = $args[0] -as [int]
     }
     else {
-        $proc = Get-Process -Name $APP_NAME.CLI -ErrorAction SilentlyContinue | Select-Object -First 1
+        $proc = Get-Process -Name "fkn" -ErrorAction SilentlyContinue | Select-Object -First 1
         if ($proc) { $procId = $proc.Id }
     }
     
@@ -75,55 +71,6 @@ Function Get-LatestReleaseUrl {
     }
 }
 
-# creates a .bat shortcut to allow for fknode to exist alongside fuckingnode in the CLI
-Function New-Shortcuts {
-    try {
-        Write-Output "Creating shortcuts for CLI..."
-
-        # all aliases should be
-        # (appName).exe <a command> [ANY ARGS PASSED]
-        # so e.g. fkclean "b" = (appName).exe <command> "b"
-
-        $appName = $APP_NAME.CLI
-
-        if (-not (Test-Path $INSTALL_DIR -PathType Container)) {
-            Throw "Error: Install directory '$INSTALL_DIR' does not exist."
-        }
-
-        $commands = @{
-            "fknode"      = ""
-            "fkn"         = ""
-            "fkclean"     = "clean"
-            "fkstart"     = "kickstart"
-            "fklaunch"    = "launch"
-            "fkcommit"    = "commit"
-            "fkuncommit"  = "uncommit"
-            "fkbuild"     = "build"
-            "fkrelease"   = "release"
-            "fksurrender" = "surrender"
-            "fkadd"       = "add"
-            "fkrem"       = "remove"
-            "fklist"      = "list"
-            "fkaudit"     = "audit"
-            "fkstats"     = "stats"
-            "fksetup"     = "setup"
-            "fkmigrate"   = "migrate"
-        }
-
-        foreach ($name in $commands.Keys) {
-            $cmd = $commands[$name]
-            $batContent = "@echo off`n%~dp0$($appName).exe $cmd %*"
-            $batPath = Join-Path -Path $INSTALL_DIR -ChildPath "$name.bat"
-            Set-Content -Path $batPath -Value $batContent -Encoding ASCII
-            Write-Output "Shortcut created successfully at $batPath"
-        }
-    }
-    catch {
-        Write-Error "Failed to create .bat shortcuts for the CLI: $_"
-        Throw $_
-    }
-}
-
 # download the app
 Function Install-App {
     param (
@@ -140,7 +87,7 @@ Function Install-App {
         Write-Output "Downloaded successfully to $EXE_PATH"
     }
     catch {
-        Throw "Failed to download fuckingnode.exe: $_"
+        Throw "Failed to download fkn.exe: $_"
     }
 }
 
@@ -232,14 +179,10 @@ Function Add-AppToPath {
 
 Function Installer {
     try {
-        Write-Output "Hi! We'll install $($APP_NAME.CASED) for you. Just a sec!"
+        Write-Output "Hi! We'll install FuckingNode for you. Just a sec!"
         Remove-IfNeeded
         Install-App -url (Get-LatestReleaseUrl)
         Add-AppToPath
-        Write-Output "You may have seen our documentation mention shortcuts like 'fknode', 'fkn', 'fkclean'..."
-        Write-Output "These are made by creating a bunch of scripts (fknode.bat, fkn.bat...) next to the main installation."
-        Write-Output "We will create a bunch of shell scripts next to the main installation for these to work."
-        New-Shortcuts
         Write-Output "Installed successfully! Restart your terminal for it to work."
     }
     catch {

@@ -7,8 +7,6 @@ description: "As easy as any installation should be."
 
 First thing first, install the CLI using any of these methods.
 
-Standard installation for :fontawesome-brands-windows: Microsoft Windows, :simple-linux: Linux and :simple-apple: macOS is script-based, and it's worth noting **these scripts will also create shortcuts.** For example, `fkn`, `fknode`, and also command-specific shortcuts like `fkclean`, `fkaudit`, and so on. These shortcuts are script (SH or PS1) based, and are not created when compiling from source, when installing from a package manager, or when installing for NixOS.
-
 ## Standard installation
 
 ### :fontawesome-brands-windows: Microsoft Windows

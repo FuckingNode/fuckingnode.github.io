@@ -52,27 +52,26 @@ inputs.fuckingnode.packages."${pkgs.system}".default;
 
 ### Step 1: Initial setup
 
-Add your projects to FuckingNode's project list. This is done manually with the `fuckingnode add <path>` (or `fkadd <path>`) command. `<path>` can be any file path, or empty to use the CWD.
+Add your projects to FuckingNode's project list. This is done manually with the `fkn add <path>` command. `<path>` can be any file path, or empty to use the CWD.
 
 ```bash
 # relative
-fuckingnode add "../projects/project1"
+fkn add "../projects/project1"
 # absolute
-fuckingnode add "/home/Zaka/Code/project2"
+fkn add "/home/Zaka/Code/project2"
 # self path
 cd project3
-fuckingnode add
+fkn add
 ```
 
-It's recommended that from now on you run `fkadd .` immediately after running `npm init` (or `pnpm init` or whatever) each time you create a project.
+It's recommended that from now on you run `fkn add .` immediately after running `npm init` (or `pnpm init` or whatever) each time you create a project.
 
 ### Step 2: Start using it
 
 A basic cleanup is invoked by running this command, with no arguments.
 
 ```bash
-fuckingnode clean
-# or "fkclean"
+fkn clean
 ```
 
 While it doesn't recover gigabytes of storage, it's simple, fast and gets the job done. Flags can be passed for using extra features.
@@ -85,10 +84,10 @@ You can also clean a specific project providing it's path, or it's name from the
 
 ```bash
 # only clean /home/users/me/project1, for example
-fuckingnode clean ../project1
+fkn clean ../project1
 
 # only clean the project with "my-framework" in the "name" field
-fuckingnode clean my-framework
+fkn clean my-framework
 ```
 
 ### Step 3: Use it better
@@ -96,12 +95,12 @@ fuckingnode clean my-framework
 For increased intensity, use this.
 
 ```bash
-fuckingnode clean hard
+fkn clean hard
 ```
 
 When cleaning like this, global caches from all your installed package managers will be cleared immediately after cleaning all of your projects.
 
-If you only wish to clear global caches without waiting for individual cleanup of all of your projects, use `fuckingnode clean hard-only`, or a shortcut (`fuckingnode global-clean` or `fuckingnode hard-clean`).
+If you only wish to clear global caches without waiting for individual cleanup of all of your projects, use `fkn clean hard-only`, or a shortcut (`fkn global-clean` or `fkn hard-clean`).
 
 ### Step 4: Use it even better
 

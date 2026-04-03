@@ -42,11 +42,11 @@ This workflow can be simplified into the following:
 
 ```mermaid
 graph TD
-    A["fkadd ../project1"]
-    B["fkadd ../project2"]
-    C["fkadd /home/Zaka/Code/some-app"]
+    A["fkn add ../project1"]
+    B["fkn add ../project2"]
+    C["fkn add /home/Zaka/Code/some-app"]
 
-    D["fkclean -- -- -u -l -d -p -"]
+    D["fkn clean -- -- -u -l -d -p -"]
 
     A --> D
     B --> D
@@ -59,13 +59,13 @@ We reduce your workflow to a one-time bunch of commands for initial setup, and t
 
 ### TL;DR
 
-`fuckingnode clean` gets into each project's root directory and executes all the maintenance commands you need, automatically.
+`fkn clean` gets into each project's root directory and executes all the maintenance commands you need, automatically.
 
 ## How it works
 
 ### Finding your projects
 
-You need to manually add a project, via the `fuckingnode add` command. When you add a project, it's stored in either:
+You need to manually add a project, via the `fkn add` command. When you add a project, it's stored in either:
 
 - `C:\Users\YOUR_USER\AppData\Roaming\FuckingNode\` on :fontawesome-brands-windows: Windows
 - `/home/.config/FuckingNode/` on :simple-apple: macOS and :simple-linux: Linux
@@ -80,7 +80,7 @@ C:\Users\Zaka\projects\Vuelto
 C:\Users\Zaka\projects\FuckingNode
 ```
 
-Whenever you run the `fuckingnode clean` command, first thing we do is reading this file.
+Whenever you run the `fkn clean` command, first thing we do is reading this file.
 
 ### Cleaning a project
 
@@ -88,7 +88,7 @@ Cleaning a project involves the following steps:
 
 ```mermaid
 graph TD
-    CLI["fuckingnode clean [...flags]"]
+    CLI["fkn clean [...flags]"]
 
     CLI -->|chdir into| A["C:\Users\Zaka\projects\Sokora"]
 
@@ -107,11 +107,11 @@ graph TD
     I -->|Validates| B
 ```
 
-Inside the terminal you're running `fuckingnode` from, we'll change directories to each added project's path. From the inside, we proceed as follows:
+Inside the terminal you're running `fkn` from, we'll change directories to each added project's path. From the inside, we proceed as follows:
 
 First, we basically do some basic validations before touching each project (is the lockfile present? are node modules installed? etc...), so we know what to do and we're sure all commands will work out of the box. Some validations, like the absence of `node_modules`, will result in that project being skipped into the next one. Other validations, like a `deno.lock` lockfile, will change our behavior (in this example, we'd skip some features as Deno doesn't support all cleaning features, [as noted here](./cross-runtime-support.md)).
 
-Then, we seek a `fknode.yaml` config file - if present, we parse it and validate it. If not present, or invalid, **we run each CLI command from the open terminal**. When using `fuckingnode clean` you'll notice we don't add a loader whatsoever, but instead show you the raw output of each command as if you executed it yourself. That's because we did the same, each command is ran from the terminal you're on.
+Then, we seek a `fknode.yaml` config file - if present, we parse it and validate it. If not present, or invalid, **we run each CLI command from the open terminal**. When using `fkn clean` you'll notice we don't add a loader whatsoever, but instead show you the raw output of each command as if you executed it yourself. That's because we did the same, each command is ran from the terminal you're on.
 
 If settings _are_ present, we take them into account before doing anything, so if you added a `divineProtection` value we skip certain actions.
 
