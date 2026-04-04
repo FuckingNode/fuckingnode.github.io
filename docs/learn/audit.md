@@ -123,7 +123,7 @@ This table is only updated when compatibility changes, don't mind the version nu
 
 | Support    | NodeJS npm | NodeJS pnpm | NodeJS yarn | Deno | Bun | Go | Cargo |
 | :--------- | ---------- | ----------- | ----------- | ---- | --- | -- | ----- |
-| **v5.2.0** | YES        | YES         | YES         | YES  | YES | NO | NO    |
+| **v5.3.0** | YES        | YES         | YES         | YES  | YES | NO | NO    |
 | v4.0.0     | YES        | YES         | YES         | NO   | YES | NO | NO    |
 | v3.3.0     | YES        | YES         | YES         | NO   | NO  | NO | NO    |
 | v3.0.0     | EXP        | EXP         | EXP         | NO   | NO  | NO | NO    |

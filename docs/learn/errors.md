@@ -183,16 +183,3 @@ If FuckingNode references a file embedded within the binary that's indeed not em
 `Internal__Lazy`
 
 More casual way to call a "NotImplemented" error. If we're lazy to finish a feature or can't finish it on time to fullfil our [release schedule](https://github.com/FuckingNode/FuckingNode/blob/master/RELEASE_SCHEDULE.md), instead of removing references to the feature we'll make it trigger this error, indicating we were indeed lazy to implement it.
-
-## External errors
-
-!!! warning
-    This category will be removed by version 5.1, and these errors will be moved somewhere else.
-
-Errors that depend on something external.
-
-### Setting / Favorite IDE
-
-`External__Setting__FavIde`
-
-If you changed your favorite IDE to something unsupported, then got us to attempt to launch it, this happens. You cannot directly set this setting to something invalid, you'd have to manually edit the config file - making this an "external" error.

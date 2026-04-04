@@ -28,7 +28,7 @@ Below, in case you provided additional params, like `learn-more` or `alternative
 At the end, there will always be a small disclaimer looking like this:
 
 !!! quote "The disclaimer shown looks like this:"
-    This project was _automatically deprecated_ using the FuckingNode v5.0.0 CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
+    This project was _automatically deprecated_ using the FuckingNode v5.3.0 CLI utility (found at [this repo](https://github.com/FuckingNode/FuckingNode/)), and this message was auto-generated based on their input - so if something feels off, it might be because of that. Below proceeds the old README from this project, unedited
 
 Below is an example of how a full deprecation README, assuming example values for all optional arguments, could look like.
 

@@ -14,7 +14,7 @@ not planned short-term anyway).
 
 You can run `compat` anytime from the CLI to see a table showing what works and
 what doesn't. **NodeJS is the only environment with 100% platform support.** As
-of version 5.1.0, that table looks like this:
+of version 5.3.0, that table looks like this:
 
 | Feature   | NodeJS     | Deno       | Bun        | Go         | Cargo      |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- |

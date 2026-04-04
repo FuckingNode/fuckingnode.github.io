@@ -55,14 +55,14 @@ fkn add ./*
 # this will check every folder
 ```
 
-**4 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On :fontawesome-brands-windows: Windows it lives at your local `%APPDATA%`, and on :simple-linux: Linux & :simple-apple: macOS it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks kinda like this:
+**4 /** You also can waste your time opening the config file. It's a plain text file that stores absolute paths separated by line breaks. On :fontawesome-brands-windows: Windows it lives at your local `%APPDATA%`, and on :simple-linux: Linux & :simple-apple: macOS it lives on `HOME` (or `XDG_CONFIG_HOME`). It looks like this:
 
 ```txt title="fuckingnode-motherfuckers.txt" linenums="1"
 C:\Users\Zaka\projects\Sokora
 C:\Users\Zaka\projects\electronJS-clone
 ```
 
-**Keep in mind paths must always point to the root**. If any path point to the `package.json` itself or to anything else that isn't the root of the project (the DIR that holds `package.json`), you're cooked (the entire CLI won't work).
+**Keep in mind paths must always point to the root**. If any path point to the `package.json` itself or to anything else that isn't the root of the project (the DIR that holds `package.json`), the entire CLI will just break.
 
 **Once you're done with adding your projects, you can** theoretically **skip the rest of the page and get started with [using the CLI](usage.md)**. Keep reading for learning the rest about configuring the CLI.
 
@@ -79,7 +79,9 @@ fkn remove "C:\Users\Zaka\projects\something"
 fkn remove ./foo ./bar ./baz
 ```
 
-However, there's one more thing. Thanks to our innovative expertise, you can use a project's _name_ (as in `package.json > "name"`, or your runtime's equivalent):
+## Smart Project Referencing
+
+There's one more thing to `fkn remove` (and to many more commands). **Thanks to our innovative expertise, you can use a project's _name_ (as in `package.json > "name"`, or your runtime's equivalent)**:
 
 ```bash
 fkn remove flamethrower
@@ -97,6 +99,13 @@ The above would work as long as you have one added project with this `package.js
 
 It also works for `deno.json`, `Cargo.toml`...
 
+Some facts:
+
+- Any command that takes a project as an input can take a name, except for illogical things like `fkn add`.
+- Feature's _not_ officially called "Smart Project Referencing".
+- If two projects have the same name... there's no code to explicitly handle it, actually. This thing reads the project list in order, so first one to have the name wins.
+    - We like to consider our beloved users "smart". Be smart enough not to keep duplicate project names.
+
 ## Listing projects
 
 Just run `fkn list`. It'll beautifully show you all of your projects in a table like below, but with CLI colors and cool stuff.
@@ -109,30 +118,31 @@ Just run `fkn list`. It'll beautifully show you all of your projects in a table 
 [bun+bun]   zen-pkgs v0.0.1 /home/zaka/Code/zen-os-search (clear)
 [node+npm]  personaplus v0.2.0 /home/Zaka/Code/personaplus (protected from updater)
 [deno+deno] /home/zaka/Code/dev-utils (clear)
-[deno+deno] @zakahacecosas/fuckingnode v5.2.4 /home/zaka/Code/FuckingNode (protected from cleaner)
-Shown as: [Runtime+PackageManager] ([Name] (v[Version])) [Root] [DivineProtection]...
+[deno+deno] @zakahacecosas/fuckingnode v5.3.0 /home/zaka/Code/FuckingNode (protected from cleaner)
 ```
 
-Later on we'll see how to "ignore" projects; here we'll tell you that you can pass `--ignored` to only list ignored projects, or `--alive` to only list non-ignored projects. If you try to mix both flags to create a loophole and break the matrix, you won't break anything; the flag you write first will overrule the second one.
+Data is shown as `[Runtime+PackageManager] ([Name] (v[Version])) [Root] [DivineProtection]`.
+
+Later on we'll see how to "protect" projects; here we'll tell you that you can pass `--ignored` to only list protected projects (or ignored; later we'll talk about terminology), or `--alive` to only list non-ignored projects. If you try to mix both flags to create a loophole and break the matrix, you won't break anything; the flag you write first will overrule the second one.
 
 ## Settings
 
-As most apps, we offer settings you can tweak. We use default values that should work for most people, to save you even more time - however you _might_ want to change them, **especially if you don't use Visual Studio Code**, as it's your "favorite editor" by default.
+As most apps, we offer settings you can tweak. We use default values that should work for most people, to save you even more time - however you _might_ want to change them; for example if you don't use Visual Studio Code (your "favorite editor" by default).
 
 Currently supported settings are the following. Change them with `settings change <KEY> <value>`
 
-| KEY | Value Type | Description |
-| :--- | :--- | ---: |
-| `default-intensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | Changes the default intensity for the `clean` command. `normal` by default. |
-| `update-freq` | A fixed number, represents DAYS. | Changes how frequently the CLI sends an HTTP request for updates. Recommend to be high, as we don't frequently update. Defaults to `5`. |
-| `fav-editor` | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | Your favorite code editor. Used by `kickstart` and `launch`. VSCode by default. |
-| `default-manager` | `npm`, `pnpm`, `yarn`, `deno`, `bun`, `go`, or `cargo` | Default package manager, for use when we can't guess what to use. Makes most sense to set to a JS one; defaults to `npm`. |
-| `notifications` | `true`, `false` | Whether to [use system notifications](../learn/notifications.md). Highly recommended, enabled by default. |
-| `notification-threshold` | `true`, `false` | Disabled by default, makes system notifications only fire up if the task to be notified about takes less than the threshold value. |
-| `notification-threshold-value` | A fixed number, represents MILLISECONDS. | Threshold value. Defaults to `10000` (10 seconds). |
-| `always-short-circuit-cleanup` | `true`, `false` | Disabled by default, makes `clean` immediately halt if an error happens. See [this](usage.md#note-about-error-handling). |
-| `kickstart-root` | A file path | Unset by default, automatically roots kickstarted projects to there instead of the current working directory. Useful if you have a main "projects" folder or something similar. |
-| `workspace-policy` | `standalone` or `unified` | Unset by default. If set, when adding a project with workspaces, you won't be prompted for how to handle them; `standalone` handling will add each workspace individually and `unified` handling will add just the root. |
+| KEY | Value Type | Default | Description |
+| :--- | :--- | ---: | ---: |
+| `default-intensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | `normal` | Changes the default intensity for the `clean` command. |
+| `update-freq` | A fixed number, represents DAYS. | 5 | Changes how frequently the CLI sends an HTTP request for updates. Recommend to be high, as we don't frequently update. |
+| `fav-editor` | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | `vscode` | Your favorite code editor. Used by `kickstart` and `launch`. |
+| `default-manager` | `npm`, `pnpm`, `yarn`, `deno`, `bun`, `go`, or `cargo` | `npm` | Used when a manager is required and we can't guess what to use. |
+| `notifications` | `true`, `false` | `true` | Whether to [use system notifications](../learn/notifications.md). Highly recommended. |
+| `notification-threshold` | `true`, `false` | `false` | Makes system notifications only fire up if the task to be notified about takes more than the threshold value. |
+| `notification-threshold-value` | A fixed number, represents MILLISECONDS. | `10000` (10 seconds) | Notification threshold value. |
+| `always-short-circuit-cleanup` | `true`, `false` | `false` | Makes `clean` immediately halt if an error happens. See [this](usage.md#note-about-error-handling). |
+| `kickstart-root` | A file path | (Undefined) | Automatically roots kickstarted projects to there instead of the current working directory. Useful if you have a main "projects" folder or something similar. |
+| `workspace-policy` | `standalone` or `unified` | (Undefined) | If set, when adding a project with workspaces, you won't be prompted for how to handle them; `standalone` handling will add each workspace individually and `unified` handling will add just the root. |
 
 ### View current settings
 
@@ -148,10 +158,12 @@ Favorite code editor          | vscode. fav-editor
 Send system notifications     | Enabled. notifications
 Threshold notifications?      | Disabled. notification-threshold
 Notification threshold        | 10000 milliseconds. notification-threshold
-Cleanup error behavior?       | Short-circuit always-short-circuit-cleanup
+Short circuit on cleanup error? | Disabled. always-short-circuit-cleanup
+Root for kickstarted projects?  | /home/zaka/proyectitos. kickstart-root
+Workspace clone handling?       | Always unify. workspace-policy
 ```
 
-As you can see, you're shown at the end the key used to change a setting (it appears _italic_ in your terminal).
+As you can see, you're shown at the end the key used to change a setting (it appears _italic_ in your terminal, if it supports that).
 
 ### Change settings
 
