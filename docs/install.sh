@@ -5,7 +5,7 @@ set -Eeuo pipefail
 
 # constants
 BIN_DIR="/usr/local/bin"
-EXE_NAME="fuckingnode"
+EXE_NAME="fkn"
 EXE_PATH="$BIN_DIR/$EXE_NAME"
 OLD_INSTALL_DIR="/usr/local/fuckingnode"
 
