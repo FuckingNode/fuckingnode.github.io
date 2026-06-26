@@ -42,7 +42,6 @@ nav:
           - How cleanup works under the hood: "learn/clean.md"
           - How audit works under the hood: "learn/audit.md"
 
-    - Roadmap: "about/roadmap.md"
     - Brand guidelines: "about/branding.md"
     - Community: "about/social.md"
     - Donate: "https://buymeacoffee.com/zakahacecosas"
@@ -103,8 +102,7 @@ plugins:
     - redirects:
           redirect_maps:
               "about.md": "about/roadmap.md"
-              # "donate.md": "about/donate.md"
-              "roadmap.md": "about/roadmap.md"
+              "donate.md": "https://buymeacoffee.com/zakahacecosas"
               "repo.md": "https://github.com/FuckingNode/FuckingNode"
               "repository.md": "https://github.com/FuckingNode/FuckingNode"
               "github.md": "https://github.com/FuckingNode/FuckingNode"

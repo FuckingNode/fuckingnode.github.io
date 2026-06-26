@@ -5,7 +5,7 @@ description: "Get your projects cloned, launched, and ready for development with
 
 # Using FuckingNode: Kickstart a project
 
-> `fkn kickstart <repo-url> [path] [package manager]`
+> `fkn kickstart <repo-url> -p [path] -m [package manager to use]`
 
 The `kickstart` command increases a lot your productivity when working with remote repositories by doing all of the following from a single command:
 
@@ -23,12 +23,10 @@ And, best of all, it also provides post-clone scripts.
 Just run the following:
 
 ```bash
-fkn kickstart <REPO-URL> [PATH] [PKG MANAGER]
+fkn kickstart <REPO-URL> -p [PATH] -m [PKG MANAGER]
 ```
 
-`REPO-URL` is obvious and mandatory. `PATH` is optional and defines the path where you want us to clone the project. If not provided, we'll create a directory in the CWD with the name of the repository (just as Git would do by default).
-
-`PKG MANAGER` lets you override the project's package manager, so a project that's using `npm` gets its dependencies installed with, for example, `pnpm` instead.
+`REPO-URL` is obvious and mandatory. `PATH` is optional and defines the path where you want us to clone the project. If not provided, we'll create a directory in the CWD with the name of the repository (just as Git would do by default). `PKG MANAGER`, also optional, lets you override the project's package manager, so a project that's using `npm` gets its dependencies installed with, for example, `pnpm` instead.
 
 ## Git scopes / shorthands
 
@@ -44,7 +42,7 @@ instead of this:
 git clone https://github.com/jonathan/some_app.git
 cd dev-utils
 npm install
-code .
+zed .
 ```
 
 You can save a few extra seconds, however, by typing this instead:

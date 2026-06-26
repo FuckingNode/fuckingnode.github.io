@@ -21,8 +21,6 @@ Note "we" should actually be "I", as this is maintained by a single developer (m
 
 ## Other pages you may also find useful
 
-[Roadmap and future plans](../about/roadmap.md)
-
 [Learn how does FuckingNode work from the inside](../learn/index.md)
 
 [Branding guidelines? (yes we have them)](../about/branding.md)

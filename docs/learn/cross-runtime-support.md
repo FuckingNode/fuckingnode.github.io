@@ -26,7 +26,7 @@ of version 5.3.0, that table looks like this:
 | Stats     | Yes        | Yes        | Yes        | Partial    | Yes        |
 | Surrender | Yes        | Yes        | Yes        | Yes        | Yes        |
 | Setup     | (Agnostic) | (Agnostic) | (Agnostic) | (Agnostic) | (Agnostic) |
-| Audit     | Yes        | No         | Yes        | No         | No         |
+| Audit     | Yes        | Yes        | Yes        | No         | No         |
 | Launch    | (Agnostic) | (Agnostic) | (Agnostic) | (Agnostic) | (Agnostic) |
 | Terminate | Partial    | Partial    | Partial    | Yes        | Yes        |
 
@@ -53,7 +53,7 @@ cleaning its cache. While a "gluefix" exists, it doesn't work most of the time.
 
 ## No Golang support for release
 
-We might add it in the future, for now it's not supported because it're harder
+We might add it in the future, for now it's not supported because it's harder
 to implement (as more steps are required).
 
 ## Partial Go support for stats
@@ -66,11 +66,10 @@ module name, no author, no license, etc...
 
 There's a single package manager for these platforms, `migrate` is useless.
 
-## No audit support for Deno, Cargo, or Go
+## No audit support for Cargo or Go
 
-Neither Deno, nor Golang, nor Cargo, offer an `audit` command.
+Neither Golang nor Cargo offer an `audit` command.
 
 ## Partial terminate support for JS runtimes
 
-Some steps like PATH removal or deeper uninstall (specifically for Node) are yet
-to be done.
+Some steps like PATH removal or deeper uninstall (specifically for Node) are yet to be done.
