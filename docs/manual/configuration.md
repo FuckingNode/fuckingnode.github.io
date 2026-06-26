@@ -135,7 +135,7 @@ Currently supported settings are the following. Change them with `settings chang
 | :--- | :--- | ---: | ---: |
 | `default-intensity` | `normal`, `hard`, `hard-only`, `maxim`, or `maxim-only` | `normal` | Changes the default intensity for the `clean` command. |
 | `update-freq` | A fixed number, represents DAYS. | 5 | Changes how frequently the CLI sends an HTTP request for updates. Recommend to be high, as we don't frequently update. |
-| `fav-editor` | `vscode`, `sublime`, `emacs`, `atom`, `vscodium`, `notepad++` | `vscode` | Your favorite code editor. Used by `kickstart` and `launch`. |
+| `fav-editor` | `vscode`, `sublime`, `emacs`, `notepad++`, `atom`, `vscodium`, `zed`, `flatpak-zed`, `flatpak-vscode`, `flatpak-vscodium` | `vscode` | Your favorite code editor. Used by `kickstart` and `launch`. |
 | `default-manager` | `npm`, `pnpm`, `yarn`, `deno`, `bun`, `go`, or `cargo` | `npm` | Used when a manager is required and we can't guess what to use. |
 | `notifications` | `true`, `false` | `true` | Whether to [use system notifications](../learn/notifications.md). Highly recommended. |
 | `notification-threshold` | `true`, `false` | `false` | Makes system notifications only fire up if the task to be notified about takes more than the threshold value. |
