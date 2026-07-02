@@ -1,6 +1,6 @@
 ---
 title: "FuckingNode Migrate"
-description: "Quickly migrate a JS project from one runtime to another."
+description: "Quickly migrate a JavaScript project from one runtime to another, with less commands to be typed."
 ---
 
 # Using FuckingNode: Migrate a project

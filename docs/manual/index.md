@@ -1,6 +1,6 @@
 ---
 title: "FuckingNode user manual"
-description: "A complete guide for your complete dev-life-quality improver."
+description: "A complete guide to your complete dev-life-quality improver. The FKN documentation lies in these pages."
 ---
 
 # FuckingNode user manual

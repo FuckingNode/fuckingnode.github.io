@@ -1,3 +1,8 @@
+---
+title: "The FuckingNode Community"
+description: "Join us, see what we're working on, and have a say on what we should fix, add or improve. Your feedback is always welcome!"
+---
+
 # FuckingNode community
 
 <div class="grid cards" markdown>

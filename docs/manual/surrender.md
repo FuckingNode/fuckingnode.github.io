@@ -1,6 +1,6 @@
 ---
 title: "FuckingNode Surrenderer"
-description: "Thanks to the world's only JavaScript CLI that knows what you'll actually use, you get this tool to automatically deprecate your own projects at will. Convenient, isn't it?"
+description: "THE tool for JavaScript development, one to automatically deprecate your own projects at will. Updates your README then deletes the project."
 ---
 
 # Using FuckingNode: Automate giving up

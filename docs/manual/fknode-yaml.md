@@ -1,6 +1,6 @@
 ---
 title: "fknode.yaml"
-description: "FuckingNode project config reference. Fine-grained configuration for each project of yours."
+description: "This is the FuckingNode project configuration reference. Serves fine-grained configuration for each project that you have."
 ---
 
 # Using FuckingNode: The fknode.yaml file

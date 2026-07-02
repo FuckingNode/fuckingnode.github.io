@@ -1,3 +1,8 @@
+---
+title: "FuckingNode branding guidelines"
+description: "Yes really."
+---
+
 # FuckingNode branding guidelines
 
 Just in case you wanted to write an article or make a video about us (thank you!). We're not Nintendo, of course we won't sue you if you don't strictly follow these rules. We do appreciate you respecting them, though.

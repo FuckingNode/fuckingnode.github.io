@@ -1,3 +1,8 @@
+---
+title: "Why does this exist?"
+description: "\"FuckingNode\" is a weird name for a weird tool that serves a weird purpose, or at least that's what you'd think at first. Learn why we made what we made and how it helps."
+---
+
 # Why is FuckingNode even a thing?
 
 ## What we wanted to fix

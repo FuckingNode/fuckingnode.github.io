@@ -1,6 +1,6 @@
 ---
 title: "FuckingNode Launcher"
-description: "Save up the clicks and keystrokes, and get your project instantly up and ready for development."
+description: "Save up the clicks and keystrokes, and get your project instantly up and ready for development. This launches your code editor and runs a startup task of choice."
 ---
 
 # Using FuckingNode: Launch a project

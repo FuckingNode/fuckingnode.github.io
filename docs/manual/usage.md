@@ -5,7 +5,7 @@ description: "How to cleanup your projects - and fall in love with FuckingNode."
 
 # Using FuckingNode: the most important command
 
-> `fkn clean [...many optional arguments]`
+> `fkn clean [-i/--intensity INTENSITY] [-p/--pretty] [-l/--lint] [-c/--commit] [-d/--destroy] [-u/--update] [[PROJECT(S)...]]`
 
 The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On top of that base, additional maintenance features and [cross-runtime support](../learn/cross-runtime-support.md) exist as well.
 
@@ -14,7 +14,7 @@ The core idea of FuckingNode is to automate cleanup of your NodeJS projects. On 
 The `fkn clean` command is the base utility of the app. It accepts the following (all optional) arguments:
 
 ```bash
-fkn clean <PROJECT | -- | ...PROJECTS> <INTENSITY | --> [--update] [--lint] [--pretty] [--destroy] [--commit]
+fkn clean [-i/--intensity INTENSITY] [-p/--pretty] [-l/--lint] [-c/--commit] [-d/--destroy] [-u/--update] [[PROJECT(S)...]]
 ```
 
 When executed with no arguments, it'll do a cleanup using the default intensity (which is `normal` and can be changed from the [settings](configuration.md#settings)) across all of your projects.
@@ -23,13 +23,13 @@ It'll iterate through all of your projects and clean them, showing status update
 
 ## Cleaner intensities, explained
 
-There are five (well, three in reality) intensities available:
+There are three (effectively five) intensities available:
 
 - `normal`
 - `hard`
 - `maxim`
 
-and additional `hard-only` and `maxim-only` levels.
+and the additional `hard-only` and `maxim-only` ones.
 
 This graph demonstrates what does each level do.
 
@@ -74,24 +74,24 @@ The `maxim` level does what the previous levels do (unless using `hard-only`), a
 Now that we know this, we can choose whatever fits our needs each time we run a cleanup
 
 ```bash
-fkn clean -- normal
-fkn clean -- hard
-fkn clean -- hard-only
-fkn clean -- maxim
-fkn clean -- maxim-only
+fkn clean -i normal
+fkn clean -i hard
+fkn clean -i hard-only
+fkn clean -i maxim
+fkn clean -i maxim-only
 ```
 
 Running without an intensity will use the **default intensity**. On a fresh install, it's always `normal`, however [that can be changed to your linking from the settings command](configuration.md#settings).
 
-Notice the `--`. `clean` takes a project path / name as a first optional argument. If given (and different from `--`), that specific project will be cleaned (and global caches when `hard` cleanup). If not given, or `--` given, every single project from your list will be cleaned one by one, saving you even more time.
-
-You can also use spreading by using `--projects`, like this:
+By default, when running `clean` every single project from your list will be cleaned one by one, saving you even more time. However you might want to provide specific projects to be cleaned this time. To do this, just pass them as plain arguments anywhere that can't be confused with an intensity. Like this:
 
 ```bash
-fkn clean --projects foo bar ./projects/baz
+fkn clean foo bar ./projects/baz # OR
+fkn clean -i hard foo bar ./projects/baz # OR ALSO
+fkn clean -i hard -p -l foo bar ./projects/baz
 ```
 
-**Keep in mind**, when using spreading, you need to use a flag to interrupt spreading, so if you want to specify an intensity, it'll need a `--intensity` flag otherwise. The `--intensity` flag does _not_ work however if projects are not spreading.
+All flags except for `-i/--intensity` don't expect arguments, so they won't be affected by the presence of projects.
 
 ## Configuring a project's behavior
 
@@ -108,9 +108,9 @@ There are two ways of activating them:
 **1 /** Simply pass them as a flag to use them. No args are required for any of them.
 
 ```bash
-fkn clean -- -- --update --lint --pretty --destroy --commit
+fkn clean --update --lint --pretty --destroy --commit
 # or, shorter
-fkn clean -- -- -u -l -p -d -c
+fkn clean -u -l -p -d -c
 ```
 
 **2 /** For a specific project to automatically use some features without the need of the `clean` command having the flag specified, use `flagless` in the `fknode.yaml` file:

@@ -1,6 +1,6 @@
 ---
 title: "FuckingNode Setuper"
-description: "You're meant to write code, not config files. Let us handle setup for you."
+description: "You're meant to write code, not configuration files. This tool makes sure you're not required to do the latter by providing many ready-to-use template files."
 ---
 
 # Using FuckingNode: Setup a project
