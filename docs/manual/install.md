@@ -33,7 +33,7 @@ curl -fsSL fuckingnode.github.io/remove.sh | bash
 
 ### :simple-nixos: Nix / NixOS
 
-!!! warning
+!!!warning
     ARM (`aarch64-linux`) support is available, but NOT tested!
 
 Add the repo to your `flake.nix`.
@@ -74,7 +74,7 @@ You can now either:
 - Run `deno task compile` and get the output executable from `dist/`.
 - Run `deno -A src/main.ts [...commands]` from the root.
 
-!!! note Note for source compiling
+!!!note Note for source compiling
     When compiling from source, you'll get an error because of a missing utility "kbi". You can ignore it, we use it for hashing release binaries.
 
 ---

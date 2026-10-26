@@ -72,7 +72,7 @@ You can use FuckingNode's CmdSet system to create a `kickstartCmd`, or what you'
 
 These are scripts written in a special, cross-platform "language" within the `fknode.yaml` file.
 
-!!! success "Safety first."
+!!!success "Safety first."
     Scripts are scripts; they're unsafe by nature. To prevent this from causing issues, you're prompted after cloning whether you want to run them or not and are shown every command that they'll run, one by one. Choosing not to run it won't alter the rest of the kickstart process.
 
 How to write this kind of scripts is covered in [the CmdSet documentation](fknode-yaml.md#cmdsets).

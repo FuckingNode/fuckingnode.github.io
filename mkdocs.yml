@@ -2,7 +2,7 @@ site_name: FuckingNode
 site_description: The fucking chaos of maintaining JavaScript projects ends here.
 site_url: https://fuckingnode.github.io/
 site_author: ZakaHaceCosas
-copyright: Copyright &copy; 2024 - 2025 ZakaHaceCosas
+copyright: Copyright &copy; 2024 and onwards, made by ZakaHaceCosas
 
 repo_name: FuckingNode/FuckingNode
 repo_url: https://github.com/FuckingNode/FuckingNode/
@@ -28,6 +28,7 @@ nav:
           - Feature - Launch: "manual/launch.md"
           - Feature - Migrate: "manual/migrate.md"
           - Feature - Setup: "manual/setup.md"
+          - Feature - State: "manual/state.md"
           - Feature - Stats: "manual/stats.md"
           - Feature - Surrender: "manual/surrender.md"
           - Feature - Terminate: "manual/terminate.md"
@@ -50,7 +51,7 @@ theme:
     name: material
     custom_dir: docs/overrides
 
-    logo: fkn_logo_dark.webp
+    logo: fkn_logo_light.webp
     favicon: fkn_icon.webp
 
     features:
@@ -101,7 +102,6 @@ plugins:
     - social
     - redirects:
           redirect_maps:
-              "about.md": "about/roadmap.md"
               "donate.md": "https://buymeacoffee.com/zakahacecosas"
               "repo.md": "https://github.com/FuckingNode/FuckingNode"
               "repository.md": "https://github.com/FuckingNode/FuckingNode"

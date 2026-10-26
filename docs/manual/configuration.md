@@ -5,7 +5,7 @@ description: "FuckingNode is easy to config and to tweak, this page explains all
 
 # Setup FuckingNode
 
-!!! question "Don't mess terms up"
+!!!question "Don't mess terms up"
     It's not the same to _setup FuckingNode_ (here) than to use _fkn setup_ (a [separate utility](setup.md) we provide)
 
 Here we'll learn everything about setting up and configuring the CLI to your liking.
@@ -16,7 +16,7 @@ Here we'll learn everything about setting up and configuring the CLI to your lik
 
 _We care about user experience, and that's why we're constantly working to ensure peak performance..._ blah blah blah TL;DR: **you need to add projects yourself so we don't consume your time and CPU looking in your entire drive for JavaScript projects** (which trust me, would've been easier for me - kind off).
 
-!!! note
+!!!note
     Some features are **addition agnostic**, like `commit` or `setup`. This means they don't need the project to be added. These features usually don't even require you to be on a "supported platform".
 
 There are 4 ways to add projects:

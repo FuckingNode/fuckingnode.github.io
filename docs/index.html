@@ -1,7 +1,9 @@
 <!-- yes, hardcoded HTML because, you know, who needs react? -->
 <!-- ALSO this is kinda unfinished, we could do
 - highlight a few more features in the home page
-- maybe add a backdrop video
+- add a backdrop video
+- improve the look and the code quality
+- optimize images
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
     <meta
@@ -54,11 +56,12 @@
     <title>FuckingNode - The chaos of maintaining projects ends here</title>
     <style>
       :root {
-        --bg-dark: #0d1117;
+        --bg-dark: #0f1319;
         --bg-darker: #090c10;
         --text-main: #e6edf3;
         --text-muted: #8b949e;
-        --accent: #b36044;
+        --accent-dimmed: #b36044;
+        --accent: #f87755;
       }
 
       * {
@@ -68,7 +71,7 @@
         scroll-behavior: smooth;
       }
       body {
-        font-family: "Segoe UI", "Inter", system-ui, sans-serif;
+        font-family: "Mona Sans", system-ui, sans-serif;
         background: var(--bg-dark);
         color: var(--text-main);
         line-height: 1.6;
@@ -84,8 +87,8 @@
           to bottom right,
           #000,
           #210,
-          var(--accent),
-          #f87755
+          var(--accent-dimmed),
+          var(--accent)
         );
         background-size: 2000%;
         background-position: 0%;
@@ -104,7 +107,7 @@
         color: #fff;
         flex-grow: 1;
         height: 100%;
-        transition: background-color 8s cubic-bezier(0, 1, 0, 1) box-shadow
+        transition: background-color 8s cubic-bezier(0, 1, 0, 1), box-shadow
           12s ease;
         font-size: x-large;
       }
@@ -162,7 +165,7 @@
       }
       .hero {
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
         min-height: 100vh;
         padding: 0 40px;
@@ -187,22 +190,23 @@
         padding: 10px 20px;
         text-align: center;
         border-radius: 8px;
-        background: linear-gradient(90deg, #f87755, var(--accent));
+        background: linear-gradient(90deg, var(--accent), var(--accent-dimmed));
         color: #fff;
         font-weight: 600;
         transition: transform 0.2s, box-shadow 0.3s;
       }
       .btn2 {
+        border: 2px solid #ffffff50;
         background: var(--bg-dark);
       }
       .btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 0 20px #f87755;
+        box-shadow: 0 0 20px var(--accent);
       }
       .btn2:hover {
         transform: translateY(-3px);
         background-color: var(--bg-darker);
-        box-shadow: 0 0 20px #ffffff40;
+        border: 2px solid #f87755;
       }
       .btn {
         display: inline-block;
@@ -264,7 +268,7 @@
       .card:hover {
         transform: translateY(-10px);
         border-color: var(--accent);
-        box-shadow: 0 0 25px var(--accent);
+        box-shadow: 0 0 25px var(--accent-dimmed);
       }
       .card h4 {
         margin-bottom: 10px;
@@ -304,7 +308,7 @@
         font-size: 3rem;
         line-height: 3.75rem;
         margin-bottom: 20px;
-        background: linear-gradient(90deg, #f87755, var(--accent));
+        background: linear-gradient(90deg,var(--accent), var(--accent-dimmed));
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -468,12 +472,6 @@
         color: #999;
       }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const text = document.getElementById("random-text");
@@ -503,12 +501,14 @@
           "resign node",
           "ungo --remove-all-motherfuckers-too",
           "clean",
+          "state ofjs",
           "uncommit",
           "kickstart cb:NotabenaDesu/Notabena",
           "unnode --remove-all-motherfuckers-too",
           "commit 'revert past commit' -A",
           "im-done-with npm",
-          "terminate node"
+          "terminate node",
+          "state of-the-art"
         ];
         // uses time instead of Math.random() so it changes more often
         text.innerText = options[
@@ -538,10 +538,10 @@
         <a href="#platform-support">Where can I use it?</a>
       </nav>
     </header>
-
+<main>
     <section class="hero">
       <!-- <video autoplay muted loop playsinline>
-        <source src="https://fuckingnode.github.io/fkn4.webm" type="video/webm">
+        <source src="/fkn5.webm" type="video/webm">
       </video> -->
       <div class="hero-text">
         <div style="overflow: hidden">
@@ -561,7 +561,7 @@
         </div>
       </div>
       <img
-        src="https://fuckingnode.github.io/hero.avif"
+        src="/ss.png"
         alt="FuckingNode doing a global cleanup"
       />
     </section>
@@ -645,14 +645,14 @@
           </p>
         </div>
         <img
-          src="https://fuckingnode.github.io/website_1.avif"
+          src="/website_1.avif"
           alt="Kickstart"
         />
       </div>
 
       <div class="feature">
         <img
-          src="https://fuckingnode.github.io/website_2.avif"
+          src="/website_2.avif"
           alt="Setup"
         />
         <div class="feature-text">
@@ -676,14 +676,14 @@
           </p>
         </div>
         <img
-          src="https://fuckingnode.github.io/website_3.avif"
+          src="/website_3.avif"
           alt="Commit"
         />
       </div>
 
       <div class="feature">
         <img
-          src="https://fuckingnode.github.io/website_4.avif"
+          src="/website_4.avif"
           alt="Launch"
         />
         <div class="feature-text">
@@ -702,7 +702,7 @@
           </p>
         </div>
         <img
-          src="https://fuckingnode.github.io/website_5.avif"
+          src="/website_5.avif"
           alt="Surrender"
         />
       </div>
@@ -840,7 +840,7 @@
         <div class="cool-button-body">Get started now!</div>
       </a>
     </section>
-
+</main>
     <footer style="text-align: left">
       Copyright &copy; 2024 and onwards <a
         style="text-decoration: underline"

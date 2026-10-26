@@ -2,9 +2,8 @@
 
 > `fkn compat [item]`
 
-!!! note "What we mean by _Cross-runtime_" While we always use the term
-"cross-runtime", we also include _cross-platform_ (Golang and Rust) support
-inside of that term.
+!!!note "What we mean by _Cross-runtime_"
+    While we always use the term "cross-runtime", we also include _cross-platform_ (Golang and Rust) support inside of that term.
 
 While FuckingNode can be a very powerful automation tool if properly used, in
 the end it's just an executable that _automates_ tasks; it doesn't do much on

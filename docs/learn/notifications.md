@@ -14,5 +14,5 @@ On finish notifications are fired if the running task took more than 30 seconds 
 
 Notifications are enabled by default, but can be disabled if you don't like them.
 
-!!! warning Support for Linux
+!!!warning "Support for Linux"
     On Linux, it's assumed that `notify-send` is installed. If not, notifications simply won't be sent, without a warning.

@@ -7,7 +7,7 @@ description: "You're meant to write code, not configuration files. This tool mak
 
 > `fkn setup <setup> [project]`
 
-!!! question "Don't mess terms up"
+!!!question "Don't mess terms up"
     It's not the same to _setup FuckingNode_ ([configure the CLI first time](configuration.md)) than to use _fkn setup_ (here)
 
 The `setup` command in FuckingNode basically adds a pre-made text-config file (like a preset `tsconfig.json` or a preset `fknode.yaml`). There's currently few _setups_ (we refer to each "preset" / "template" / ... as a _setup_); however they're easy to add, so soon we'll likely have a setup for every use case. _You could contribute your own, too :wink:._
@@ -81,4 +81,4 @@ You didn't provide a valid setup. Above are all setups that match ts-.
 
 You've now learnt how to quickly get your text-config files ready.
 
-Next: Stats - (can't think of a description for this one).
+Next: State - How to get a quick look at some project’s state.

@@ -59,14 +59,14 @@ The `normal` level recursively "cleans" each of your project. We define "cleanin
 
 The `hard` level does the previous (unless using `hard-only`), plus cleans global caches. This will make the most sense for `pnpm` user, which is known for it's global module cache, however cleaning is made for all package managers.
 
-!!! warning "Regarding npm's cache"
+!!!warning "Regarding npm's cache"
     As `npm` itself warns you when manually cleaning its cache, it will make `npm` even slower than what it already is the next time you use it. Our recommendation is simple: to use `pnpm` or `bun` as your default package manager instead.
 
 Our official recommendation is to run `normal` cleanups in a weekly basis, and `hard` cleanups once or twice a month. That's our recommendation, of course. Do whatever you please with your computer.
 
 The `maxim` level does what the previous levels do (unless using `hard-only`), and also the removes `node_modules` directory (forcing you to reinstall dependencies next time you want to code).
 
-!!! tip "Why does maxim even exist?"
+!!!tip "Why does maxim even exist?"
     For average use, it is discouraged. However, in some cases, it can be useful, as our registered record is of **11 recovered gigabytes storage after using this cleanup** (yes, eleven). So, for example, if you needed to download a particularly big file and completely forgot your drive is almost full, this command will free up a particularly big chunk of your hard drive.
 
 ---
@@ -134,7 +134,7 @@ Available flags are:
 
 \* if not obvious enough, removes files and directories you specify, such as `.react`, `out/`, `dist/`, or anything you want gone.
 
-!!! abstract "Cross-runtime support notice"
+!!!abstract "Cross-runtime support notice"
 
     Some advanced features won't work everywhere. See [cross-runtime support](../learn/cross-runtime-support.md) for more info.
 
@@ -194,7 +194,7 @@ When destroying, we will automatically remove files and directories you specifie
 
 You already know what command this will run (your operating system's default file removal command).
 
-!!! abstract "Don't forget!"
+!!!abstract "Don't forget!"
 
     `fknode.yaml` allows (and requires) you to specify on which intensities you'd like this to run (so for example, one project will always `destroy` upon cleanup, and other project will only `destroy` upon a `hard` cleanup). Other commands do not currently support specifying per intensity level usage rules.
 
@@ -229,7 +229,7 @@ For your own safety, we will commit ONLY IF ALL of the following conditions are 
 - There are no changes from upstream that haven't been pulled.
 - You EXPLICITLY allowed committing for that project in the `fknode.yaml` file.
 
-!!! success "Safety first."
+!!!success "Safety first."
     While features you opt-in when cleaning are automatically used on **all** projects as noted above, an exception was made for committing, requiring explicit allowance for your own safety.
 
     To allow a project's code to be committed, add the following to your `fknode.yaml`:

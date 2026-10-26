@@ -13,7 +13,7 @@ You can also just keep reading this page for a TL;DR.
 
 ### Step 0: Install
 
-### :fontawesome-brands-windows: Microsoft Windows
+#### :fontawesome-brands-windows: Microsoft Windows
 
 Copy and paste the following code in a terminal session.
 
@@ -21,7 +21,7 @@ Copy and paste the following code in a terminal session.
 powershell -c "irm fuckingnode.github.io/install.ps1 | iex"
 ```
 
-### :simple-linux: Linux and :simple-apple: macOS
+#### :simple-linux: Linux / :simple-apple: macOS
 
 Copy and paste the following code in a terminal session.
 
@@ -29,9 +29,9 @@ Copy and paste the following code in a terminal session.
 curl -fsSL fuckingnode.github.io/install.sh | bash
 ```
 
-### :simple-nixos: Nix / NixOS
+#### :simple-nixos: Nix(OS)
 
-!!! warning
+!!!warning
     ARM (`aarch64-linux`) support is available, but NOT tested!
 
 Add the repo to your `flake.nix`.
@@ -90,7 +90,7 @@ fkn clean ../project1
 fkn clean my-framework
 ```
 
-### Step 3: Use it better
+### Step 3: Make it better
 
 For increased intensity, use this.
 
@@ -102,7 +102,7 @@ When cleaning like this, global caches from all your installed package managers 
 
 If you only wish to clear global caches without waiting for individual cleanup of all of your projects, use `fkn clean hard-only`, or a shortcut (`fkn global-clean` or `fkn hard-clean`).
 
-### Step 4: Use it even better
+### Step 4: Even better!
 
 For the best experience, you can pass flags to the clean command for using additional features. Detailed explanations are available at the [usage manual](../manual/usage.md), but basically:
 
@@ -121,12 +121,10 @@ Behavior itself can also be overridden via an `fknode.yaml` file, in case you'd 
 Note `--destroy` and `--commit` _are_ affected by the global cleaning rule, however they won't run by default as they require configuration via an `fknode.yaml` file:
 
 - `--destroy` requires you to specify what you want to be removed. We don't have "default" directories to auto-remove like `dist/`, to avoid removing something you _might_ need.
-- `--commit` requires you to specify permission to run. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Hence, committing requires explicit allowance from you, and additional safety checks are performed [as outlined here](../manual/usage.md#committing-your-code-commit).
+- `--commit` requires you to specify permission to run. Making a commit is a sensible action, as we could potentially commit something you did _not_ intend to commit yet. Hence, committing requires explicit allowance from you, and additional safety checks are performed [as outlined here](../manual/usage.md#committing-your-code).
 
 ---
 
-And that's the basic manual. For further learning about `fknode.yaml` or advanced features, keep navigating the documentation. You've got it all in the sidebar.
-
----
+And that's the basic manual. For further learning about advanced features or project configuration via `fknode.yaml`, keep navigating the documentation. You've got it all in the sidebar.
 
 *[CWD]: Current Working Directory

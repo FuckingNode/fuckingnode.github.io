@@ -9,7 +9,7 @@ The `fknode.yaml` file is used to define settings for individual projects. It is
 
 Below is a detailed explanation of each configuration option available in the file. They are all optional. Data types are expressed using TypeScript type syntax.
 
-!!! tip "Get autocomplete for VSCode"
+!!!tip "Get autocomplete for VSCode"
     You can [download our Visual Studio Code extension for FuckingNode here](https://marketplace.visualstudio.com/items?itemName=ZakaHaceCosas.fknode), to get autocomplete (as well as some other features).
 
 ## General settings
